@@ -390,12 +390,17 @@
       const btn = document.getElementById('submitBtn');
       btn.disabled = true;
       btn.textContent = 'Joining...';
-      const interests = [...document.querySelectorAll('.checks input:checked')].map(cb => cb.value).join(', ');
       const data = new FormData();
-      data.append('fields[email]', document.getElementById('femail').value);
+      // MailerLite standard email field
+      data.append('email', document.getElementById('femail').value);
+      // MailerLite custom field: {$name}
       data.append('fields[name]', document.getElementById('fname').value);
+      // MailerLite custom field: {$condition}
       data.append('fields[condition]', document.getElementById('fcondition').value);
-      data.append('fields[interests]', interests);
+      // MailerLite custom field: {$interests} — each checked value sent as a separate entry
+      document.querySelectorAll('.checks input:checked').forEach(cb => {
+        data.append('fields[interests][]', cb.value);
+      });
       data.append('ml-submit', '1');
       data.append('anticsrf', 'true');
       try {
