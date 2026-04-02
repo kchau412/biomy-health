@@ -308,52 +308,14 @@
         <p class="sec-sub" style="max-width:480px;margin:8px auto 0;">Tell us about yourself and we'll make sure Biomy is ready for you when we launch.</p>
       </div>
       <div class="form-box fade-up">
-        <div class="success-state" id="successState">
-          <div class="success-icon">&#10003;</div>
-          <h3>You're on the list!</h3>
-          <p>Thanks for joining. We'll be in touch as we get closer to launch.</p>
-        </div>
-        <form id="waitlistForm">
-          <h3>I'm in.</h3>
-          <p class="form-sub">Takes 30 seconds. No spam, ever.</p>
-          <div class="field">
-            <label class="flabel" for="fname">Your name</label>
-            <input class="finput" type="text" id="fname" placeholder="First name" required />
-          </div>
-          <div class="field">
-            <label class="flabel" for="femail">Email address</label>
-            <input class="finput" type="email" id="femail" placeholder="you@example.com" required />
-          </div>
-          <div class="field">
-            <label class="flabel" for="fcondition">Primary condition</label>
-            <div class="select-wrap">
-              <select class="finput" id="fcondition" required>
-                <option value="" disabled selected>Select your condition</option>
-                <option>Ulcerative Colitis</option>
-                <option>Crohn's disease</option>
-                <option>IBS</option>
-                <option>Coeliac disease</option>
-                <option>Type 2 diabetes</option>
-                <option>PCOS</option>
-                <option>Endometriosis</option>
-                <option>Other / prefer not to say</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label class="flabel">What are you most interested in?</label>
-            <div class="checks">
-              <label class="chk-label"><input type="checkbox" value="Condition guides" />Condition guides</label>
-              <label class="chk-label"><input type="checkbox" value="Recipes and meal plans" />Recipes and meal plans</label>
-              <label class="chk-label"><input type="checkbox" value="Symptom tracker" />Symptom tracker</label>
-              <label class="chk-label"><input type="checkbox" value="Flora companion" />Flora companion</label>
-              <label class="chk-label"><input type="checkbox" value="FODMAP guidance" />FODMAP guidance</label>
-              <label class="chk-label"><input type="checkbox" value="Community" />Community</label>
-            </div>
-          </div>
-          <button type="submit" class="fsubmit" id="submitBtn">Join the Biomy waitlist</button>
-          <p class="fprivacy">No spam. Unsubscribe anytime. Your data stays private.</p>
-        </form>
+        <iframe data-tally-src="https://tally.so/embed/xXyy45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Biomy waitlist">
+        </iframe>
       </div>
     </div>
   </section>
@@ -385,36 +347,7 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-    document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = 'Joining...';
-      const data = new FormData();
-      // MailerLite standard email field
-      data.append('email', document.getElementById('femail').value);
-      // MailerLite custom field: {$name}
-      data.append('fields[name]', document.getElementById('fname').value);
-      // MailerLite custom field: {$condition}
-      data.append('fields[condition]', document.getElementById('fcondition').value);
-      // MailerLite custom field: {$interests} — each checked value sent as a separate entry
-      document.querySelectorAll('.checks input:checked').forEach(cb => {
-        data.append('fields[interests][]', cb.value);
-      });
-      data.append('ml-submit', '1');
-      data.append('anticsrf', 'true');
-      try {
-        await fetch('https://assets.mailerlite.com/jsonp/2237509/forms/183543328264947129/subscribe', {
-          method: 'POST', body: data, mode: 'no-cors'
-        });
-        document.getElementById('waitlistForm').style.display = 'none';
-        document.getElementById('successState').style.display = 'block';
-      } catch {
-        btn.disabled = false;
-        btn.textContent = 'Join the Biomy waitlist';
-        alert('Something went wrong. Please try again.');
-      }
-    });
   </script>
+  <script src="https://tally.so/widgets/embed.js"></script>
 </body>
 </html>
