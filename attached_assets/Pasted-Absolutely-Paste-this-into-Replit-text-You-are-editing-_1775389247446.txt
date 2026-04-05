@@ -1,0 +1,162 @@
+Absolutely. Paste this into Replit:
+
+```text
+You are editing a static HTML/CSS website for biomy.health.
+
+Context:
+- This is a simple static site deployed via GitHub Pages.
+- I use Replit as my preview/prod-like environment, then push to GitHub Pages.
+- Please make the requested edits directly in the HTML files.
+- Preserve the current visual language, typography, palette, spacing, button styles, rounded corners, and overall calm/editorial feel.
+- Do not convert this to React, Next.js, Tailwind, or any framework.
+- Keep everything as plain HTML, embedded CSS, and light vanilla JS only where already used.
+- Keep pages responsive on mobile.
+- Keep navigation and footer consistent across all pages.
+- Keep the site feeling premium, warm, trustworthy, culturally inclusive, and human.
+- Biomy is a wellness platform, not a medical product, so preserve and reinforce that distinction where appropriate.
+
+Files/pages in scope:
+1. Homepage / index
+2. Privacy page / privacy
+3. About / founder page / about
+
+What I need you to do:
+
+PART 1: HOMEPAGE UPDATES
+Use my existing homepage code as the base and improve it without changing the brand feel.
+
+Goals:
+- Keep the current structure, but polish any rough edges and make the page feel slightly more finished and investor/user ready.
+- Keep the hero, FODMAP/jargon section, features, Flora section, supported conditions, and waitlist section.
+- Preserve the Tally embed.
+- Preserve current colors and type pairing.
+- Preserve the “wellness platform, not medical advice” tone.
+
+Homepage changes:
+- Make sure nav links work cleanly for About and Privacy.
+- If Recipes is not live yet, either:
+  a) keep it only in footer and remove from top nav, or
+  b) keep it in nav only if there is already a real recipes page.
+  Choose the cleaner option based on the current files.
+- Add a subtle line somewhere on the homepage that makes the founder credibility clearer, something like:
+  “Built by someone living with Ulcerative Colitis and with 18 years of product and technology experience.”
+  Keep this concise and elegant, not overly startup-y.
+- Tighten any copy that feels repetitive.
+- Keep Flora clearly positioned as a wellness companion, not a clinician.
+- Make sure footer links include About and Privacy.
+- Ensure all internal links work correctly for GitHub Pages static routing.
+
+Technical requirement for static routing:
+- Because this is GitHub Pages, create routes that work as static pages.
+- If needed, use folder-based paths:
+  - /about/index.html
+  - /privacy/index.html
+- Update internal links accordingly so /about and /privacy resolve cleanly.
+
+PART 2: PRIVACY PAGE
+Create or refine the privacy page using the supplied privacy page content and current design system.
+
+Goals:
+- Keep the “plain English, not legalese” tone.
+- Keep the page visually consistent with the homepage.
+- Make it readable and trustworthy.
+- Preserve the warm, human tone, but make the formatting feel polished.
+
+Required privacy page tasks:
+- Keep sections for:
+  - What we collect
+  - What we do not collect
+  - Health data
+  - Your rights
+  - Who we are
+  - Changes
+- Keep the footer and top nav consistent with homepage.
+- Keep the copy mostly as-is unless you see grammar/clarity issues.
+- Add an “Effective date” or “Last updated” line in a neat, understated format.
+- Make sure email links are correct and consistent.
+- Keep the disclaimer that Biomy is not medical advice.
+- Keep it as a static HTML page.
+
+Important:
+- Do not make exaggerated legal claims.
+- Keep the tone confident but not over-claiming.
+- If there are any absolute claims like “never” or strong compliance language, only keep them if they are already in the supplied copy and fit the current early-stage solo-project reality.
+
+PART 3: ABOUT / FOUNDER PAGE
+Create or revise the about page using the supplied about page content and current design system.
+
+This page needs content corrections.
+
+Please update the founder story with these exact factual corrections:
+- Change “twenty years of experience building consumer products” to reflect:
+  - 18 years of professional experience across consulting, big tech, and financial services
+- Change any line that says I have “twenty years” of product experience
+- Make clear that I have:
+  - 18 years of professional experience
+  - including consulting
+  - 10 years at Amazon
+  - 3 years at Ford in financial services
+- Change any statement that implies I have 20 years building products to:
+  - 10 years of experience building products
+  - with broader professional experience totaling 18 years
+- Add that when I was looking for support, I used Monash resources and Facebook groups to connect with others facing IBD
+- Preserve the personal story:
+  - diagnosed with Ulcerative Colitis at 19
+  - remission
+  - flare returned at 35 and lasted 3.5 years
+  - NHS/FODMAP confusion
+  - frustration with jargon
+  - lack of culturally relevant food guidance
+- Keep the warmth, wit, and specificity
+- Keep the line about “oligosaccharide” sounding like a Russian oligarch if it still reads well
+- Keep the story about Indian food, garlic, onion, and culturally relevant recipes
+- Keep Biomy positioned as the resource I wish I had
+- Keep Flora as a wellness companion, not a doctor
+- Keep the “What Biomy is not” section
+- Keep the CTA at the bottom
+
+Please rewrite the top subtitle so it is accurate. It should communicate something close to:
+“Biomy is a solo project from Karan, someone living with Ulcerative Colitis, with 18 years of professional experience across consulting, Amazon, and Ford, and 10 years of experience building products.”
+
+Please also revise the professional section so it reads accurately and smoothly. It should reflect:
+- 18 years total professional experience
+- consulting background
+- 10 years at Amazon
+- 3 years at Ford in financial services
+- product leadership background
+- experience with AI / ML / customer-facing products
+- but without sounding bloated or like a résumé dump
+
+PART 4: DESIGN + UX CLEANUP
+Across all pages:
+- Keep the same fonts:
+  - Lora
+  - DM Sans
+- Keep the same palette and rounded aesthetic.
+- Ensure spacing is consistent.
+- Ensure headings and body widths are comfortable to read.
+- Ensure mobile layout works well.
+- Ensure hover states remain subtle.
+- Ensure nav and footer are visually identical or near-identical across pages.
+- Preserve the premium editorial look.
+
+PART 5: OUTPUT FORMAT
+Please:
+1. Update the homepage file
+2. Create/update the privacy page
+3. Create/update the about page
+4. Use file paths that work for GitHub Pages static hosting
+5. Return the final full code for each file
+6. Briefly note any routing/link decisions you made
+
+Current source material:
+- Use the existing homepage HTML I already have as the base
+- Use the supplied privacy HTML as the base
+- Use the supplied about HTML as the base
+- Only make changes necessary to improve polish, fix accuracy, and create a cleaner static-site implementation
+```
+
+A couple of smart nudges before you run it:
+
+* On GitHub Pages, `/about` and `/privacy` are usually safest as `about/index.html` and `privacy/index.html`.
+* Your about page is much stronger with the corrected credibility split: **18 years professional experience, 10 years building products**. That lands cleaner and sounds more believable.

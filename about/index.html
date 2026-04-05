@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Biomy</title>
+  <meta name="description" content="Biomy was built by someone living with Ulcerative Colitis. Read the founder's story, the mission, and what Biomy is — and isn't." />
+  <link rel="canonical" href="https://biomy.health/about/" />
+  <meta property="og:title" content="About Biomy" />
+  <meta property="og:description" content="The resource I wish I'd had. Built by Karan, someone living with UC." />
+  <meta property="og:url" content="https://biomy.health/about/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EE; --cream-dark: #EDE8DF;
+      --green: #2D5A3D; --green-mid: #4A7B5E;
+      --green-light: #D4E8DA; --green-pale: #EBF3EE;
+      --amber: #C4853A; --text: #1A1A18;
+      --text-muted: #5C5C52; --border: #D8D3C8;
+      --white: #FFFFFF; --r: 12px; --r-sm: 8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
+    .logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--green); }
+    .nav-link.current { color: var(--green); }
+    .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    .section { padding: 80px 2rem; }
+    .container { max-width: 1060px; margin: 0 auto; }
+    .container-narrow { max-width: 680px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
+    h1 { font-family: 'Lora', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 20px; }
+    h1 em { font-style: italic; color: var(--green); }
+    h2 { font-family: 'Lora', serif; font-size: clamp(22px, 3vw, 34px); font-weight: 600; line-height: 1.2; letter-spacing: -0.3px; margin-bottom: 16px; color: var(--text); }
+    .lead { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
+
+    .about-hero { background: var(--cream); padding: 72px 2rem 64px; }
+
+    .story { background: var(--white); }
+    .story-body p { color: var(--text-muted); font-size: 16px; line-height: 1.85; margin-bottom: 22px; }
+    .story-body p:last-child { margin-bottom: 0; }
+    .story-body p strong { color: var(--text); font-weight: 500; }
+    .pull-quote { font-family: 'Lora', serif; font-size: clamp(17px, 2.2vw, 21px); font-style: italic; color: var(--green); border-left: 3px solid var(--green-light); padding: 2px 0 2px 22px; margin: 32px 0; line-height: 1.55; }
+
+    .credentials { background: var(--cream); }
+    .cred-intro { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 32px; }
+    .cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cred-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 20px; }
+    .cred-num { font-family: 'Lora', serif; font-size: 38px; font-weight: 600; color: var(--green); line-height: 1; margin-bottom: 8px; }
+    .cred-label { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    .not-section { background: var(--cream-dark); }
+    .not-intro { font-size: 16px; color: var(--text-muted); line-height: 1.75; margin-bottom: 20px; }
+    .not-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .not-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text-muted); }
+    .not-list li::before { content: '×'; font-size: 16px; font-weight: 600; color: var(--amber); flex-shrink: 0; line-height: 1.55; }
+    .flora-note { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 20px 24px; font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .flora-note strong { color: var(--green); font-weight: 500; }
+
+    .about-cta { background: var(--green); }
+    .about-cta h2 { color: white; margin-bottom: 10px; }
+    .about-cta p { color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 28px; }
+    .btn-primary-light { background: white; color: var(--green); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+    .btn-primary-light:hover { background: var(--green-pale); transform: translateY(-2px); }
+
+    footer { background: var(--text); padding: 44px 2rem; text-align: center; }
+    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
+    .flogo span { color: var(--amber); }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
+    footer a:hover { color: rgba(255,255,255,0.75); }
+    .flinks { margin-bottom: 16px; }
+    .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .about-hero { padding: 48px 1.5rem 40px; }
+      .cred-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .cred-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">biomy<span>.</span>health</a>
+    <div class="nav-links">
+      <a href="/about/" class="nav-link current">About</a>
+      <a class="nav-cta" href="/#waitlist">Join waitlist</a>
+    </div>
+  </nav>
+
+  <div class="about-hero">
+    <div class="container-narrow">
+      <p class="eyebrow fade-up">About Biomy</p>
+      <h1 class="fade-up">The resource I wish<br><em>I'd had.</em></h1>
+      <p class="lead fade-up">A solo project from Karan — someone living with Ulcerative Colitis, with 18 years of professional experience across consulting, Amazon, and Ford, and 10 years building consumer products.</p>
+    </div>
+  </div>
+
+  <section class="section story">
+    <div class="container">
+      <div class="container-narrow fade-up">
+        <p class="eyebrow">The story</p>
+        <h2>Diagnosed at 19. Still figuring it out at 35.</h2>
+        <div class="story-body">
+          <p>I was 19 when I was first diagnosed with Ulcerative Colitis.</p>
+          <p>A gastroenterologist handed me a leaflet about FODMAP — a word that sounds less like a dietary framework and more like an acronym invented by a committee that had given up on being understood. One of its key offenders, oligosaccharides, sounds less like a carbohydrate and more like a Russian oligarch who owns a superyacht.</p>
+          <p>The condition went into remission. Life moved on. Then, at 35, it came back — and stayed for three and a half years. Long enough to reshape how I thought about food, energy, plans, and the particular exhaustion of managing something nobody around you can see.</p>
+          <div class="pull-quote">"I needed something that felt like it had been built for someone like me — not a composite patient from a clinical trial."</div>
+          <p>I turned to Monash University's FODMAP resources, which are genuinely excellent. I found community in IBD Facebook groups, where people were far more generous with their experiences than any clinic appointment had been. But there were gaps nobody was filling.</p>
+          <p>The recipes assumed I cooked British food. The guidance didn't account for Indian cooking — which is built on garlic and onion, both high-FODMAP triggers. Adapting meant trial, error, and a lot of evenings I'd rather not revisit.</p>
+          <p>I needed something that combined clear, jargon-free information with practical, culturally relevant guidance. Something that could answer questions at 11pm when the next gastroenterology appointment was six weeks away.</p>
+          <p><strong>Biomy is that thing.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section credentials">
+    <div class="container">
+      <div class="container-narrow fade-up">
+        <p class="eyebrow">Who I am</p>
+        <h2>Product person. Not a doctor.</h2>
+        <p class="cred-intro">I have 18 years of professional experience — across consulting, a decade at Amazon, and three years at Ford in financial services. Within that, I've spent 10 years building consumer-facing products, including work in AI and machine learning. I'm not a doctor, a dietitian, or a clinical researcher. I'm a product person who spent too long confused by medical language and under-served by tools that weren't built for how I actually live.</p>
+      </div>
+      <div class="cred-grid fade-up" style="max-width:900px;margin:0 auto;">
+        <div class="cred-card">
+          <div class="cred-num">18</div>
+          <div class="cred-label">Years of professional experience across consulting, big tech, and financial services</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-num">10</div>
+          <div class="cred-label">Years building consumer products, including AI and machine learning at Amazon</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-num">3.5</div>
+          <div class="cred-label">Years of active flare — the catalyst for building what I couldn't find</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section not-section">
+    <div class="container">
+      <div class="container-narrow fade-up">
+        <p class="eyebrow">Clarity matters</p>
+        <h2>What Biomy is not.</h2>
+        <p class="not-intro">Biomy is a wellness platform built with care — not a medical product. That distinction matters, and we'll always be upfront about it.</p>
+        <ul class="not-list">
+          <li>A medical app or diagnostic tool</li>
+          <li>A replacement for your doctor, gastroenterologist, or dietitian</li>
+          <li>FDA or MHRA cleared</li>
+          <li>A source of medical advice, diagnosis, or treatment</li>
+        </ul>
+        <div class="flora-note">
+          <strong>A note on Flora.</strong> Flora, Biomy's wellness companion, is not a clinician. She won't diagnose you, prescribe anything, or give you medical advice. She's there to help you navigate, find information, and feel a little less alone at 11pm when the next appointment is weeks away.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-cta">
+    <div class="container">
+      <div class="container-narrow fade-up" style="text-align:center;">
+        <h2>If any of this resonates.</h2>
+        <p>The waitlist is open. No commitment, no spam — just early access when we launch.</p>
+        <a class="btn-primary-light" href="/#waitlist">Join the waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a class="flogo" href="/">biomy<span>.</span>health</a>
+    <div class="flinks">
+      <a href="mailto:hello@biomy.health">hello@biomy.health</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/about/">About</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/privacy/">Privacy</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
+    </div>
+    <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

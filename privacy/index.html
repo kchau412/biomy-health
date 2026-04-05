@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy — Biomy</title>
+  <meta name="description" content="Biomy's privacy policy. Plain English, no legalese." />
+  <link rel="canonical" href="https://biomy.health/privacy/" />
+  <meta property="og:title" content="Privacy — Biomy" />
+  <meta property="og:url" content="https://biomy.health/privacy/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EE; --cream-dark: #EDE8DF;
+      --green: #2D5A3D; --green-mid: #4A7B5E;
+      --green-light: #D4E8DA; --green-pale: #EBF3EE;
+      --amber: #C4853A; --text: #1A1A18;
+      --text-muted: #5C5C52; --border: #D8D3C8;
+      --white: #FFFFFF; --r: 12px; --r-sm: 8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
+    .logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--green); }
+    .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    .privacy-hero { background: var(--cream); padding: 72px 2rem 56px; }
+    .privacy-hero .container-narrow { max-width: 680px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
+    h1 { font-family: 'Lora', serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.6px; color: var(--text); margin-bottom: 16px; }
+    .date-line { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+    .lead { font-size: 17px; color: var(--text-muted); line-height: 1.75; }
+
+    .privacy-body { background: var(--white); padding: 64px 2rem; }
+    .prose { max-width: 680px; margin: 0 auto; }
+    .prose-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
+    .prose-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .prose h2 { font-family: 'Lora', serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 14px; letter-spacing: -0.2px; }
+    .prose p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 14px; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose ul { list-style: none; margin: 10px 0 14px; display: flex; flex-direction: column; gap: 8px; }
+    .prose ul li { font-size: 15px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 10px; line-height: 1.65; }
+    .prose ul li::before { content: '—'; color: var(--green-mid); font-weight: 500; flex-shrink: 0; }
+    .prose a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
+    .prose a:hover { color: var(--green-mid); }
+    .highlight-box { background: var(--green-pale); border: 1px solid var(--green-light); border-radius: var(--r); padding: 18px 22px; margin-top: 16px; font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+    .highlight-box strong { color: var(--green); font-weight: 500; }
+
+    footer { background: var(--text); padding: 44px 2rem; text-align: center; }
+    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
+    .flogo span { color: var(--amber); }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
+    footer a:hover { color: rgba(255,255,255,0.75); }
+    .flinks { margin-bottom: 16px; }
+    .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .privacy-hero { padding: 48px 1.5rem 40px; }
+      .privacy-body { padding: 48px 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">biomy<span>.</span>health</a>
+    <div class="nav-links">
+      <a href="/about/" class="nav-link">About</a>
+      <a class="nav-cta" href="/#waitlist">Join waitlist</a>
+    </div>
+  </nav>
+
+  <div class="privacy-hero">
+    <div class="container-narrow">
+      <p class="eyebrow fade-up">Privacy</p>
+      <h1 class="fade-up">Plain English.<br>No legalese.</h1>
+      <p class="date-line fade-up">Last updated: April 2026</p>
+      <p class="lead fade-up">Biomy is an early-stage, solo-built project. We take your privacy seriously and want to be completely transparent about what we collect, what we don't, and why.</p>
+    </div>
+  </div>
+
+  <div class="privacy-body">
+    <div class="prose fade-up">
+
+      <div class="prose-section">
+        <h2>What we collect</h2>
+        <p>When you sign up to the Biomy waitlist, we collect:</p>
+        <ul>
+          <li>Your name</li>
+          <li>Your email address</li>
+          <li>Your primary condition (for example, Ulcerative Colitis or Crohn's disease)</li>
+          <li>Your areas of interest (for example, recipes, symptom tracking, or condition guides)</li>
+        </ul>
+        <p>That's it. This data is collected via our waitlist form and stored securely using Tally and MailerLite.</p>
+      </div>
+
+      <div class="prose-section">
+        <h2>What we do not collect</h2>
+        <p>We do not collect:</p>
+        <ul>
+          <li>Your location or IP address</li>
+          <li>Your medical records, prescriptions, or clinical history</li>
+          <li>Payment information (the waitlist is free)</li>
+          <li>Data from third-party sources or data brokers</li>
+          <li>Biometric data of any kind</li>
+          <li>Information about anyone other than you</li>
+        </ul>
+      </div>
+
+      <div class="prose-section">
+        <h2>Health data</h2>
+        <p>You may choose to share your condition when signing up to the waitlist. We use this only to personalise your early access experience and to understand who Biomy is being built for.</p>
+        <p>We do not share this information with third parties. We do not use it for advertising targeting. We will never sell your health data.</p>
+        <div class="highlight-box">
+          <strong>A reminder.</strong> Biomy is a wellness platform, not a medical service. Nothing on this site or in any Biomy communication constitutes medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding your condition.
+        </div>
+      </div>
+
+      <div class="prose-section">
+        <h2>Your rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access the personal data we hold about you</li>
+          <li>Ask us to correct any inaccurate data</li>
+          <li>Ask us to delete your data at any time</li>
+          <li>Unsubscribe from all communications at any time — every email includes an unsubscribe link</li>
+        </ul>
+        <p>To exercise any of these rights, email us at <a href="mailto:hello@biomy.health">hello@biomy.health</a>. We'll respond promptly.</p>
+      </div>
+
+      <div class="prose-section">
+        <h2>Who we are</h2>
+        <p>Biomy is a solo project built by Karan. There is no large team, no data department, and no investors with access to your information. If you have any questions about your data or this policy, email <a href="mailto:hello@biomy.health">hello@biomy.health</a> directly.</p>
+      </div>
+
+      <div class="prose-section">
+        <h2>Changes to this policy</h2>
+        <p>If we make material changes to how we handle your data, we'll update this page and notify you by email. The "last updated" date at the top of this page will always reflect the most recent revision.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <a class="flogo" href="/">biomy<span>.</span>health</a>
+    <div class="flinks">
+      <a href="mailto:hello@biomy.health">hello@biomy.health</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/about/">About</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/privacy/">Privacy</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
+    </div>
+    <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
