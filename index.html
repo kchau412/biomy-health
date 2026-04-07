@@ -55,9 +55,41 @@
     .cycle-wrap { height: clamp(44px, 6.5vw, 68px); overflow: hidden; }
     .cycle-inner { transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
     .cycle-item { height: clamp(44px, 6.5vw, 68px); display: flex; align-items: center; font-family: 'Lora', serif; font-size: clamp(36px, 5.5vw, 58px); font-weight: 600; font-style: italic; color: var(--green); letter-spacing: -0.8px; }
-    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
-    .btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
+.btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--green);
+  border: 1.5px solid var(--green);
+  border-radius: 100px;
+  padding: 16px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-secondary:hover {
+  background: var(--green);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.hero-copy {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-top: 22px;
+}
+
+.hero-trust {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
 
     .phone { background: #1A1A18; border-radius: 36px; padding: 10px; width: 220px; box-shadow: 0 32px 64px rgba(0,0,0,0.18); }
     .phone-screen { background: var(--cream); border-radius: 28px; overflow: hidden; }
@@ -196,23 +228,28 @@
   <div style="background:var(--cream);">
     <div class="hero">
       <div>
-        <div class="badge">Wellness platform - not medical advice</div>
-        <h1>Comfort with chronic.<br>Living with</h1>
-        <div class="cycle-wrap">
-          <div class="cycle-inner" id="cycleInner">
-            <div class="cycle-item">Colitis</div>
-            <div class="cycle-item">Crohn's</div>
-            <div class="cycle-item">IBS</div>
-            <div class="cycle-item">Colitis</div>
-          </div>
-        </div>
-        <h1><em>just got a little easier.</em></h1>
-        <div class="hero-actions">
-          <a class="btn-primary" href="#waitlist">Get early access</a>
-        </div>
-        <p style="font-size:13px;color:var(--text-muted);margin-top:14px;">Always consult your doctor for medical decisions.</p>
-        <p style="font-size:13px;color:var(--text-muted);margin-top:6px;">Built by someone living with Ulcerative Colitis, with 18 years of product and technology experience.</p>
-      </div>
+  <div class="badge">Wellness platform, not medical advice</div>
+  <h1>Your gut condition shouldn't erase your food culture.</h1>
+
+  <div class="cycle-wrap" style="margin-top:14px;height:44px;">
+    <div class="cycle-inner" id="cycleInner">
+      <div class="cycle-item" style="font-size:32px;height:44px;">Indian comfort food</div>
+      <div class="cycle-item" style="font-size:32px;height:44px;">Mexican weeknight staples</div>
+      <div class="cycle-item" style="font-size:32px;height:44px;">West African classics</div>
+      <div class="cycle-item" style="font-size:32px;height:44px;">the foods you grew up with</div>
+      <div class="cycle-item" style="font-size:32px;height:44px;">Indian comfort food</div>
+    </div>
+  </div>
+
+  <p class="hero-copy">Low-FODMAP recipes across Indian, Mexican, African and more, plus Flora, an AI wellness companion who's there at 11pm when your next appointment is 6 weeks away.</p>
+
+  <div class="hero-actions">
+    <a class="btn-primary" href="/recipes/">Browse recipes</a>
+    <a class="btn-secondary" href="#waitlist">Join the waitlist</a>
+  </div>
+
+  <p class="hero-trust">Built by someone living with Ulcerative Colitis, with 10 years building consumer products at Amazon and Ford.</p>
+</div>
       <div class="phone-wrap">
         <div class="phone">
           <div class="phone-screen">
@@ -361,7 +398,7 @@
     const inner = document.getElementById('cycleInner');
     function getH() { return inner.querySelector('.cycle-item').offsetHeight; }
     setInterval(() => {
-      idx = (idx + 1) % 3;
+      idx = (idx + 1) % 4;
       inner.style.transform = 'translateY(-' + (idx * getH()) + 'px)';
     }, 2400);
 
