@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Low FODMAP Recipes | Biomy</title>
+  <meta name="description" content="Low FODMAP recipes across Indian, Chinese, Mexican, African and European cuisines. Flavour-first meals for sensitive guts, built from lived experience." />
+  <link rel="canonical" href="https://biomy.health/recipes" />
+  <meta property="og:title" content="Low FODMAP Recipes | Biomy" />
+  <meta property="og:description" content="Flavour-first, culturally inclusive low FODMAP recipes for sensitive guts." />
+  <meta property="og:url" content="https://biomy.health/recipes" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Low FODMAP Recipes | Biomy" />
+  <meta name="twitter:description" content="Low FODMAP recipes that still taste like real food." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F4EE;
+      --cream-dark: #EDE8DF;
+      --green: #2D5A3D;
+      --green-mid: #4A7B5E;
+      --green-light: #D4E8DA;
+      --green-pale: #EBF3EE;
+      --amber: #C4853A;
+      --text: #1A1A18;
+      --text-muted: #5C5C52;
+      --border: #D8D3C8;
+      --white: #FFFFFF;
+      --r: 12px;
+      --r-lg: 18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,244,238,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--amber); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover { color: var(--green); }
+
+    .nav-link.active {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 22px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-mid);
+      transform: translateY(-1px);
+    }
+
+    .section { padding: 80px 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--green-mid);
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.4px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: clamp(26px, 3.5vw, 40px);
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
+
+    .hero {
+      padding: 76px 2rem 52px;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-trust {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--green);
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-radius: 100px;
+      display: inline-block;
+      padding: 8px 14px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn-primary, .btn-outline {
+      border-radius: 100px;
+      padding: 15px 30px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--green);
+      border: 1.5px solid var(--green);
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px;
+      box-shadow: 0 8px 30px rgba(45,90,61,0.05);
+    }
+
+    .intro-copy {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 780px;
+    }
+
+    .intro-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 18px 16px;
+    }
+
+    .stat-num {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .featured-card, .recipe-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+
+    .featured-card:hover, .recipe-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(45,90,61,0.08);
+    }
+
+    .featured-image {
+      height: 220px;
+      background: linear-gradient(135deg, #d8d2c6, #f4efe7);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 16px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .featured-body {
+      padding: 20px;
+    }
+
+    .badge-row, .meta-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag, .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 10px;
+      line-height: 1;
+    }
+
+    .tag {
+      background: var(--green-pale);
+      color: var(--green);
+      border: 1px solid var(--green-light);
+    }
+
+    .tag.alt {
+      background: var(--cream);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .featured-title, .recipe-title {
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      line-height: 1.2;
+      margin-top: 14px;
+      margin-bottom: 10px;
+    }
+
+    .featured-desc, .recipe-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    .why-line {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .why-line strong {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    .meta-pill {
+      background: var(--cream);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .filters-wrap {
+      margin-top: 34px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .filters-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .filters-top h3 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .results-count {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .filters-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .filter-group label {
+      display: block;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .filter-group select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--cream);
+      color: var(--text);
+      font-size: 14px;
+      padding: 12px 12px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+    }
+
+    .clear-row {
+      margin-top: 14px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .clear-btn {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green-light);
+      border-radius: 100px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+    }
+
+    .clear-btn:hover {
+      background: var(--green-pale);
+    }
+
+    .recipes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .recipe-card {
+      padding: 20px;
+    }
+
+    .recipe-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .note-line {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--green-mid);
+    }
+
+    .education-card {
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-radius: 20px;
+      padding: 34px;
+      margin-top: 46px;
+    }
+
+    .education-card p {
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.8;
+    }
+
+    .education-small {
+      font-size: 13px !important;
+      color: var(--text-muted) !important;
+      margin-top: 6px;
+      margin-bottom: 0 !important;
+    }
+
+    .empty-state {
+      display: none;
+      background: var(--white);
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 24px;
+    }
+
+    .bottom-cta {
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 28px;
+      margin-top: 52px;
+    }
+
+    .bottom-cta p {
+      max-width: 620px;
+      margin: 0 auto 20px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      background: var(--text);
+      padding: 44px 2rem;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .flogo {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      color: white;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .flogo span { color: var(--amber); }
+
+    footer a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    footer a:hover { color: rgba(255,255,255,0.75); }
+
+    .flinks { margin-bottom: 10px; }
+    .flinks-secondary { margin-bottom: 16px; }
+
+    .fdisclaimer {
+      font-size: 12px;
+      color: rgba(255,255,255,0.22);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .featured-grid,
+      .recipes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .filters-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intro-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-link { display: none; }
+      .hero { padding: 50px 1.5rem 34px; }
+      .section { padding: 60px 1.5rem; }
+      .filters-wrap, .intro-card, .education-card, .bottom-cta { padding: 24px 18px; }
+    }
+
+    @media (max-width: 640px) {
+      .featured-grid,
+      .recipes-grid,
+      .filters-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        height: 200px;
+      }
+
+      .filters-top {
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">biomy<span>.</span>health</a>
+    <div class="nav-links">
+      <a class="nav-link" href="/about">About</a>
+      <a class="nav-link active" href="/recipes">Recipes</a>
+      <a class="nav-link" href="/privacy">Privacy</a>
+      <a class="nav-cta" href="/#waitlist">Join waitlist</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Low FODMAP recipes</p>
+      <h1>Recipes that are gentle on your gut, not brutal on your tastebuds.</h1>
+      <p class="hero-sub">
+        A curated collection of low FODMAP recipes across Indian, Chinese, Mexican, African and European cuisines.
+        Built for people who want flavour, comfort, and food that still feels like them.
+      </p>
+      <div class="hero-trust">Built from lived experience with Ulcerative Colitis, Monash guidance, and a lot of trial and error in a real kitchen.</div>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#waitlist">Join the waitlist</a>
+        <a class="btn-outline" href="#recipes-grid">Browse recipes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+
+      <div class="intro-card">
+        <p class="eyebrow">Why this page exists</p>
+        <h2>Low FODMAP food should still taste like real food.</h2>
+        <p class="intro-copy">
+          Most low FODMAP recipe pages flatten food into beige mush. Biomy is different.
+          These recipes are designed to be gentler on sensitive guts while still respecting the spices,
+          techniques, and flavours that make food feel like home.
+        </p>
+
+        <div class="intro-stats">
+          <div class="stat">
+            <div class="stat-num">50</div>
+            <div class="stat-label">starter recipes</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">cuisines</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">flavour-first</div>
+            <div class="stat-label">onion-free, garlic-smart, culturally inclusive</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-grid">
+        <article class="featured-card">
+          <div class="featured-image" style="background-image:url('/assets/recipes/chicken-tikka-masala.jpg');">
+            <span>Featured recipe image<br>Chicken Tikka Masala</span>
+          </div>
+          <div class="featured-body">
+            <div class="badge-row">
+              <span class="tag">Indian</span>
+              <span class="tag alt">Comfort food</span>
+            </div>
+            <h3 class="featured-title">Chicken Tikka Masala, Biomy Style</h3>
+            <p class="featured-desc">Creamy, tomatoey, and deeply comforting without the usual garlic-onion base.</p>
+            <p class="why-line"><strong>Why it works:</strong> Uses garlic-infused oil and lactose-conscious swaps.</p>
+            <div class="meta-row">
+              <span class="meta-pill">40+ min</span>
+              <span class="meta-pill">Chicken</span>
+              <span class="meta-pill">Medium spice</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <div class="featured-image" style="background-image:url('/assets/recipes/moong-dal-khichdi.jpg');">
+            <span>Featured recipe image<br>Moong Dal Khichdi</span>
+          </div>
+          <div class="featured-body">
+            <div class="badge-row">
+              <span class="tag">Indian</span>
+              <span class="tag alt">Flare-friendly</span>
+            </div>
+            <h3 class="featured-title">Moong Dal Khichdi for Flare Days</h3>
+            <p class="featured-desc">Soft rice and lentils cooked until soothing and easy to handle.</p>
+            <p class="why-line"><strong>Why it works:</strong> Mild, simple, and built for low-energy days.</p>
+            <div class="meta-row">
+              <span class="meta-pill">20 to 40 min</span>
+              <span class="meta-pill">Vegetarian</span>
+              <span class="meta-pill">Mild</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <div class="featured-image" style="background-image:url('/assets/recipes/ginger-scallion-chicken-stir-fry.jpg');">
+            <span>Featured recipe image<br>Ginger Scallion Chicken Stir-Fry</span>
+          </div>
+          <div class="featured-body">
+            <div class="badge-row">
+              <span class="tag">Chinese</span>
+              <span class="tag alt">Quick</span>
+            </div>
+            <h3 class="featured-title">Ginger Scallion Chicken Stir-Fry</h3>
+            <p class="featured-desc">Clean, fragrant, and fast enough for a weeknight.</p>
+            <p class="why-line"><strong>Why it works:</strong> Uses green onion tops and ginger for depth.</p>
+            <div class="meta-row">
+              <span class="meta-pill">Under 20 min</span>
+              <span class="meta-pill">Chicken</span>
+              <span class="meta-pill">Mild</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <div class="featured-image" style="background-image:url('/assets/recipes/chicken-tinga-rice-bowl.jpg');">
+            <span>Featured recipe image<br>Chicken Tinga-Style Rice Bowl</span>
+          </div>
+          <div class="featured-body">
+            <div class="badge-row">
+              <span class="tag">Mexican</span>
+              <span class="tag alt">Everyday</span>
+            </div>
+            <h3 class="featured-title">Chicken Tinga-Style Rice Bowl</h3>
+            <p class="featured-desc">Smoky tomato chicken without the usual onion base.</p>
+            <p class="why-line"><strong>Why it works:</strong> Bold flavour with practical swaps.</p>
+            <div class="meta-row">
+              <span class="meta-pill">20 to 40 min</span>
+              <span class="meta-pill">Chicken</span>
+              <span class="meta-pill">Medium</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <div class="featured-image" style="background-image:url('/assets/recipes/jollof-style-rice.jpg');">
+            <span>Featured recipe image<br>Jollof-Style Rice</span>
+          </div>
+          <div class="featured-body">
+            <div class="badge-row">
+              <span class="tag">African</span>
+              <span class="tag alt">Comfort food</span>
+            </div>
+            <h3 class="featured-title">Jollof-Style Rice</h3>
+            <p class="featured-desc">A Biomy-style take on the beloved tomato rice classic.</p>
+            <p class="why-line"><strong>Why it works:</strong> Honouring flavour while adapting the base carefully.</p>
+            <div class="meta-row">
+              <span class="meta-pill">40+ min</span>
+              <span class="meta-pill">Vegetarian</span>
+              <span class="meta-pill">Medium</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <div class="featured-image" style="background-image:url('/assets/recipes/lemon-herb-roast-chicken.jpg');">
+            <span>Featured recipe image<br>Lemon Herb Roast Chicken</span>
+          </div>
+          <div class="featured-body">
+            <div class="badge-row">
+              <span class="tag">European</span>
+              <span class="tag alt">Everyday</span>
+            </div>
+            <h3 class="featured-title">Lemon Herb Roast Chicken with Potatoes</h3>
+            <p class="featured-desc">A reliable classic that always works.</p>
+            <p class="why-line"><strong>Why it works:</strong> Simple ingredients, easy on the gut.</p>
+            <div class="meta-row">
+              <span class="meta-pill">40+ min</span>
+              <span class="meta-pill">Chicken</span>
+              <span class="meta-pill">Mild</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="filters-wrap" id="recipes-grid">
+        <div class="filters-top">
+          <div>
+            <p class="eyebrow" style="margin-bottom: 6px;">Browse the library</p>
+            <h3>Find what works for your gut, your mood, and your kitchen.</h3>
+          </div>
+          <div class="results-count"><span id="resultsCount">50</span> recipes showing</div>
+        </div>
+
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label for="filterCuisine">Cuisine</label>
+            <select id="filterCuisine">
+              <option value="All">All</option>
+              <option value="Indian">Indian</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Mexican">Mexican</option>
+              <option value="African">African</option>
+              <option value="European">European</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterMeal">Meal type</label>
+            <select id="filterMeal">
+              <option value="All">All</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Soup">Soup</option>
+              <option value="Side">Side</option>
+              <option value="Sauce">Sauce</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterGoodFor">Good for</label>
+            <select id="filterGoodFor">
+              <option value="All">All</option>
+              <option value="Flare-friendly">Flare-friendly</option>
+              <option value="Everyday">Everyday</option>
+              <option value="High-protein">High-protein</option>
+              <option value="Comfort food">Comfort food</option>
+              <option value="Quick">Quick</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterTime">Time</label>
+            <select id="filterTime">
+              <option value="All">Any</option>
+              <option value="Under 20 min">Under 20 min</option>
+              <option value="20 to 40 min">20 to 40 min</option>
+              <option value="40+ min">40+ min</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterProtein">Protein</label>
+            <select id="filterProtein">
+              <option value="All">Any</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Chicken">Chicken</option>
+              <option value="Seafood">Seafood</option>
+              <option value="Egg">Egg</option>
+              <option value="Meat">Meat</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filterSpice">Spice level</label>
+            <select id="filterSpice">
+              <option value="All">Any</option>
+              <option value="Mild">Mild</option>
+              <option value="Medium">Medium</option>
+              <option value="Punchy">Punchy</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="clear-row">
+          <button class="clear-btn" id="clearFilters">Clear filters</button>
+        </div>
+      </div>
+
+      <div class="recipes-grid" id="recipeGrid"></div>
+
+      <div class="empty-state" id="emptyState">
+        No recipes match those filters yet. Try broadening things out a bit.
+      </div>
+
+      <div class="education-card">
+        <p class="eyebrow">A quick note</p>
+        <h2>What makes a recipe low FODMAP?</h2>
+        <p>
+          Low FODMAP eating is usually less about removing all flavour and more about making smarter swaps.
+          Think garlic-infused oil instead of garlic cloves, the green tops of spring onions instead of onions,
+          lactose-free dairy where needed, and portion-aware use of ingredients that can be tolerated in smaller amounts.
+        </p>
+        <p>
+          Biomy recipes are designed to be practical, culturally inclusive, and grounded in the reality that people do not just eat grilled chicken and sad rice forever.
+        </p>
+        <p class="education-small">Everyone’s triggers are different. These recipes are a starting point, not medical advice.</p>
+      </div>
+
+      <div class="bottom-cta">
+        <p class="eyebrow">What’s next</p>
+        <h2>Want the full Biomy recipe library?</h2>
+        <p>
+          This is just the start. Join the waitlist for symptom-aware recipes,
+          culturally inclusive condition guides, and Flora, your wellness companion.
+        </p>
+        <a class="btn-primary" href="/#waitlist">Join the waitlist</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="flogo">biomy<span>.</span>health</span>
+    <div class="flinks">
+      <a href="mailto:hello@biomy.health">hello@biomy.health</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://instagram.com/biomy.health" target="_blank" rel="noopener">Instagram</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://tiktok.com/@biomy.health" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <div class="flinks flinks-secondary">
+      <a href="/about">About</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/recipes">Recipes</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/privacy">Privacy</a>
+    </div>
+    <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Launching 2026.</p>
+  </footer>
+
+  <script>
+    const recipes = [
+      { title:"Chicken Tikka Masala, Biomy Style", cuisine:"Indian", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"Creamy, tomatoey, and deeply comforting without the usual garlic-onion base.", why:"Uses garlic-infused oil and lactose-conscious swaps.", note:"Uses garlic-infused oil" },
+      { title:"Moong Dal Khichdi for Flare Days", cuisine:"Indian", mealType:"Dinner", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Soft rice and lentils cooked until soothing and easy to handle.", why:"Mild, simple, and built for low-energy days.", note:"Best during a flare" },
+      { title:"Jeera Rice with Cucumber Mint Raita", cuisine:"Indian", mealType:"Side", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"Lightly spiced cumin rice with a cooling side.", why:"Simple flavours, easy to pair, low drama.", note:"" },
+      { title:"Tandoori Salmon with Coriander Rice", cuisine:"Indian", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Medium", desc:"A brighter, lighter take on a classic spiced marinade.", why:"Flavour-forward and high in protein.", note:"" },
+      { title:"Saag Paneer with Garlic-Infused Oil", cuisine:"Indian", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Creamy greens and paneer without the onion-heavy restaurant base.", why:"Familiar comfort with smarter swaps.", note:"Uses garlic-infused oil" },
+      { title:"Coconut Chicken Curry", cuisine:"Indian", mealType:"Dinner", goodFor:"Everyday", time:"20 to 40 min", protein:"Chicken", spice:"Mild", desc:"A softer curry with ginger, turmeric, and coconut milk.", why:"Soothing texture, no onion-garlic overload.", note:"" },
+      { title:"Masala Omelette with Chives and Tomato", cuisine:"Indian", mealType:"Breakfast", goodFor:"Quick", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Fast, savoury, and ideal for breakfast or a lazy dinner.", why:"Big flavour without complicated ingredients.", note:"" },
+      { title:"Carrot Ginger Soup with Indian Spices", cuisine:"Indian", mealType:"Soup", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Silky soup with warmth from ginger and cumin.", why:"Flare-friendlier and easy to digest.", note:"" },
+      { title:"Besan Chilla with Mint Chutney", cuisine:"Indian", mealType:"Breakfast", goodFor:"Quick", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"A savoury gram flour pancake with gentle spice.", why:"Quick, satisfying, and naturally flexible.", note:"" },
+      { title:"Aloo Gobi, Portion-Aware Version", cuisine:"Indian", mealType:"Dinner", goodFor:"Everyday", time:"20 to 40 min", protein:"Vegetarian", spice:"Medium", desc:"A careful take on the classic potato-cauliflower combo.", why:"Built around serving-size awareness.", note:"" },
+
+      { title:"Ginger Scallion Chicken Stir-Fry", cuisine:"Chinese", mealType:"Dinner", goodFor:"Quick", time:"Under 20 min", protein:"Chicken", spice:"Mild", desc:"Clean, fragrant, and fast enough for a weeknight.", why:"Uses green onion tops and ginger for depth.", note:"" },
+      { title:"Egg Fried Rice with Spring Onion Greens", cuisine:"Chinese", mealType:"Lunch", goodFor:"Everyday", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Comfort food that still feels like proper fried rice.", why:"Simple ingredients, very adaptable.", note:"" },
+      { title:"Chicken Congee", cuisine:"Chinese", mealType:"Soup", goodFor:"Flare-friendly", time:"40+ min", protein:"Chicken", spice:"Mild", desc:"A soft rice porridge for days when your gut needs kindness.", why:"Gentle, hydrating, and easy to customise.", note:"Best during a flare" },
+      { title:"Steamed Fish with Ginger and Soy", cuisine:"Chinese", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Mild", desc:"Delicate, savoury, and surprisingly low effort.", why:"Light but still deeply flavourful.", note:"" },
+      { title:"Tomato Egg Stir-Fry", cuisine:"Chinese", mealType:"Lunch", goodFor:"Quick", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Silky eggs and sweet tomato in a simple sauce.", why:"Soft texture and pantry-friendly ingredients.", note:"" },
+      { title:"Beef Rice Noodles with Chives", cuisine:"Chinese", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Meat", spice:"Medium", desc:"A satisfying noodle dish without the usual garlic bomb.", why:"Rich enough to feel indulgent, but built smarter.", note:"" },
+      { title:"Mapo-Style Tofu, Low FODMAP Version", cuisine:"Chinese", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Punchy", desc:"Comforting tofu with heat, depth, and none of the usual landmines.", why:"Captures the spirit, not the gut pain.", note:"" },
+      { title:"Sesame Cucumber Salad", cuisine:"Chinese", mealType:"Side", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"Cool, crisp, and perfect next to richer mains.", why:"Refreshing and very low effort.", note:"" },
+      { title:"Bok Choy Rice Bowl", cuisine:"Chinese", mealType:"Lunch", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"A simple bowl with greens, rice, and a savoury glaze.", why:"Light, fast, and everyday-friendly.", note:"" },
+      { title:"Five-Spice Roast Chicken Traybake", cuisine:"Chinese", mealType:"Dinner", goodFor:"High-protein", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"A one-pan dinner with aromatic depth.", why:"Maximum flavour, minimal chaos.", note:"" },
+
+      { title:"Chicken Tinga-Style Rice Bowl", cuisine:"Mexican", mealType:"Lunch", goodFor:"Everyday", time:"20 to 40 min", protein:"Chicken", spice:"Medium", desc:"Smoky tomato chicken without the usual onion base.", why:"Bold flavour with practical swaps.", note:"" },
+      { title:"Shrimp Tacos with Lime Slaw", cuisine:"Mexican", mealType:"Dinner", goodFor:"Quick", time:"Under 20 min", protein:"Seafood", spice:"Medium", desc:"Fresh, bright, and weeknight fast.", why:"Satisfying without feeling heavy.", note:"" },
+      { title:"Red Enchilada Bowl", cuisine:"Mexican", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Chicken", spice:"Medium", desc:"All the comfort of enchiladas, simplified into a bowl.", why:"Easier to make, easier to tolerate.", note:"" },
+      { title:"Cilantro Lime Chicken Rice", cuisine:"Mexican", mealType:"Lunch", goodFor:"High-protein", time:"Under 20 min", protein:"Chicken", spice:"Mild", desc:"A clean, reliable staple with real flavour.", why:"Simple enough for everyday eating.", note:"" },
+      { title:"Blackened Fish with Roasted Potatoes", cuisine:"Mexican", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Medium", desc:"Spiced fish and crisp potatoes with a squeeze of lime.", why:"High flavour, low fuss.", note:"" },
+      { title:"Breakfast Huevos with Corn Tortillas", cuisine:"Mexican", mealType:"Breakfast", goodFor:"Quick", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Eggs, salsa-style tomato, and warm tortillas.", why:"Quick and comforting.", note:"" },
+      { title:"Calabacitas Skillet", cuisine:"Mexican", mealType:"Side", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"A veg-forward skillet with courgette, tomato, and herbs.", why:"Lighter but still satisfying.", note:"" },
+      { title:"Mexican Chicken Soup with Rice", cuisine:"Mexican", mealType:"Soup", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Chicken", spice:"Mild", desc:"A brothy, restorative soup with gentle warmth.", why:"Ideal when you want comfort without heaviness.", note:"" },
+      { title:"Roasted Tomato Chipotle Sauce", cuisine:"Mexican", mealType:"Sauce", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Punchy", desc:"A punchy sauce to wake up bowls, eggs, and grilled proteins.", why:"Flavour booster without hidden triggers.", note:"" },
+      { title:"Street Corn-Style Salad", cuisine:"Mexican", mealType:"Side", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Medium", desc:"Creamy, tangy, and bright.", why:"Built with low FODMAP awareness and portion care.", note:"" },
+
+      { title:"Jollof-Style Rice", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Vegetarian", spice:"Medium", desc:"A Biomy-style take on the beloved tomato rice classic.", why:"Honouring flavour while adapting the base carefully.", note:"" },
+      { title:"Suya-Spiced Chicken Skewers", cuisine:"African", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Chicken", spice:"Punchy", desc:"Warm spice, char, and a sharp little kick.", why:"Huge flavour payoff for relatively little effort.", note:"" },
+      { title:"Coconut Peanut Fish Stew", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Seafood", spice:"Medium", desc:"Rich, savoury, and deeply comforting.", why:"Satisfying and balanced when portioned thoughtfully.", note:"" },
+      { title:"Berbere Roast Chicken and Carrots", cuisine:"African", mealType:"Dinner", goodFor:"High-protein", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"Spice-led roast dinner with East African inspiration.", why:"Warming and simple to prep.", note:"" },
+      { title:"Lemon Herb Tilapia with Rice", cuisine:"African", mealType:"Lunch", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Mild", desc:"Bright, clean, and easy for a midweek dinner.", why:"Light protein with plenty of flavour.", note:"" },
+      { title:"West African Ginger Chicken Soup", cuisine:"African", mealType:"Soup", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Chicken", spice:"Mild", desc:"A restorative soup with heat, depth, and comfort.", why:"Soothing, warming, and not too rich.", note:"" },
+      { title:"Millet Porridge with Cinnamon and Berries", cuisine:"African", mealType:"Breakfast", goodFor:"Flare-friendly", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"A breakfast that feels calm but not boring.", why:"Gentle texture and naturally simple ingredients.", note:"" },
+      { title:"Peri Peri Prawns with Rice", cuisine:"African", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Punchy", desc:"Bright chilli heat balanced with citrus.", why:"Flavour-first without depending on garlic and onion.", note:"" },
+      { title:"Pumpkin and Spinach Stew", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"A soft, gently spiced vegetable stew.", why:"Comforting and easy to batch cook.", note:"" },
+      { title:"Spiced Plantain Bowl with Eggs", cuisine:"African", mealType:"Breakfast", goodFor:"Everyday", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Sweet-savoury and deeply satisfying.", why:"Feels like real food, not diet food.", note:"" },
+
+      { title:"Lemon Herb Roast Chicken with Potatoes", cuisine:"European", mealType:"Dinner", goodFor:"Everyday", time:"40+ min", protein:"Chicken", spice:"Mild", desc:"A reliable classic that always works.", why:"Simple ingredients, easy on the gut.", note:"" },
+      { title:"Herb Risotto with Parmesan", cuisine:"European", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Vegetarian", spice:"Mild", desc:"Creamy, soothing, and elegant enough to feel like a treat.", why:"Soft texture and controlled ingredients.", note:"" },
+      { title:"Baked Cod with Olives and Tomatoes", cuisine:"European", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Mild", desc:"Mediterranean flavours in a very manageable format.", why:"Light but not bland.", note:"" },
+      { title:"Polenta with Roasted Vegetables and Feta", cuisine:"European", mealType:"Lunch", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"A warm bowl that still feels slightly fancy.", why:"Comforting texture and flexible toppings.", note:"" },
+      { title:"French Omelette with Chives and Goat Cheese", cuisine:"European", mealType:"Breakfast", goodFor:"Quick", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Soft, rich, and deceptively simple.", why:"Quick, protein-rich, and gentle.", note:"" },
+      { title:"Greek Chicken Rice Bowl", cuisine:"European", mealType:"Lunch", goodFor:"High-protein", time:"Under 20 min", protein:"Chicken", spice:"Mild", desc:"Chicken, cucumber, dill, and lemon over rice.", why:"Bright flavours without too much heaviness.", note:"" },
+      { title:"Tuscan-Style White Fish Stew", cuisine:"European", mealType:"Soup", goodFor:"Comfort food", time:"20 to 40 min", protein:"Seafood", spice:"Mild", desc:"Tomatoey, brothy, and full of Mediterranean comfort.", why:"Warming without being overwhelming.", note:"" },
+      { title:"Shepherd’s Pie with Garlic-Infused Oil", cuisine:"European", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Meat", spice:"Mild", desc:"A comfort classic reworked with smarter flavour building.", why:"Familiar and satisfying.", note:"Uses garlic-infused oil" },
+      { title:"Creamy Tomato Pasta with Lactose-Free Mascarpone", cuisine:"European", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Silky and comforting without the usual dairy hit.", why:"Classic comfort, adjusted thoughtfully.", note:"" },
+      { title:"Roast Carrot and Parsnip Soup", cuisine:"European", mealType:"Soup", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Sweet, earthy, and easy to batch.", why:"Good for low-energy days and freezer-friendly.", note:"" }
+    ];
+
+    const recipeGrid = document.getElementById('recipeGrid');
+    const resultsCount = document.getElementById('resultsCount');
+    const emptyState = document.getElementById('emptyState');
+
+    const filterCuisine = document.getElementById('filterCuisine');
+    const filterMeal = document.getElementById('filterMeal');
+    const filterGoodFor = document.getElementById('filterGoodFor');
+    const filterTime = document.getElementById('filterTime');
+    const filterProtein = document.getElementById('filterProtein');
+    const filterSpice = document.getElementById('filterSpice');
+    const clearFilters = document.getElementById('clearFilters');
+
+    function renderRecipes(items) {
+      recipeGrid.innerHTML = items.map(recipe => `
+        <article class="recipe-card">
+          <div class="badge-row">
+            <span class="tag">${recipe.cuisine}</span>
+            <span class="tag alt">${recipe.mealType}</span>
+          </div>
+          <h3 class="recipe-title">${recipe.title}</h3>
+          <p class="recipe-desc">${recipe.desc}</p>
+          <p class="why-line"><strong>Why it works:</strong> ${recipe.why}</p>
+          <div class="meta-row">
+            <span class="meta-pill">${recipe.time}</span>
+            <span class="meta-pill">${recipe.goodFor}</span>
+            <span class="meta-pill">${recipe.protein}</span>
+          </div>
+          ${recipe.note ? `<p class="note-line">${recipe.note}</p>` : ``}
+        </article>
+      `).join('');
+
+      resultsCount.textContent = items.length;
+      emptyState.style.display = items.length === 0 ? 'block' : 'none';
+    }
+
+    function applyFilters() {
+      const cuisine = filterCuisine.value;
+      const meal = filterMeal.value;
+      const goodFor = filterGoodFor.value;
+      const time = filterTime.value;
+      const protein = filterProtein.value;
+      const spice = filterSpice.value;
+
+      const filtered = recipes.filter(recipe => {
+        return (cuisine === 'All' || recipe.cuisine === cuisine) &&
+               (meal === 'All' || recipe.mealType === meal) &&
+               (goodFor === 'All' || recipe.goodFor === goodFor) &&
+               (time === 'All' || recipe.time === time) &&
+               (protein === 'All' || recipe.protein === protein) &&
+               (spice === 'All' || recipe.spice === spice);
+      });
+
+      renderRecipes(filtered);
+    }
+
+    [filterCuisine, filterMeal, filterGoodFor, filterTime, filterProtein, filterSpice]
+      .forEach(select => select.addEventListener('change', applyFilters));
+
+    clearFilters.addEventListener('click', () => {
+      filterCuisine.value = 'All';
+      filterMeal.value = 'All';
+      filterGoodFor.value = 'All';
+      filterTime.value = 'All';
+      filterProtein.value = 'All';
+      filterSpice.value = 'All';
+      applyFilters();
+    });
+
+    renderRecipes(recipes);
+  </script>
+</body>
+</html>
