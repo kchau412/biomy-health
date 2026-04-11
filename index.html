@@ -1,33 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biomy - Comfort with chronic illness</title>
-  <meta name="description" content="Biomy is a wellness platform for people living with Colitis, Crohn's and other chronic conditions. Condition guides, gut-friendly recipes, symptom tracking and Flora your AI wellness companion." />
-  <meta name="keywords" content="ulcerative colitis app, Crohn's disease wellness, IBD meal planning, FODMAP guidance, chronic illness support, gut health platform" />
+  <title>Low-FODMAP recipes for every culture | Biomy</title>
+  <meta name="description" content="Culturally diverse low-FODMAP recipes across Indian, Mexican, West African and more — plus Flora, your AI wellness companion. Built for people living with Colitis, Crohn's and IBS." />
+  <meta name="keywords" content="low-FODMAP recipes, ulcerative colitis recipes, Crohn's disease diet, IBD meal planning, gut-friendly Indian food, FODMAP Mexican food, chronic illness support, gut health platform" />
   <link rel="canonical" href="https://biomy.health" />
-  <meta property="og:title" content="Biomy - Comfort with chronic illness" />
-  <meta property="og:description" content="Your wellness companion for Colitis, Crohn's and beyond. Join the waitlist." />
+  <meta property="og:title" content="Low-FODMAP recipes for every culture | Biomy" />
+  <meta property="og:description" content="Your gut condition shouldn't erase your food culture. Culturally diverse low-FODMAP recipes plus Flora, your AI wellness companion." />
   <meta property="og:url" content="https://biomy.health" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Biomy - Comfort with chronic illness" />
-  <meta name="twitter:description" content="Your wellness companion for Colitis, Crohn's and beyond." />
-  
+  <meta name="twitter:title" content="Low-FODMAP recipes for every culture | Biomy" />
+  <meta name="twitter:description" content="Your gut condition shouldn't erase your food culture. Culturally diverse low-FODMAP recipes plus Flora, your AI wellness companion." />
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-25DX3B1E4C"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-25DX3B1E4C');
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-  
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,55 +41,29 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
+    /* ── NAV ── */
     nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
     .logo span { color: var(--amber); }
     .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
     .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
 
+    /* ── HERO ── */
     .hero { max-width: 1100px; margin: 0 auto; padding: 72px 2rem 64px; display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center; }
     .badge { display: inline-block; background: var(--green-pale); color: var(--green); border: 1px solid var(--green-light); font-size: 12px; font-weight: 500; letter-spacing: 0.4px; padding: 5px 14px; border-radius: 100px; margin-bottom: 24px; }
     h1 { font-family: 'Lora', serif; font-size: clamp(36px, 5.5vw, 58px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 4px; }
-    h1 em { font-style: italic; color: var(--green); }
-    .cycle-wrap { height: clamp(44px, 6.5vw, 68px); overflow: hidden; }
+    .cycle-wrap { height: clamp(44px, 6.5vw, 68px); overflow: hidden; margin-top: 14px; }
     .cycle-inner { transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
-    .cycle-item { height: clamp(44px, 6.5vw, 68px); display: flex; align-items: center; font-family: 'Lora', serif; font-size: clamp(36px, 5.5vw, 58px); font-weight: 600; font-style: italic; color: var(--green); letter-spacing: -0.8px; }
-.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
-.btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-.btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+    .cycle-item { height: clamp(44px, 6.5vw, 68px); display: flex; align-items: center; font-family: 'Lora', serif; font-size: 28px; font-weight: 600; font-style: italic; color: var(--green); letter-spacing: -0.8px; }
+    .hero-copy { font-size: 18px; color: var(--text-muted); max-width: 640px; margin-top: 22px; }
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
+    .btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--green); border: 1.5px solid var(--green); border-radius: 100px; padding: 16px 30px; font-size: 16px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s, transform 0.15s; display: inline-block; }
+    .btn-secondary:hover { background: var(--green); color: white; transform: translateY(-2px); }
+    .hero-trust { font-size: 13px; color: var(--text-muted); margin-top: 14px; }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--green);
-  border: 1.5px solid var(--green);
-  border-radius: 100px;
-  padding: 16px 30px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s, transform 0.15s;
-  display: inline-block;
-}
-.btn-secondary:hover {
-  background: var(--green);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.hero-copy {
-  font-size: 18px;
-  color: var(--text-muted);
-  max-width: 640px;
-  margin-top: 22px;
-}
-
-.hero-trust {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 14px;
-}
-
+    /* ── PHONE MOCKUP ── */
     .phone { background: #1A1A18; border-radius: 36px; padding: 10px; width: 220px; box-shadow: 0 32px 64px rgba(0,0,0,0.18); }
     .phone-screen { background: var(--cream); border-radius: 28px; overflow: hidden; }
     .phone-header { background: var(--green); padding: 22px 18px 16px; }
@@ -105,6 +78,7 @@
     .pdot-g { background: var(--green); } .pdot-e { background: var(--border); }
     .phone-btn { background: var(--green); color: white; border: none; border-radius: 100px; width: 100%; padding: 11px; font-size: 12px; font-weight: 500; margin-top: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
 
+    /* ── SHARED SECTION STYLES ── */
     .section { padding: 80px 2rem; }
     .container { max-width: 1060px; margin: 0 auto; }
     .container-narrow { max-width: 640px; margin: 0 auto; }
@@ -112,6 +86,35 @@
     h2 { font-family: 'Lora', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; line-height: 1.2; letter-spacing: -0.4px; margin-bottom: 8px; }
     .sec-sub { font-size: 16px; color: var(--text-muted); line-height: 1.65; margin-bottom: 40px; }
 
+    /* ── RECIPE PREVIEW ── */
+    .recipe-preview { background: var(--white); }
+    .recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .recipe-card { background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; }
+    .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
+    .recipe-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .recipe-card-body { padding: 18px; }
+    .recipe-tag { display: inline-block; font-size: 11px; font-weight: 500; background: var(--green-pale); color: var(--green); border-radius: 100px; padding: 4px 10px; margin-bottom: 10px; }
+    .recipe-title { font-family: 'Lora', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .recipe-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .recipe-link-row { margin-top: 28px; text-align: center; }
+    .text-link { color: var(--green); font-weight: 500; text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    .recipe-img-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: white; }
+
+    /* ── FLORA ── */
+    .flora-section { background: var(--green); }
+    .flora-section .eyebrow { color: #9FE1CB; }
+    .flora-section h2 { color: white; }
+    .flora-section .sec-sub { color: rgba(255,255,255,0.65); }
+    .flora-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .chat { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--r); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+    .bubble { border-radius: 16px; padding: 12px 16px; font-size: 14px; line-height: 1.55; max-width: 86%; }
+    .bubble-user { background: rgba(255,255,255,0.13); color: rgba(255,255,255,0.9); align-self: flex-end; border-bottom-right-radius: 3px; }
+    .bubble-flora { background: white; color: var(--text); align-self: flex-start; border-bottom-left-radius: 3px; }
+    .flora-name { font-size: 10px; font-weight: 500; color: var(--green); margin-bottom: 3px; }
+    .flora-disclaimer { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 20px; line-height: 1.6; }
+
+    /* ── FODMAP SUSPECTS ── */
     .suspects { background: var(--white); }
     .suspects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .scard { background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 18px; transition: transform 0.2s; }
@@ -132,7 +135,11 @@
     .scard.star .stag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
     .sdesc { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
     .scard.star .sdesc { color: rgba(255,255,255,0.6); }
+    .monash-note { font-size: 13px; color: var(--text-muted); margin-top: 24px; line-height: 1.6; }
+    .monash-note a { color: var(--green); text-decoration: none; }
+    .monash-note a:hover { text-decoration: underline; }
 
+    /* ── WHAT YOU GET ── */
     .wyg { background: var(--cream); }
     .feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
     .fcard { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; transition: transform 0.2s, box-shadow 0.2s; }
@@ -140,55 +147,20 @@
     .fnum { font-size: 11px; font-weight: 500; color: var(--green-mid); margin-bottom: 10px; }
     .ftitle { font-family: 'Lora', serif; font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
     .fdesc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
-    .mid-cta { text-align: center; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
-    .mid-cta p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
-    .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); border-radius: 100px; padding: 14px 32px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: background 0.2s, color 0.2s; display: inline-block; }
-    .btn-outline:hover { background: var(--green); color: white; }
 
-    .flora-section { background: var(--green); }
-    .flora-section .eyebrow { color: #9FE1CB; }
-    .flora-section h2 { color: white; }
-    .flora-section .sec-sub { color: rgba(255,255,255,0.65); }
-    .flora-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .chat { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--r); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
-    .bubble { border-radius: 16px; padding: 12px 16px; font-size: 14px; line-height: 1.55; max-width: 86%; }
-    .bubble-user { background: rgba(255,255,255,0.13); color: rgba(255,255,255,0.9); align-self: flex-end; border-bottom-right-radius: 3px; }
-    .bubble-flora { background: white; color: var(--text); align-self: flex-start; border-bottom-left-radius: 3px; }
-    .flora-name { font-size: 10px; font-weight: 500; color: var(--green); margin-bottom: 3px; }
-    .flora-disclaimer { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 20px; line-height: 1.6; }
+    /* ── LAUNCH LINE ── */
+    .launch-line { background: var(--cream-dark); }
+    .launch-text { font-size: 17px; color: var(--text); text-align: center; }
 
-    .conds { background: var(--cream-dark); }
-    .cpills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-    .cpill { display: flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--border); border-radius: 100px; padding: 9px 18px; font-size: 14px; color: var(--text); font-weight: 500; }
-    .cdot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .cd-live { background: var(--green); } .cd-soon { background: var(--amber); } .cd-plan { background: var(--border); }
-    .clegend { display: flex; gap: 24px; margin-top: 20px; flex-wrap: wrap; }
-    .cli { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
-
+    /* ── WAITLIST ── */
     .waitlist { background: var(--white); }
     .form-box { background: var(--green-pale); border: 1px solid var(--green-light); border-radius: 20px; padding: 44px; max-width: 600px; margin: 32px auto 0; }
     .form-box h3 { font-family: 'Lora', serif; font-size: 26px; font-weight: 600; margin-bottom: 6px; }
     .form-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
-    .field { margin-bottom: 18px; }
-    .flabel { display: block; font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-    .finput { width: 100%; background: white; border: 1px solid var(--border); border-radius: var(--r-sm); padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--text); outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
-    .finput:focus { border-color: var(--green-mid); box-shadow: 0 0 0 3px rgba(74,123,94,0.12); }
-    .select-wrap { position: relative; }
-    .select-wrap::after { content: '▾'; position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 12px; color: var(--text-muted); pointer-events: none; }
-    .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
-    .chk-label { display: flex; align-items: center; gap: 10px; background: white; border: 1px solid var(--border); border-radius: var(--r-sm); padding: 10px 14px; font-size: 13px; color: var(--text); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
-    .chk-label:has(input:checked) { border-color: var(--green-mid); background: var(--green-pale); }
-    .chk-label input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--green); flex-shrink: 0; cursor: pointer; }
-    .fsubmit { width: 100%; background: var(--green); color: white; border: none; border-radius: 100px; padding: 18px; font-size: 16px; font-weight: 500; margin-top: 28px; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s, transform 0.15s; }
-    .fsubmit:hover { background: var(--green-mid); transform: translateY(-1px); }
-    .fsubmit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    .fprivacy { text-align: center; font-size: 12px; color: var(--text-muted); margin-top: 14px; }
+    .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); border-radius: 100px; padding: 14px 32px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: background 0.2s, color 0.2s; display: inline-block; }
+    .btn-outline:hover { background: var(--green); color: white; }
 
-    .success-state { display: none; text-align: center; padding: 48px 24px; }
-    .success-icon { width: 60px; height: 60px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 24px; margin: 0 auto 20px; color: var(--green); }
-    .success-state h3 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; margin-bottom: 10px; }
-    .success-state p { font-size: 15px; color: var(--text-muted); }
-
+    /* ── FOOTER ── */
     footer { background: var(--text); padding: 44px 2rem; text-align: center; }
     .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; }
     .flogo span { color: var(--amber); }
@@ -197,83 +169,11 @@
     .flinks { margin-bottom: 16px; }
     .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
 
-.recipe-preview { background: var(--white); }
-
-.recipe-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.recipe-card {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  color: inherit;
-}
-
-.recipe-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(45,90,61,0.08);
-}
-
-.recipe-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.recipe-card-body {
-  padding: 18px;
-}
-
-.recipe-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 500;
-  background: var(--green-pale);
-  color: var(--green);
-  border-radius: 100px;
-  padding: 4px 10px;
-  margin-bottom: 10px;
-}
-
-.recipe-title {
-  font-family: 'Lora', serif;
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.recipe-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.recipe-link-row {
-  margin-top: 28px;
-  text-align: center;
-}
-
-.text-link {
-  color: var(--green);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.text-link:hover {
-  text-decoration: underline;
-}
-    
+    /* ── ANIMATIONS ── */
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+    /* ── MOBILE ── */
     @media (max-width: 768px) {
       .hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 1.5rem 40px; }
       .phone-wrap { display: flex; justify-content: center; }
@@ -281,7 +181,6 @@
       .suspects-grid { grid-template-columns: repeat(2, 1fr); }
       .feat-grid { grid-template-columns: 1fr; }
       .form-box { padding: 28px 20px; }
-      .checks { grid-template-columns: 1fr; }
       .recipe-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
@@ -291,40 +190,44 @@
 </head>
 <body>
 
+  <!-- ════════ NAV ════════ -->
   <nav>
     <a class="logo" href="/">biomy<span>.</span>health</a>
     <div style="display:flex;align-items:center;gap:28px;">
-  <a href="/about/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">About</a>
-  <a href="/recipes/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">Recipes</a>
-  <a href="/privacy/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">Privacy</a>
-  <a class="nav-cta" href="#waitlist">Join waitlist</a>
-</div>  </nav>
+      <a href="/about/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">About</a>
+      <a href="/recipes/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">Recipes</a>
+      <a href="/privacy/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">Privacy</a>
+      <a class="nav-cta" href="#waitlist">Join waitlist</a>
+    </div>
+  </nav>
 
+  <!-- ════════ HERO ════════ -->
   <div style="background:var(--cream);">
     <div class="hero">
       <div>
-  <div class="badge">Wellness platform, not medical advice</div>
-  <h1>Your gut condition shouldn't erase your food culture.</h1>
+        <div class="badge">Wellness platform, not medical advice</div>
+        <h1>Your gut condition shouldn't erase your food culture.</h1>
 
-  <div class="cycle-wrap" style="margin-top:14px;height:44px;">
-    <div class="cycle-inner" id="cycleInner">
-      <div class="cycle-item" style="font-size:28px;height:44px;">Indian comfort food</div>
-      <div class="cycle-item" style="font-size:28px;height:44px;">Mexican weeknight staples</div>
-      <div class="cycle-item" style="font-size:28px;height:44px;">West African classics</div>
-      <div class="cycle-item" style="font-size:28px;height:44px;">the foods you grew up with</div>
-      <div class="cycle-item" style="font-size:28px;height:44px;">Indian comfort food</div>
-    </div>
-  </div>
+        <div class="cycle-wrap">
+          <div class="cycle-inner" id="cycleInner">
+            <div class="cycle-item">Indian comfort food</div>
+            <div class="cycle-item">Mexican weeknight staples</div>
+            <div class="cycle-item">West African classics</div>
+            <div class="cycle-item">the foods you grew up with</div>
+            <div class="cycle-item">Indian comfort food</div>
+          </div>
+        </div>
 
-  <p class="hero-copy">Low-FODMAP recipes across Indian, Mexican, African and more, plus Flora, an AI wellness companion who's there at 11pm when your next appointment is 6 weeks away.</p>
+        <p class="hero-copy">Low-FODMAP recipes across Indian, Mexican, African and more, plus Flora, an AI wellness companion who's there at 11pm when your next appointment is 6 weeks away.</p>
 
-  <div class="hero-actions">
-    <a class="btn-primary" href="/recipes/">Browse recipes</a>
-    <a class="btn-secondary" href="#waitlist">Join the waitlist</a>
-  </div>
+        <div class="hero-actions">
+          <a class="btn-primary" href="/recipes/">Browse recipes</a>
+          <a class="btn-secondary" href="#waitlist">Join the waitlist</a>
+        </div>
 
-  <p class="hero-trust">Built by someone living with Ulcerative Colitis, with 10 years building consumer products at Amazon and Ford.</p>
-</div>
+        <p class="hero-trust">Built by someone living with Ulcerative Colitis, with 10 years building consumer products at Amazon and Ford.</p>
+      </div>
+
       <div class="phone-wrap">
         <div class="phone">
           <div class="phone-screen">
@@ -346,51 +249,57 @@
     </div>
   </div>
 
-  <section class="section suspects">
+  <!-- ════════ RECIPE PREVIEW ════════ -->
+  <section class="section recipe-preview">
     <div class="container">
       <div class="container-narrow fade-up">
-        <p class="eyebrow">Demystifying the jargon</p>
-        <h2>Chronic illness comes with a lot of confusing terminology. We translate it.</h2>
-        <p class="sec-sub">From FODMAP (a framework developed by Monash University) to flare-ups, from biologics to bowel prep — Biomy turns impenetrable medical language into plain English. Here's one example.</p>
+        <p class="eyebrow">Taste the difference</p>
+        <h2>Real food. Real flavour. Gut-friendly.</h2>
+        <p class="sec-sub">Every recipe is low-FODMAP, culturally authentic, and actually something you'd want to eat.</p>
       </div>
-      <div class="suspects-grid fade-up">
-        <div class="scard"><div class="emoji-circle">🧅</div><div class="snum">Suspect 1</div><div class="sname">The Allium</div><div class="stag">Oligosaccharides</div><div class="sdesc">Garlic, onion, wheat, legumes. The ones that will ruin your day.</div></div>
-        <div class="scard"><div class="emoji-circle">🥛</div><div class="snum">Suspect 2</div><div class="sname">The Dairy</div><div class="stag">Disaccharides</div><div class="sdesc">Lactose. Milk, soft cheese, yoghurt.</div></div>
-        <div class="scard"><div class="emoji-circle">🍎</div><div class="snum">Suspect 3</div><div class="sname">The Fructose</div><div class="stag">Monosaccharides</div><div class="sdesc">Honey, mango, apple, pear. Too much fructose overwhelms your gut.</div></div>
-        <div class="scard"><div class="emoji-circle">➕</div><div class="snum">Suspect 4</div><div class="sname">The "And"</div><div class="stag">And</div><div class="sdesc">Yes. The A literally just stands for "and." We didn't name it.</div></div>
-        <div class="scard"><div class="emoji-circle">🍄</div><div class="snum">Suspect 5</div><div class="sname">The Sneaky One</div><div class="stag">Polyols</div><div class="sdesc">Mushrooms, cauliflower, stone fruits, sugar-free gum.</div></div>
-        <div class="scard star"><div class="emoji-circle">🌍</div><div class="snum">Suspect 6</div><div class="sname">The Cultural Gap</div><div class="stag">Biomy's speciality</div><div class="sdesc">Nobody told you how to cook Indian, Mexican, or West African food without garlic and onion. Biomy does.</div></div>
+      <div class="recipe-grid fade-up">
+        <a class="recipe-card" href="/recipes/">
+          <img src="/images/recipes/chicken-tikka-masala.png" alt="Chicken Tikka Masala" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="recipe-img-placeholder" style="display:none;background:linear-gradient(135deg,#e8c07a,#d4853a);">Chicken Tikka Masala</div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Indian</span>
+            <div class="recipe-title">Chicken Tikka Masala</div>
+            <div class="recipe-desc">Rich, creamy, totally gut-friendly. No onion, no garlic, all flavour.</div>
+          </div>
+        </a>
+        <a class="recipe-card" href="/recipes/">
+          <img src="/images/recipes/jollof-style-rice.png" alt="Jollof-Style Rice" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="recipe-img-placeholder" style="display:none;background:linear-gradient(135deg,#c94b2a,#e87840);">Jollof-Style Rice</div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">West African</span>
+            <div class="recipe-title">Jollof-Style Rice</div>
+            <div class="recipe-desc">Smoky tomato rice without the usual FODMAP triggers.</div>
+          </div>
+        </a>
+        <a class="recipe-card" href="/recipes/">
+          <img src="/images/recipes/ginger-scallion-chicken-stir-fry.png" alt="Ginger Scallion Chicken Stir-Fry" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="recipe-img-placeholder" style="display:none;background:linear-gradient(135deg,#7ab55e,#4a8b3e);">Ginger Scallion Stir-Fry</div>
+          <div class="recipe-card-body">
+            <span class="recipe-tag">Asian</span>
+            <div class="recipe-title">Ginger Scallion Chicken Stir-Fry</div>
+            <div class="recipe-desc">Quick weeknight dinner. Bright, punchy, and safe.</div>
+          </div>
+        </a>
+      </div>
+      <div class="recipe-link-row fade-up">
+        <a class="text-link" href="/recipes/">Browse all recipes →</a>
       </div>
     </div>
   </section>
 
-  <section class="section wyg">
-    <div class="container">
-      <div class="container-narrow fade-up">
-        <p class="eyebrow">What you get</p>
-        <h2>Everything in one place, from day one.</h2>
-        <p class="sec-sub">Condition guides, recipes, a symptom tracker and Flora your wellness companion. All built for people who are tired of navigating chronic illness alone.</p>
-      </div>
-      <div class="feat-grid fade-up">
-        <div class="fcard"><div class="fnum">01</div><div class="ftitle">Condition guides</div><div class="fdesc">Plain-English explainers for Colitis, Crohn's and more. Written for real life, not a textbook.</div></div>
-        <div class="fcard"><div class="fnum">02</div><div class="ftitle">Recipes and resources</div><div class="fdesc">Culturally diverse, gut-friendly recipes. Indian, Mexican, West African - without the triggers.</div></div>
-        <div class="fcard"><div class="fnum">03</div><div class="ftitle">Symptom tracker</div><div class="fdesc">Log how you're feeling day to day. Spot patterns. Know your body better over time.</div></div>
-        <div class="fcard"><div class="fnum">04</div><div class="ftitle">Flora - your wellness companion</div><div class="fdesc">Ask Flora anything. "Is this normal?" Flora is a wellness guide, not a doctor - but always there when you need a steady voice.</div></div>
-      </div>
-      <div class="mid-cta fade-up">
-        <p>Launching 2026. Get notified the moment we go live.</p>
-        <a class="btn-outline" href="#waitlist">Join the waitlist</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- ════════ FLORA ════════ -->
   <section class="section flora-section">
     <div class="container">
       <div class="flora-inner">
         <div class="fade-up">
           <p class="eyebrow">Meet Flora</p>
           <h2>Your wellness companion, whenever you need one.</h2>
-          <p class="sec-sub">The questions you'd normally wait 6 weeks to ask. Flora's got you - day or night.</p>
+          <p class="sec-sub">The questions you'd normally wait 6 weeks to ask. Flora's got you — day or night.</p>
           <p class="flora-disclaimer">Flora is a wellness guide, not a medical professional. Always consult your doctor for medical decisions.</p>
         </div>
         <div class="chat fade-up">
@@ -403,32 +312,59 @@
     </div>
   </section>
 
-  <section class="section conds">
+  <!-- ════════ FODMAP EXPLAINER ════════ -->
+  <section class="section suspects">
     <div class="container">
       <div class="container-narrow fade-up">
-        <p class="eyebrow">Conditions we support</p>
-        <h2>Starting with IBD. Expanding to more.</h2>
-        <p class="sec-sub">Biomy launches with Ulcerative Colitis and Crohn's disease, with more conditions joining in the months ahead.</p>
+        <p class="eyebrow">Demystifying the jargon</p>
+        <h2>FODMAP sounds complicated. It isn't.</h2>
+        <p class="sec-sub">FODMAP is a framework developed by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;font-weight:500;">Monash University</a> that identifies the short-chain carbohydrates most likely to trigger gut symptoms. Here's the lineup.</p>
       </div>
-      <div class="cpills fade-up">
-        <div class="cpill"><span class="cdot cd-live"></span>Ulcerative Colitis</div>
-        <div class="cpill"><span class="cdot cd-live"></span>Crohn's disease</div>
-        <div class="cpill"><span class="cdot cd-soon"></span>IBS</div>
-        <div class="cpill"><span class="cdot cd-soon"></span>Coeliac disease</div>
-        <div class="cpill"><span class="cdot cd-soon"></span>Type 2 diabetes</div>
-        <div class="cpill"><span class="cdot cd-plan"></span>PCOS</div>
-        <div class="cpill"><span class="cdot cd-plan"></span>Endometriosis</div>
-        <div class="cpill"><span class="cdot cd-plan"></span>Fibromyalgia</div>
-        <div class="cpill"><span class="cdot cd-plan"></span>+ more</div>
+      <div class="suspects-grid fade-up">
+        <div class="scard"><div class="emoji-circle">🧅</div><div class="snum">Suspect 1</div><div class="sname">The Allium</div><div class="stag">Oligosaccharides</div><div class="sdesc">Garlic, onion, wheat, legumes. The ones that will ruin your day.</div></div>
+        <div class="scard"><div class="emoji-circle">🥛</div><div class="snum">Suspect 2</div><div class="sname">The Dairy</div><div class="stag">Disaccharides</div><div class="sdesc">Lactose. Milk, soft cheese, yoghurt.</div></div>
+        <div class="scard"><div class="emoji-circle">🍎</div><div class="snum">Suspect 3</div><div class="sname">The Fructose</div><div class="stag">Monosaccharides</div><div class="sdesc">Honey, mango, apple, pear. Too much fructose overwhelms your gut.</div></div>
+        <div class="scard"><div class="emoji-circle">➕</div><div class="snum">Suspect 4</div><div class="sname">The "And"</div><div class="stag">And</div><div class="sdesc">Yes. The A literally just stands for "and." We didn't name it.</div></div>
+        <div class="scard"><div class="emoji-circle">🍄</div><div class="snum">Suspect 5</div><div class="sname">The Sneaky One</div><div class="stag">Polyols</div><div class="sdesc">Mushrooms, cauliflower, stone fruits, sugar-free gum.</div></div>
+        <div class="scard star"><div class="emoji-circle">🌍</div><div class="snum">Suspect 6</div><div class="sname">The Cultural Gap</div><div class="stag">Biomy's speciality</div><div class="sdesc">Nobody told you how to cook Indian, Mexican, or West African food without garlic and onion. Biomy does.</div></div>
       </div>
-      <div class="clegend fade-up">
-        <div class="cli"><span class="cdot cd-live" style="display:inline-block;"></span>Launching first</div>
-        <div class="cli"><span class="cdot cd-soon" style="display:inline-block;background:var(--amber);"></span>Coming soon</div>
-        <div class="cli"><span class="cdot cd-plan" style="display:inline-block;"></span>On the way</div>
+      <p class="monash-note fade-up">FODMAP research is led by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener">Monash University</a>. Biomy's recipes are guided by the Monash low-FODMAP framework.</p>
+    </div>
+  </section>
+
+  <!-- ════════ WHAT YOU GET ════════ -->
+  <section class="section wyg">
+    <div class="container">
+      <div class="container-narrow fade-up">
+        <p class="eyebrow">What you get</p>
+        <h2>Two things, done properly.</h2>
+        <p class="sec-sub">No feature bloat. Just the two things that actually help right now.</p>
+      </div>
+      <div class="feat-grid fade-up">
+        <div class="fcard">
+          <div class="fnum">01</div>
+          <div class="ftitle">Culturally diverse recipes</div>
+          <div class="fdesc">Indian, Mexican, West African and more. Low-FODMAP, full flavour. Every recipe explains why the swaps work so you learn as you cook.</div>
+        </div>
+        <div class="fcard">
+          <div class="fnum">02</div>
+          <div class="ftitle">Flora — your wellness companion</div>
+          <div class="fdesc">"Is this normal?" "Can I eat this?" Flora is there at 11pm when your next appointment is 6 weeks away. A wellness guide, not a doctor — but always a steady voice.</div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ════════ LAUNCH LINE ════════ -->
+  <section class="section launch-line" style="padding:48px 2rem;">
+    <div class="container">
+      <p class="launch-text fade-up">
+        <strong>Launching with Ulcerative Colitis, Crohn's, and IBS.</strong> More conditions coming soon.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════ WAITLIST ════════ -->
   <section class="section waitlist" id="waitlist">
     <div class="container">
       <div class="fade-up" style="text-align:center;">
@@ -449,25 +385,27 @@
     </div>
   </section>
 
+  <!-- ════════ FOOTER ════════ -->
   <footer>
     <span class="flogo">biomy<span>.</span>health</span>
     <div class="flinks">
-  <a href="mailto:hello@biomy.health">hello@biomy.health</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/about/">About</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/recipes/">Recipes</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/privacy/">Privacy</a>
-  &nbsp;&middot;&nbsp;
-  <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
-  &nbsp;&middot;&nbsp;
-  <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
-</div>
+      <a href="mailto:hello@biomy.health">hello@biomy.health</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/about/">About</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/recipes/">Recipes</a>
+      &nbsp;&middot;&nbsp;
+      <a href="/privacy/">Privacy</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
+    </div>
     <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
     <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
   </footer>
 
+  <!-- ════════ SCRIPTS ════════ -->
   <script>
     let idx = 0;
     const inner = document.getElementById('cycleInner');
