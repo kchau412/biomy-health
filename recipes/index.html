@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Low FODMAP Recipes | Biomy</title>
   <meta name="description" content="Low FODMAP recipes across Indian, Chinese, Mexican, African and European cuisines. Flavour-first meals for sensitive guts, built from lived experience." />
-  <link rel="canonical" href="https://biomy.health/recipes" />
+  <link rel="canonical" href="https://biomy.health/recipes/" />
   <meta property="og:title" content="Low FODMAP Recipes | Biomy" />
   <meta property="og:description" content="Flavour-first, culturally inclusive low FODMAP recipes for sensitive guts." />
-  <meta property="og:url" content="https://biomy.health/recipes" />
+  <meta property="og:url" content="https://biomy.health/recipes/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Low FODMAP Recipes | Biomy" />
   <meta name="twitter:description" content="Low FODMAP recipes that still taste like real food." />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-25DX3B1E4C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-25DX3B1E4C');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-25DX3B1E4C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-25DX3B1E4C');
+  </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -267,12 +266,24 @@
       margin-top: 36px;
     }
 
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card-link:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .featured-card, .recipe-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--r-lg);
       overflow: hidden;
       transition: transform 0.18s, box-shadow 0.18s;
+      height: 100%;
     }
 
     .featured-card:hover, .recipe-card:hover {
@@ -636,113 +647,125 @@
       </div>
 
       <div class="featured-grid">
-        <article class="featured-card">
-          <div class="featured-image" style="background-image:url('/Images/Recipes/chicken-tikka-masala.png');"></div>
-          <div class="featured-body">
-            <div class="badge-row">
-              <span class="tag">Indian</span>
-              <span class="tag alt">Comfort food</span>
+        <a class="card-link" href="/recipes/chicken-tikka-masala/">
+          <article class="featured-card">
+            <div class="featured-image" style="background-image:url('/Images/Recipes/chicken-tikka-masala.png');"></div>
+            <div class="featured-body">
+              <div class="badge-row">
+                <span class="tag">Indian</span>
+                <span class="tag alt">Comfort food</span>
+              </div>
+              <h3 class="featured-title">Chicken Tikka Masala, Biomy Style</h3>
+              <p class="featured-desc">Creamy, tomatoey, and deeply comforting without the usual garlic-onion base.</p>
+              <p class="why-line"><strong>Why it works:</strong> Uses garlic-infused oil and lactose-conscious swaps.</p>
+              <div class="meta-row">
+                <span class="meta-pill">40+ min</span>
+                <span class="meta-pill">Chicken</span>
+                <span class="meta-pill">Medium spice</span>
+              </div>
             </div>
-            <h3 class="featured-title">Chicken Tikka Masala, Biomy Style</h3>
-            <p class="featured-desc">Creamy, tomatoey, and deeply comforting without the usual garlic-onion base.</p>
-            <p class="why-line"><strong>Why it works:</strong> Uses garlic-infused oil and lactose-conscious swaps.</p>
-            <div class="meta-row">
-              <span class="meta-pill">40+ min</span>
-              <span class="meta-pill">Chicken</span>
-              <span class="meta-pill">Medium spice</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </a>
 
-        <article class="featured-card">
-          <div class="featured-image" style="background-image:url('/Images/Recipes/comforting-khichdi.png');"></div>
-          <div class="featured-body">
-            <div class="badge-row">
-              <span class="tag">Indian</span>
-              <span class="tag alt">Flare-friendly</span>
+        <a class="card-link" href="/recipes/moong-dal-khichdi/">
+          <article class="featured-card">
+            <div class="featured-image" style="background-image:url('/Images/Recipes/comforting-khichdi.png');"></div>
+            <div class="featured-body">
+              <div class="badge-row">
+                <span class="tag">Indian</span>
+                <span class="tag alt">Flare-friendly</span>
+              </div>
+              <h3 class="featured-title">Moong Dal Khichdi for Flare Days</h3>
+              <p class="featured-desc">Soft rice and lentils cooked until soothing and easy to handle.</p>
+              <p class="why-line"><strong>Why it works:</strong> Mild, simple, and built for low-energy days.</p>
+              <div class="meta-row">
+                <span class="meta-pill">20 to 40 min</span>
+                <span class="meta-pill">Vegetarian</span>
+                <span class="meta-pill">Mild</span>
+              </div>
             </div>
-            <h3 class="featured-title">Moong Dal Khichdi for Flare Days</h3>
-            <p class="featured-desc">Soft rice and lentils cooked until soothing and easy to handle.</p>
-            <p class="why-line"><strong>Why it works:</strong> Mild, simple, and built for low-energy days.</p>
-            <div class="meta-row">
-              <span class="meta-pill">20 to 40 min</span>
-              <span class="meta-pill">Vegetarian</span>
-              <span class="meta-pill">Mild</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </a>
 
-        <article class="featured-card">
-          <div class="featured-image" style="background-image:url('/Images/Recipes/ginger-scallion-chicken-stir-fry.png');"></div>
-          <div class="featured-body">
-            <div class="badge-row">
-              <span class="tag">Chinese</span>
-              <span class="tag alt">Quick</span>
+        <a class="card-link" href="/recipes/ginger-scallion-chicken-stir-fry/">
+          <article class="featured-card">
+            <div class="featured-image" style="background-image:url('/Images/Recipes/ginger-scallion-chicken-stir-fry.png');"></div>
+            <div class="featured-body">
+              <div class="badge-row">
+                <span class="tag">Chinese</span>
+                <span class="tag alt">Quick</span>
+              </div>
+              <h3 class="featured-title">Ginger Scallion Chicken Stir-Fry</h3>
+              <p class="featured-desc">Clean, fragrant, and fast enough for a weeknight.</p>
+              <p class="why-line"><strong>Why it works:</strong> Uses green onion tops and ginger for depth.</p>
+              <div class="meta-row">
+                <span class="meta-pill">Under 20 min</span>
+                <span class="meta-pill">Chicken</span>
+                <span class="meta-pill">Mild</span>
+              </div>
             </div>
-            <h3 class="featured-title">Ginger Scallion Chicken Stir-Fry</h3>
-            <p class="featured-desc">Clean, fragrant, and fast enough for a weeknight.</p>
-            <p class="why-line"><strong>Why it works:</strong> Uses green onion tops and ginger for depth.</p>
-            <div class="meta-row">
-              <span class="meta-pill">Under 20 min</span>
-              <span class="meta-pill">Chicken</span>
-              <span class="meta-pill">Mild</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </a>
 
-        <article class="featured-card">
-          <div class="featured-image" style="background-image:url('/Images/Recipes/chicken-tinga-style-rice-bowl.png');"></div>
-          <div class="featured-body">
-            <div class="badge-row">
-              <span class="tag">Mexican</span>
-              <span class="tag alt">Everyday</span>
+        <a class="card-link" href="/recipes/chicken-tinga-style-rice-bowl/">
+          <article class="featured-card">
+            <div class="featured-image" style="background-image:url('/Images/Recipes/chicken-tinga-style-rice-bowl.png');"></div>
+            <div class="featured-body">
+              <div class="badge-row">
+                <span class="tag">Mexican</span>
+                <span class="tag alt">Everyday</span>
+              </div>
+              <h3 class="featured-title">Chicken Tinga-Style Rice Bowl</h3>
+              <p class="featured-desc">Smoky tomato chicken without the usual onion base.</p>
+              <p class="why-line"><strong>Why it works:</strong> Bold flavour with practical swaps.</p>
+              <div class="meta-row">
+                <span class="meta-pill">20 to 40 min</span>
+                <span class="meta-pill">Chicken</span>
+                <span class="meta-pill">Medium</span>
+              </div>
             </div>
-            <h3 class="featured-title">Chicken Tinga-Style Rice Bowl</h3>
-            <p class="featured-desc">Smoky tomato chicken without the usual onion base.</p>
-            <p class="why-line"><strong>Why it works:</strong> Bold flavour with practical swaps.</p>
-            <div class="meta-row">
-              <span class="meta-pill">20 to 40 min</span>
-              <span class="meta-pill">Chicken</span>
-              <span class="meta-pill">Medium</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </a>
 
-        <article class="featured-card">
-          <div class="featured-image" style="background-image:url('/Images/Recipes/jollof-style-rice.png');"></div>
-          <div class="featured-body">
-            <div class="badge-row">
-              <span class="tag">African</span>
-              <span class="tag alt">Comfort food</span>
+        <a class="card-link" href="/recipes/jollof-style-rice/">
+          <article class="featured-card">
+            <div class="featured-image" style="background-image:url('/Images/Recipes/jollof-style-rice.png');"></div>
+            <div class="featured-body">
+              <div class="badge-row">
+                <span class="tag">African</span>
+                <span class="tag alt">Comfort food</span>
+              </div>
+              <h3 class="featured-title">Jollof-Style Rice</h3>
+              <p class="featured-desc">A Biomy-style take on the beloved tomato rice classic.</p>
+              <p class="why-line"><strong>Why it works:</strong> Honouring flavour while adapting the base carefully.</p>
+              <div class="meta-row">
+                <span class="meta-pill">40+ min</span>
+                <span class="meta-pill">Vegetarian</span>
+                <span class="meta-pill">Medium</span>
+              </div>
             </div>
-            <h3 class="featured-title">Jollof-Style Rice</h3>
-            <p class="featured-desc">A Biomy-style take on the beloved tomato rice classic.</p>
-            <p class="why-line"><strong>Why it works:</strong> Honouring flavour while adapting the base carefully.</p>
-            <div class="meta-row">
-              <span class="meta-pill">40+ min</span>
-              <span class="meta-pill">Vegetarian</span>
-              <span class="meta-pill">Medium</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </a>
 
-        <article class="featured-card">
-          <div class="featured-image" style="background-image:url('/Images/Recipes/roast-chicken-potatoes-herbs.png');"></div>
-          <div class="featured-body">
-            <div class="badge-row">
-              <span class="tag">European</span>
-              <span class="tag alt">Everyday</span>
+        <a class="card-link" href="/recipes/lemon-herb-roast-chicken/">
+          <article class="featured-card">
+            <div class="featured-image" style="background-image:url('/Images/Recipes/roast-chicken-potatoes-herbs.png');"></div>
+            <div class="featured-body">
+              <div class="badge-row">
+                <span class="tag">European</span>
+                <span class="tag alt">Everyday</span>
+              </div>
+              <h3 class="featured-title">Lemon Herb Roast Chicken with Potatoes</h3>
+              <p class="featured-desc">A reliable classic that always works.</p>
+              <p class="why-line"><strong>Why it works:</strong> Simple ingredients, easy on the gut.</p>
+              <div class="meta-row">
+                <span class="meta-pill">40+ min</span>
+                <span class="meta-pill">Chicken</span>
+                <span class="meta-pill">Mild</span>
+              </div>
             </div>
-            <h3 class="featured-title">Lemon Herb Roast Chicken with Potatoes</h3>
-            <p class="featured-desc">A reliable classic that always works.</p>
-            <p class="why-line"><strong>Why it works:</strong> Simple ingredients, easy on the gut.</p>
-            <div class="meta-row">
-              <span class="meta-pill">40+ min</span>
-              <span class="meta-pill">Chicken</span>
-              <span class="meta-pill">Mild</span>
-            </div>
-          </div>
-        </article>
+          </article>
+        </a>
       </div>
 
       <div class="filters-wrap" id="recipes-grid">
@@ -884,8 +907,8 @@
 
   <script>
     const recipes = [
-      { title:"Chicken Tikka Masala, Biomy Style", cuisine:"Indian", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"Creamy, tomatoey, and deeply comforting without the usual garlic-onion base.", why:"Uses garlic-infused oil and lactose-conscious swaps.", note:"Uses garlic-infused oil" },
-      { title:"Moong Dal Khichdi for Flare Days", cuisine:"Indian", mealType:"Dinner", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Soft rice and lentils cooked until soothing and easy to handle.", why:"Mild, simple, and built for low-energy days.", note:"Best during a flare" },
+      { title:"Chicken Tikka Masala, Biomy Style", url:"/recipes/chicken-tikka-masala/", cuisine:"Indian", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"Creamy, tomatoey, and deeply comforting without the usual garlic-onion base.", why:"Uses garlic-infused oil and lactose-conscious swaps.", note:"Uses garlic-infused oil" },
+      { title:"Moong Dal Khichdi for Flare Days", url:"/recipes/moong-dal-khichdi/", cuisine:"Indian", mealType:"Dinner", goodFor:"Flare-friendly", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Soft rice and lentils cooked until soothing and easy to handle.", why:"Mild, simple, and built for low-energy days.", note:"Best during a flare" },
       { title:"Jeera Rice with Cucumber Mint Raita", cuisine:"Indian", mealType:"Side", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"Lightly spiced cumin rice with a cooling side.", why:"Simple flavours, easy to pair, low drama.", note:"" },
       { title:"Tandoori Salmon with Coriander Rice", cuisine:"Indian", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Medium", desc:"A brighter, lighter take on a classic spiced marinade.", why:"Flavour-forward and high in protein.", note:"" },
       { title:"Saag Paneer with Garlic-Infused Oil", cuisine:"Indian", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"Creamy greens and paneer without the onion-heavy restaurant base.", why:"Familiar comfort with smarter swaps.", note:"Uses garlic-infused oil" },
@@ -895,7 +918,7 @@
       { title:"Besan Chilla with Mint Chutney", cuisine:"Indian", mealType:"Breakfast", goodFor:"Quick", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"A savoury gram flour pancake with gentle spice.", why:"Quick, satisfying, and naturally flexible.", note:"" },
       { title:"Aloo Gobi, Portion-Aware Version", cuisine:"Indian", mealType:"Dinner", goodFor:"Everyday", time:"20 to 40 min", protein:"Vegetarian", spice:"Medium", desc:"A careful take on the classic potato-cauliflower combo.", why:"Built around serving-size awareness.", note:"" },
 
-      { title:"Ginger Scallion Chicken Stir-Fry", cuisine:"Chinese", mealType:"Dinner", goodFor:"Quick", time:"Under 20 min", protein:"Chicken", spice:"Mild", desc:"Clean, fragrant, and fast enough for a weeknight.", why:"Uses green onion tops and ginger for depth.", note:"" },
+      { title:"Ginger Scallion Chicken Stir-Fry", url:"/recipes/ginger-scallion-chicken-stir-fry/", cuisine:"Chinese", mealType:"Dinner", goodFor:"Quick", time:"Under 20 min", protein:"Chicken", spice:"Mild", desc:"Clean, fragrant, and fast enough for a weeknight.", why:"Uses green onion tops and ginger for depth.", note:"" },
       { title:"Egg Fried Rice with Spring Onion Greens", cuisine:"Chinese", mealType:"Lunch", goodFor:"Everyday", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Comfort food that still feels like proper fried rice.", why:"Simple ingredients, very adaptable.", note:"" },
       { title:"Chicken Congee", cuisine:"Chinese", mealType:"Soup", goodFor:"Flare-friendly", time:"40+ min", protein:"Chicken", spice:"Mild", desc:"A soft rice porridge for days when your gut needs kindness.", why:"Gentle, hydrating, and easy to customise.", note:"Best during a flare" },
       { title:"Steamed Fish with Ginger and Soy", cuisine:"Chinese", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Mild", desc:"Delicate, savoury, and surprisingly low effort.", why:"Light but still deeply flavourful.", note:"" },
@@ -906,7 +929,7 @@
       { title:"Bok Choy Rice Bowl", cuisine:"Chinese", mealType:"Lunch", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Mild", desc:"A simple bowl with greens, rice, and a savoury glaze.", why:"Light, fast, and everyday-friendly.", note:"" },
       { title:"Five-Spice Roast Chicken Traybake", cuisine:"Chinese", mealType:"Dinner", goodFor:"High-protein", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"A one-pan dinner with aromatic depth.", why:"Maximum flavour, minimal chaos.", note:"" },
 
-      { title:"Chicken Tinga-Style Rice Bowl", cuisine:"Mexican", mealType:"Lunch", goodFor:"Everyday", time:"20 to 40 min", protein:"Chicken", spice:"Medium", desc:"Smoky tomato chicken without the usual onion base.", why:"Bold flavour with practical swaps.", note:"" },
+      { title:"Chicken Tinga-Style Rice Bowl", url:"/recipes/chicken-tinga-style-rice-bowl/", cuisine:"Mexican", mealType:"Lunch", goodFor:"Everyday", time:"20 to 40 min", protein:"Chicken", spice:"Medium", desc:"Smoky tomato chicken without the usual onion base.", why:"Bold flavour with practical swaps.", note:"" },
       { title:"Shrimp Tacos with Lime Slaw", cuisine:"Mexican", mealType:"Dinner", goodFor:"Quick", time:"Under 20 min", protein:"Seafood", spice:"Medium", desc:"Fresh, bright, and weeknight fast.", why:"Satisfying without feeling heavy.", note:"" },
       { title:"Red Enchilada Bowl", cuisine:"Mexican", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Chicken", spice:"Medium", desc:"All the comfort of enchiladas, simplified into a bowl.", why:"Easier to make, easier to tolerate.", note:"" },
       { title:"Cilantro Lime Chicken Rice", cuisine:"Mexican", mealType:"Lunch", goodFor:"High-protein", time:"Under 20 min", protein:"Chicken", spice:"Mild", desc:"A clean, reliable staple with real flavour.", why:"Simple enough for everyday eating.", note:"" },
@@ -917,7 +940,7 @@
       { title:"Roasted Tomato Chipotle Sauce", cuisine:"Mexican", mealType:"Sauce", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Punchy", desc:"A punchy sauce to wake up bowls, eggs, and grilled proteins.", why:"Flavour booster without hidden triggers.", note:"" },
       { title:"Street Corn-Style Salad", cuisine:"Mexican", mealType:"Side", goodFor:"Everyday", time:"Under 20 min", protein:"Vegetarian", spice:"Medium", desc:"Creamy, tangy, and bright.", why:"Built with low FODMAP awareness and portion care.", note:"" },
 
-      { title:"Jollof-Style Rice", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Vegetarian", spice:"Medium", desc:"A Biomy-style take on the beloved tomato rice classic.", why:"Honouring flavour while adapting the base carefully.", note:"" },
+      { title:"Jollof-Style Rice", url:"/recipes/jollof-style-rice/", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Vegetarian", spice:"Medium", desc:"A Biomy-style take on the beloved tomato rice classic.", why:"Honouring flavour while adapting the base carefully.", note:"" },
       { title:"Suya-Spiced Chicken Skewers", cuisine:"African", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Chicken", spice:"Punchy", desc:"Warm spice, char, and a sharp little kick.", why:"Huge flavour payoff for relatively little effort.", note:"" },
       { title:"Coconut Peanut Fish Stew", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Seafood", spice:"Medium", desc:"Rich, savoury, and deeply comforting.", why:"Satisfying and balanced when portioned thoughtfully.", note:"" },
       { title:"Berbere Roast Chicken and Carrots", cuisine:"African", mealType:"Dinner", goodFor:"High-protein", time:"40+ min", protein:"Chicken", spice:"Medium", desc:"Spice-led roast dinner with East African inspiration.", why:"Warming and simple to prep.", note:"" },
@@ -928,7 +951,7 @@
       { title:"Pumpkin and Spinach Stew", cuisine:"African", mealType:"Dinner", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"A soft, gently spiced vegetable stew.", why:"Comforting and easy to batch cook.", note:"" },
       { title:"Spiced Plantain Bowl with Eggs", cuisine:"African", mealType:"Breakfast", goodFor:"Everyday", time:"Under 20 min", protein:"Egg", spice:"Mild", desc:"Sweet-savoury and deeply satisfying.", why:"Feels like real food, not diet food.", note:"" },
 
-      { title:"Lemon Herb Roast Chicken with Potatoes", cuisine:"European", mealType:"Dinner", goodFor:"Everyday", time:"40+ min", protein:"Chicken", spice:"Mild", desc:"A reliable classic that always works.", why:"Simple ingredients, easy on the gut.", note:"" },
+      { title:"Lemon Herb Roast Chicken with Potatoes", url:"/recipes/lemon-herb-roast-chicken/", cuisine:"European", mealType:"Dinner", goodFor:"Everyday", time:"40+ min", protein:"Chicken", spice:"Mild", desc:"A reliable classic that always works.", why:"Simple ingredients, easy on the gut.", note:"" },
       { title:"Herb Risotto with Parmesan", cuisine:"European", mealType:"Dinner", goodFor:"Comfort food", time:"40+ min", protein:"Vegetarian", spice:"Mild", desc:"Creamy, soothing, and elegant enough to feel like a treat.", why:"Soft texture and controlled ingredients.", note:"" },
       { title:"Baked Cod with Olives and Tomatoes", cuisine:"European", mealType:"Dinner", goodFor:"High-protein", time:"20 to 40 min", protein:"Seafood", spice:"Mild", desc:"Mediterranean flavours in a very manageable format.", why:"Light but not bland.", note:"" },
       { title:"Polenta with Roasted Vegetables and Feta", cuisine:"European", mealType:"Lunch", goodFor:"Comfort food", time:"20 to 40 min", protein:"Vegetarian", spice:"Mild", desc:"A warm bowl that still feels slightly fancy.", why:"Comforting texture and flexible toppings.", note:"" },
@@ -953,23 +976,29 @@
     const clearFilters = document.getElementById('clearFilters');
 
     function renderRecipes(items) {
-      recipeGrid.innerHTML = items.map(recipe => `
-        <article class="recipe-card">
-          <div class="badge-row">
-            <span class="tag">${recipe.cuisine}</span>
-            <span class="tag alt">${recipe.mealType}</span>
-          </div>
-          <h3 class="recipe-title">${recipe.title}</h3>
-          <p class="recipe-desc">${recipe.desc}</p>
-          <p class="why-line"><strong>Why it works:</strong> ${recipe.why}</p>
-          <div class="meta-row">
-            <span class="meta-pill">${recipe.time}</span>
-            <span class="meta-pill">${recipe.goodFor}</span>
-            <span class="meta-pill">${recipe.protein}</span>
-          </div>
-          ${recipe.note ? `<p class="note-line">${recipe.note}</p>` : ``}
-        </article>
-      `).join('');
+      recipeGrid.innerHTML = items.map(recipe => {
+        const cardInner = `
+          <article class="recipe-card">
+            <div class="badge-row">
+              <span class="tag">${recipe.cuisine}</span>
+              <span class="tag alt">${recipe.mealType}</span>
+            </div>
+            <h3 class="recipe-title">${recipe.title}</h3>
+            <p class="recipe-desc">${recipe.desc}</p>
+            <p class="why-line"><strong>Why it works:</strong> ${recipe.why}</p>
+            <div class="meta-row">
+              <span class="meta-pill">${recipe.time}</span>
+              <span class="meta-pill">${recipe.goodFor}</span>
+              <span class="meta-pill">${recipe.protein}</span>
+            </div>
+            ${recipe.note ? `<p class="note-line">${recipe.note}</p>` : ``}
+          </article>
+        `;
+
+        return recipe.url
+          ? `<a class="card-link" href="${recipe.url}">${cardInner}</a>`
+          : cardInner;
+      }).join('');
 
       resultsCount.textContent = items.length;
       emptyState.style.display = items.length === 0 ? 'block' : 'none';
