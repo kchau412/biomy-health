@@ -40,43 +40,37 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
-    /* ── NAV ── */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
-    .logo span { color: var(--amber); }
-    .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+    /* ── MASTHEAD ── */
+    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 56px); border-bottom: 1px solid var(--border); }
+    .brand { font-family: 'Lora', serif; font-weight: 600; font-size: 18px; color: var(--green); text-decoration: none; letter-spacing: -0.2px; }
+    .brand b { color: var(--amber); font-weight: 600; }
+    .nav-links { display: flex; gap: 28px; font-size: 13.5px; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; transition: color 0.15s ease; }
+    .nav-links a:hover { color: var(--green); }
 
-    /* ── HERO ── */
-    .hero { max-width: 1100px; margin: 0 auto; padding: 72px 2rem 64px; display: grid; grid-template-columns: 1fr auto; gap: 56px; align-items: center; }
-    .badge { display: inline-block; background: var(--green-pale); color: var(--green); border: 1px solid var(--green-light); font-size: 12px; font-weight: 500; letter-spacing: 0.4px; padding: 5px 14px; border-radius: 100px; margin-bottom: 24px; }
-    h1 { font-family: 'Lora', serif; font-size: clamp(36px, 5.5vw, 58px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 4px; }
-    .cycle-wrap { height: clamp(44px, 6.5vw, 68px); overflow: hidden; margin-top: 14px; }
-    .cycle-inner { transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
-    .cycle-inner.no-anim { transition: none; }
-    .cycle-item { height: clamp(44px, 6.5vw, 68px); display: flex; align-items: center; font-family: 'Lora', serif; font-size: 28px; font-weight: 600; font-style: italic; color: var(--green); letter-spacing: -0.8px; }
-    .hero-copy { font-size: 18px; color: var(--text-muted); max-width: 640px; margin-top: 22px; }
-    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
-    .btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    /* ── BUTTONS ── */
+    .btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
     .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
+    .btn-primary.compact { font-size: 13px; padding: 10px 22px; }
     .btn-secondary { background: transparent; color: var(--green); border: 1.5px solid var(--green); border-radius: 100px; padding: 16px 30px; font-size: 16px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s, transform 0.15s; display: inline-block; }
     .btn-secondary:hover { background: var(--green); color: white; transform: translateY(-2px); }
-    .hero-trust { font-size: 13px; color: var(--text-muted); margin-top: 14px; }
+    .btn-ghost { background: transparent; color: var(--text); font-size: 15px; font-weight: 500; padding: 16px 0; border: none; border-bottom: 1px solid var(--text); border-radius: 0; text-decoration: none; display: inline-block; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease; }
+    .btn-ghost:hover { color: var(--green); border-color: var(--green); }
 
-    /* ── PHONE MOCKUP ── */
-    .phone { background: #1A1A18; border-radius: 36px; padding: 10px; width: 220px; box-shadow: 0 32px 64px rgba(0,0,0,0.18); }
-    .phone-screen { background: var(--cream); border-radius: 28px; overflow: hidden; }
-    .phone-header { background: var(--green); padding: 22px 18px 16px; }
-    .phone-logo { font-family: 'Lora', serif; font-size: 16px; color: white; font-weight: 600; }
-    .phone-logo span { color: rgba(255,255,255,0.6); font-size: 11px; font-family: 'DM Sans', sans-serif; font-weight: 400; display: block; margin-top: 2px; }
-    .phone-body { padding: 18px; }
-    .phone-step { font-size: 10px; font-weight: 500; color: var(--text-muted); margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-    .phone-q { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 12px; line-height: 1.4; font-family: 'Lora', serif; }
-    .phone-opt { border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; font-size: 12px; color: var(--text); margin-bottom: 6px; background: white; display: flex; align-items: center; gap: 8px; }
-    .phone-opt.sel { border-color: var(--green); background: var(--green-pale); color: var(--green); font-weight: 500; }
-    .pdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-    .pdot-g { background: var(--green); } .pdot-e { background: var(--border); }
-    .phone-btn { background: var(--green); color: white; border: none; border-radius: 100px; width: 100%; padding: 11px; font-size: 12px; font-weight: 500; margin-top: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    /* ── HERO ── */
+    .hero { background: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
+    .hero-content { flex: 1; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 104px) 56px; }
+    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.6px; color: var(--green-mid); margin-bottom: clamp(28px, 4vw, 44px); }
+    .hero-title { font-family: 'Lora', serif; font-weight: 600; font-size: clamp(48px, 8vw, 108px); line-height: 1.0; letter-spacing: -0.025em; color: var(--text); margin: 0; text-wrap: balance; }
+    .hero-title em { font-style: italic; color: var(--green); font-weight: 600; }
+    .hero-sub { font-size: clamp(15.5px, 1.3vw, 18.5px); line-height: 1.6; color: var(--text-muted); max-width: 600px; margin: clamp(28px, 3.5vw, 44px) 0 clamp(28px, 3vw, 40px); text-wrap: pretty; }
+    .hero-ctas { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+
+    /* ── HERO TRUST STRIP ── */
+    .hero-trust { margin: 0 clamp(20px, 5vw, 104px); padding: 22px 0 44px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+    .trust-left { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
+    .trust-left em { font-family: 'Lora', serif; font-style: italic; color: var(--text); font-weight: 600; }
+    .trust-meta { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.6px; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
     /* ── SHARED SECTION STYLES ── */
     .section { padding: 80px 2rem; }
@@ -205,8 +199,11 @@
 
     /* ── MOBILE ── */
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 1.5rem 40px; }
-      .phone-wrap { display: flex; justify-content: center; }
+      .nav-links { display: none; }
+      .hero-content { padding-top: 48px; padding-bottom: 40px; }
+      .hero-trust { flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 32px; }
+      .btn-primary { padding: 14px 26px; font-size: 14.5px; }
+      .btn-ghost { padding: 14px 0; font-size: 14.5px; }
       .flora-inner { grid-template-columns: 1fr; gap: 32px; }
       .suspects-grid { grid-template-columns: repeat(2, 1fr); }
       .tl-grid { grid-template-columns: 1fr; }
@@ -221,64 +218,45 @@
 </head>
 <body>
 
-  <!-- ════════ NAV ════════ -->
-  <nav>
-    <a class="logo" href="/">biomy<span>.</span>health</a>
-    <div style="display:flex;align-items:center;gap:28px;">
-      <a href="/about/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">About</a>
-      <a href="/recipes/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">Recipes</a>
-      <a href="/privacy/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;transition:color 0.2s;">Privacy</a>
-      <a class="nav-cta" href="#waitlist">Join waitlist</a>
-    </div>
-  </nav>
-
   <!-- ════════ HERO ════════ -->
-  <div style="background:var(--cream);">
-    <div class="hero">
-      <div>
-        <div class="badge">Wellness platform, not medical advice</div>
-        <h1>Your gut condition shouldn't erase your food culture.</h1>
+  <section class="hero">
 
-        <div class="cycle-wrap">
-          <div class="cycle-inner" id="cycleInner">
-            <div class="cycle-item">Indian comfort food</div>
-            <div class="cycle-item">Mexican weeknight staples</div>
-            <div class="cycle-item">West African classics</div>
-            <div class="cycle-item">the foods you grew up with</div>
-            <div class="cycle-item">Indian comfort food</div>
-          </div>
-        </div>
+    <header class="masthead">
+      <a class="brand" href="/">biomy<b>.</b>health</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/about/">About</a>
+        <a href="/recipes/">Recipes</a>
+        <a href="/fodmap/">FODMAP</a>
+        <a href="/flora/">Flora</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+      <a class="btn-primary compact" href="#waitlist">Join the waitlist</a>
+    </header>
 
-        <p class="hero-copy">Low-FODMAP recipes across Indian, Mexican, African and more, plus Flora, an AI wellness companion who's there at 11pm when your next appointment is 6 weeks away.</p>
-
-        <div class="hero-actions">
-          <a class="btn-primary" href="/recipes/">Browse recipes</a>
-          <a class="btn-secondary" href="#waitlist">Join the waitlist</a>
-        </div>
-
-        <p class="hero-trust">Built by someone living with Ulcerative Colitis, with 10 years building consumer products at Amazon and Ford.</p>
-      </div>
-
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="phone-header">
-              <div class="phone-logo">biomy.health<span>Your wellness companion</span></div>
-            </div>
-            <div class="phone-body">
-              <div class="phone-step">Step 1 of 3</div>
-              <div class="phone-q">What condition are you managing?</div>
-              <div class="phone-opt sel"><span class="pdot pdot-g"></span>Ulcerative Colitis</div>
-              <div class="phone-opt"><span class="pdot pdot-e"></span>Crohn's disease</div>
-              <div class="phone-opt"><span class="pdot pdot-e"></span>IBS</div>
-              <div class="phone-opt"><span class="pdot pdot-e"></span>Coeliac disease</div>
-              <button class="phone-btn">Continue</button>
-            </div>
-          </div>
-        </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">For people living with ulcerative colitis</p>
+      <h1 class="hero-title">
+        Understand it.<br />
+        Manage it.<br />
+        On <em>your own terms.</em>
+      </h1>
+      <p class="hero-sub">
+        Gut-health advice is gatekept behind science nobody can read, and built for a patient who isn't you. Biomy makes it make sense, then gives you the guidance and tools to manage it your way.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="/flora/">Meet Flora</a>
+        <a class="btn-ghost" href="#waitlist">Join the waitlist &rarr;</a>
       </div>
     </div>
-  </div>
+
+    <div class="hero-trust">
+      <p class="trust-left">
+        Built by someone living with UC since 2008. Not a doctor. <em>A product person.</em>
+      </p>
+      <p class="trust-meta">A wellness platform &middot; Not medical advice</p>
+    </div>
+
+  </section>
 
   <!-- ════════ RECIPE PREVIEW ════════ -->
   <section class="section recipe-preview">
@@ -448,35 +426,6 @@
 
   <!-- ════════ SCRIPTS ════════ -->
   <script>
-    // Hero text cycler — cycles through 5 items (last is duplicate of first for seamless loop)
-    (function() {
-      const inner = document.getElementById('cycleInner');
-      if (!inner) return;
-      const items = inner.querySelectorAll('.cycle-item');
-      const total = items.length; // 5
-      const real = total - 1;     // 4 unique items
-      let idx = 0;
-
-      function getH() {
-        const item = inner.querySelector('.cycle-item');
-        return item ? item.offsetHeight : 0;
-      }
-
-      setInterval(() => {
-        idx++;
-        inner.classList.remove('no-anim');
-        inner.style.transform = 'translateY(-' + (idx * getH()) + 'px)';
-        // When we hit the duplicate (last position), snap back to 0 with no animation
-        if (idx === real) {
-          setTimeout(() => {
-            inner.classList.add('no-anim');
-            inner.style.transform = 'translateY(0px)';
-            idx = 0;
-          }, 600); // slightly longer than the 0.55s CSS transition
-        }
-      }, 2400);
-    })();
-
     // Scroll reveal — adds .visible to .fade-up elements when they enter the viewport
     (function() {
       const fadeEls = document.querySelectorAll('.fade-up');
