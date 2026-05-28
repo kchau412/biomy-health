@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What can I actually eat? A plain-language FODMAP guide | Biomy</title>
+  <meta name="description" content="A simple traffic-light FODMAP guide. Green for usually fine, amber for it-depends, red for the usual suspects. Plain language, no science degree required." />
+  <link rel="canonical" href="https://biomy.health/fodmap/" />
+  <meta property="og:title" content="What can I actually eat? A plain-language FODMAP guide | Biomy" />
+  <meta property="og:description" content="Plain-language FODMAP guide. What's usually fine, what depends, and what tends to cause trouble." />
+  <meta property="og:url" content="https://biomy.health/fodmap/" />
+  <meta property="og:type" content="website" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-25DX3B1E4C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-25DX3B1E4C');
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F7F4EE; --cream-dark: #EDE8DF;
+      --green: #2D5A3D; --green-mid: #4A7B5E;
+      --green-light: #D4E8DA; --green-pale: #EBF3EE;
+      --amber: #C4853A; --text: #1A1A18;
+      --text-muted: #5C5C52; --border: #D8D3C8;
+      --white: #FFFFFF; --r: 12px; --r-sm: 8px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
+    .logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-link:hover { color: var(--green); }
+    .nav-link.current { color: var(--green); }
+    .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    .section { padding: 80px 2rem; }
+    .container { max-width: 1060px; margin: 0 auto; }
+    .container-narrow { max-width: 680px; margin: 0 auto; }
+    .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
+    h1 { font-family: 'Lora', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 20px; }
+    h1 em { font-style: italic; color: var(--green); }
+    .lead { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
+
+    .fodmap-hero { background: var(--cream); padding: 72px 2rem 56px; }
+
+    /* ── FODMAP TRAFFIC LIGHTS (lifted from index.html) ── */
+    .fodmap { background: var(--white); }
+    .tl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
+    .tl-card { background: var(--cream); border: 1px solid var(--border); border-top: 4px solid var(--border); border-radius: var(--r); padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
+    .tl-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
+    .tl-green { border-top-color: #4A8B5E; }
+    .tl-amber { border-top-color: #C4853A; }
+    .tl-red   { border-top-color: #B85C3A; }
+    .tl-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .tl-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+    .tl-green .tl-dot { background: #4A8B5E; }
+    .tl-amber .tl-dot { background: #C4853A; }
+    .tl-red   .tl-dot { background: #B85C3A; }
+    .tl-label { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: var(--text); }
+    .tl-list { list-style: none; padding: 0; margin: 0; }
+    .tl-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 9px 0; border-bottom: 1px solid var(--border); }
+    .tl-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .tl-note { font-size: 13px; color: var(--text-muted); margin-top: 28px; line-height: 1.65; max-width: 760px; }
+    .tl-note a { color: var(--green); text-decoration: none; font-weight: 500; }
+    .tl-note a:hover { text-decoration: underline; }
+
+    footer { background: var(--text); padding: 44px 2rem; text-align: center; }
+    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
+    .flogo span { color: var(--amber); }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
+    footer a:hover { color: rgba(255,255,255,0.75); }
+    .flinks { margin-bottom: 16px; }
+    .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .fodmap-hero { padding: 48px 1.5rem 36px; }
+      .tl-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">biomy<span>.</span>health</a>
+    <div class="nav-links">
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/recipes/" class="nav-link">Recipes</a>
+      <a href="/privacy/" class="nav-link">Privacy</a>
+      <a class="nav-cta" href="/#waitlist">Join waitlist</a>
+    </div>
+  </nav>
+
+  <div class="fodmap-hero">
+    <div class="container-narrow">
+      <p class="eyebrow fade-up">The food guide</p>
+      <h1 class="fade-up">What can I <em>actually</em> eat?</h1>
+      <p class="lead fade-up">FODMAP, in plain language. No science degree required. Here's a simple traffic-light guide to what's usually fine, what depends, and what tends to cause trouble.</p>
+    </div>
+  </div>
+
+  <section class="section fodmap">
+    <div class="container">
+      <div class="tl-grid fade-up">
+        <div class="tl-card tl-green">
+          <div class="tl-header"><span class="tl-dot"></span><span class="tl-label">Usually fine</span></div>
+          <ul class="tl-list">
+            <li>plain meat, chicken, fish, eggs</li>
+            <li>rice, oats, quinoa</li>
+            <li>carrots, potatoes, cucumber, courgette, spinach</li>
+            <li>firm bananas, blueberries, strawberries, oranges, kiwi</li>
+            <li>lactose-free milk, almond milk, hard cheese</li>
+          </ul>
+        </div>
+        <div class="tl-card tl-amber">
+          <div class="tl-header"><span class="tl-dot"></span><span class="tl-label">Careful — depends on how much</span></div>
+          <ul class="tl-list">
+            <li>sourdough bread</li>
+            <li>oats in bigger bowls</li>
+            <li>some cheeses</li>
+            <li>well-rinsed tinned chickpeas or lentils, small amounts</li>
+            <li>even safe fruit tips over if you double up</li>
+          </ul>
+        </div>
+        <div class="tl-card tl-red">
+          <div class="tl-header"><span class="tl-dot"></span><span class="tl-label">The usual suspects</span></div>
+          <ul class="tl-list">
+            <li>garlic, onion, leek, spring onion</li>
+            <li>wheat, rye, regular pasta</li>
+            <li>apple, pear, mango, watermelon, dried fruit</li>
+            <li>milk, soft cheese, yoghurt</li>
+            <li>beans and most lentils</li>
+            <li>honey</li>
+            <li>mushrooms, cauliflower</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="tl-note fade-up">Portion size changes everything — even a "safe" food can tip over if you eat a lot. This is a plain-language starting point, not a clinical chart. For exact amounts, the <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener">Monash FODMAP app</a> is the gold standard, and always check with your doctor or dietitian.</p>
+    </div>
+  </section>
+
+<footer>
+  <a class="flogo" href="/">biomy<span>.</span>health</a>
+  <div class="flinks">
+    <a href="mailto:hello@biomy.health">hello@biomy.health</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/about/">About</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/recipes/">Recipes</a>
+    &nbsp;&middot;&nbsp;
+    <a href="/privacy/">Privacy</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
+  </div>
+  <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
+  <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
+</footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
