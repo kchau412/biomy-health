@@ -53,6 +53,8 @@
     .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
     h1 { font-family: 'Lora', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 20px; }
     h1 em { font-style: italic; color: var(--green); }
+    h2 { font-family: 'Lora', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.5px; color: var(--text); margin-bottom: 14px; }
+    h2 em { font-style: italic; color: var(--green); }
     .lead { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
 
     .fodmap-hero { background: var(--cream); padding: 72px 2rem 56px; }
@@ -78,6 +80,33 @@
     .tl-note a { color: var(--green); text-decoration: none; font-weight: 500; }
     .tl-note a:hover { text-decoration: underline; }
 
+    /* ── SECTION 1: WHAT EVEN IS A FODMAP ── */
+    .acronym { background: var(--cream); }
+    .acro-intro { font-size: 18px; color: var(--text-muted); line-height: 1.7; max-width: 620px; margin-bottom: 36px; }
+    .acro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .acro-card { display: flex; gap: 20px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 24px; transition: transform 0.2s, box-shadow 0.2s; }
+    .acro-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
+    .acro-letter { font-family: 'Lora', serif; font-size: 34px; font-weight: 600; line-height: 1; color: var(--white); background: var(--green); width: 60px; height: 60px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .acro-term { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: var(--green); margin-bottom: 3px; }
+    .acro-card p { font-size: 14.5px; color: var(--text); line-height: 1.55; }
+
+    /* ── SECTION 2: DATING FLAGS ── */
+    .flags { background: var(--cream-dark); }
+    .flags h2 { margin-bottom: 10px; }
+    .flags .lead { max-width: 640px; margin-bottom: 36px; }
+    .flag-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .flag-card { border-radius: var(--r); padding: 24px; border-top: 3px solid; transition: transform 0.2s, box-shadow 0.2s; }
+    .flag-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
+    .flag-green  { background: #EAF3DE; border-top-color: #3B6D11; }
+    .flag-yellow { background: #FAEEDA; border-top-color: #BA7517; }
+    .flag-red    { background: #FCEBEB; border-top-color: #A32D2D; }
+    .flag-emoji { font-size: 26px; line-height: 1; margin-bottom: 12px; }
+    .flag-title { font-family: 'Lora', serif; font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .flag-sub { font-size: 14px; font-style: italic; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
+    .flag-list { list-style: none; padding: 0; margin: 0; }
+    .flag-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 10px 0; border-bottom: 1px solid rgba(26,26,24,0.1); }
+    .flag-list li:last-child { border-bottom: none; padding-bottom: 0; }
+
     footer { background: var(--text); padding: 44px 2rem; text-align: center; }
     .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
     .flogo span { color: var(--amber); }
@@ -92,6 +121,8 @@
     @media (max-width: 768px) {
       .fodmap-hero { padding: 48px 1.5rem 36px; }
       .tl-grid { grid-template-columns: 1fr; }
+      .acro-grid { grid-template-columns: 1fr; }
+      .flag-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -115,44 +146,103 @@
     </div>
   </div>
 
-  <section class="section fodmap">
+  <section class="section acronym">
     <div class="container">
-      <div class="tl-grid fade-up">
-        <div class="tl-card tl-green">
-          <div class="tl-header"><span class="tl-dot"></span><span class="tl-label">Usually fine</span></div>
-          <ul class="tl-list">
+      <h2 class="fade-up">What even is a <em>FODMAP</em>?</h2>
+      <p class="acro-intro fade-up">You got told to try low-FODMAP and immediately googled "what is a saccharide." Same. Here's the thing — FODMAP is just an acronym. Six letters, each one a type of carb that can stir up trouble in a sensitive gut. Let's break it down.</p>
+
+      <div class="acro-grid fade-up">
+        <div class="acro-card">
+          <div class="acro-letter">F</div>
+          <div>
+            <p class="acro-term">Fermentable</p>
+            <p>Stuff that ferments in your gut like a tiny brewery you didn't ask for.</p>
+          </div>
+        </div>
+        <div class="acro-card">
+          <div class="acro-letter">O</div>
+          <div>
+            <p class="acro-term">Oligosaccharides</p>
+            <p>Garlic, onion, wheat — the social butterflies that cause chaos. Think of them like a Russian oligarch of your gut: powerful, disruptive, impossible to ignore.</p>
+          </div>
+        </div>
+        <div class="acro-card">
+          <div class="acro-letter">D</div>
+          <div>
+            <p class="acro-term">Disaccharides</p>
+            <p>Lactose. Milk's personality.</p>
+          </div>
+        </div>
+        <div class="acro-card">
+          <div class="acro-letter">M</div>
+          <div>
+            <p class="acro-term">Monosaccharides</p>
+            <p>Fructose — honey, mango, apple, pear. Too much of it overwhelms your gut.</p>
+          </div>
+        </div>
+        <div class="acro-card">
+          <div class="acro-letter">A</div>
+          <div>
+            <p class="acro-term">And</p>
+            <p>Yes, literally just "and." They named a diet after the word "and."</p>
+          </div>
+        </div>
+        <div class="acro-card">
+          <div class="acro-letter">P</div>
+          <div>
+            <p class="acro-term">Polyols</p>
+            <p>Stone fruits, cauliflower, mushrooms, sugar-free gum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section flags">
+    <div class="container">
+      <h2 class="fade-up">Think of it like dating flags — but for your gut.</h2>
+      <p class="lead fade-up">Here's what's usually fine, what needs a second thought, and what your gut is already writing a strongly-worded letter about.</p>
+
+      <div class="flag-grid fade-up">
+        <div class="flag-card flag-green">
+          <div class="flag-emoji">🟢</div>
+          <p class="flag-title">Green flag</p>
+          <p class="flag-sub">Go off, your gut is fine</p>
+          <ul class="flag-list">
             <li>plain meat, chicken, fish, eggs</li>
             <li>rice, oats, quinoa</li>
-            <li>carrots, potatoes, cucumber, courgette, spinach</li>
-            <li>firm bananas, blueberries, strawberries, oranges, kiwi</li>
+            <li>carrots, potatoes, spinach, courgette</li>
+            <li>blueberries, strawberries, firm banana</li>
             <li>lactose-free milk, almond milk, hard cheese</li>
           </ul>
         </div>
-        <div class="tl-card tl-amber">
-          <div class="tl-header"><span class="tl-dot"></span><span class="tl-label">Careful — depends on how much</span></div>
-          <ul class="tl-list">
-            <li>sourdough bread</li>
-            <li>oats in bigger bowls</li>
-            <li>some cheeses</li>
-            <li>well-rinsed tinned chickpeas or lentils, small amounts</li>
-            <li>even safe fruit tips over if you double up</li>
+        <div class="flag-card flag-yellow">
+          <div class="flag-emoji">🟡</div>
+          <p class="flag-title">Yellow flag</p>
+          <p class="flag-sub">Portion size is everything here</p>
+          <ul class="flag-list">
+            <li>sourdough bread (small slice)</li>
+            <li>oats in bigger portions</li>
+            <li>some cheeses like brie or camembert</li>
+            <li>well-rinsed tinned chickpeas, small amounts</li>
+            <li>avocado (⅛ is fine, half is not)</li>
           </ul>
         </div>
-        <div class="tl-card tl-red">
-          <div class="tl-header"><span class="tl-dot"></span><span class="tl-label">The usual suspects</span></div>
-          <ul class="tl-list">
+        <div class="flag-card flag-red">
+          <div class="flag-emoji">🔴</div>
+          <p class="flag-title">Red flag</p>
+          <p class="flag-sub">Your gut has filed a restraining order</p>
+          <ul class="flag-list">
             <li>garlic, onion, leek, spring onion</li>
             <li>wheat, rye, regular pasta</li>
-            <li>apple, pear, mango, watermelon, dried fruit</li>
             <li>milk, soft cheese, yoghurt</li>
-            <li>beans and most lentils</li>
-            <li>honey</li>
-            <li>mushrooms, cauliflower</li>
+            <li>apple, pear, mango, watermelon, dried fruit</li>
+            <li>honey, beans, most lentils</li>
           </ul>
         </div>
       </div>
 
-      <p class="tl-note fade-up">Portion size changes everything — even a "safe" food can tip over if you eat a lot. This is a plain-language starting point, not a clinical chart. For exact amounts, the <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener">Monash FODMAP app</a> is the gold standard, and always check with your doctor or dietitian.</p>
+      <p class="tl-note fade-up">Portion size changes everything — even a "safe" food can tip over if you eat a lot. This is a plain-language starting point, not a clinical chart. For exact amounts, the <a href="https://www.monashfodmap.com" target="_blank" rel="noopener">Monash FODMAP app</a> is the gold standard, and always check with your doctor or dietitian.</p>
     </div>
   </section>
 
