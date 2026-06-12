@@ -1,0 +1,31 @@
+/* ============================================================
+   Biomy design tokens — single source of truth
+   Colours sampled from the Biomy logo. Do not invent new ones.
+   ============================================================ */
+:root {
+  /* colour */
+  --forest: #1A3A2D;        /* primary background, from logo circle */
+  --forest-deep: #10241C;   /* footer, cards on forest, nav logo disc */
+  --mint: #B0F0D8;          /* primary accent + CTAs, from logo wordmark */
+  --teal: #63B2AF;          /* waitlist section + links, from logo leaf */
+  --sky: #71A8C6;           /* Flora's colour ONLY, from logo leaf */
+  --sky-ink: #0B2533;       /* text on sky */
+  --cloud: #F2F7F3;         /* light section background, cool off-white */
+  --ink: #142B21;           /* text on light backgrounds */
+  --ink-soft: rgba(20, 43, 33, 0.65);
+  --cloud-soft: rgba(242, 247, 243, 0.7);
+
+  /* type */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --text-hero: clamp(2.6rem, 7vw, 5rem);
+  --text-h2: clamp(1.8rem, 4vw, 2.75rem);
+  --text-body: 1.0625rem;
+  --text-small: 0.875rem;
+
+  /* shape + space */
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --space-section: clamp(4rem, 10vw, 7.5rem);
+  --space-gutter: clamp(1.25rem, 5vw, 4rem);
+}
