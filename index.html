@@ -111,11 +111,13 @@
     .guide-link:hover { border-color: var(--teal); }
 
     /* ════════ PHOTO BAND ════════ */
-    .photo-band { position: relative; background: var(--forest-deep); min-height: clamp(320px, 42vw, 460px); display: grid; }
-    .photo-band > .photo-wrap { position: absolute; inset: 0; }
+    .photo-band { position: relative; background: var(--forest-deep); min-height: clamp(320px, 42vw, 460px); display: grid; overflow: hidden; }
+    .photo-band > .photo-wrap { position: absolute; inset: 0; z-index: 0; }
     .photo-band img { width: 100%; height: 100%; object-fit: cover; }
-    .photo-band-inner { position: relative; z-index: 1; align-self: end; padding: clamp(2.5rem, 6vw, 5rem) 0; }
-    .photo-band-quote { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.25; color: var(--cloud); max-width: 18em; text-wrap: balance; }
+    /* Readability scrim: darken the image (heaviest at the bottom, where the quote sits) so white text stays legible. */
+    .photo-band::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(16,36,28,0.82) 0%, rgba(16,36,28,0.5) 45%, rgba(16,36,28,0.22) 100%); }
+    .photo-band-inner { position: relative; z-index: 2; align-self: end; padding: clamp(2.5rem, 6vw, 5rem) 0; }
+    .photo-band-quote { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.25; color: var(--cloud); max-width: 18em; text-wrap: balance; text-shadow: 0 1px 14px rgba(0,0,0,0.45); }
 
     /* ════════ RECIPES ════════ */
     .recipes { background: var(--forest-deep); padding: var(--space-section) 0; border-top: 1px solid rgba(176,240,216,0.1); }
