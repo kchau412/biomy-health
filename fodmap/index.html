@@ -23,7 +23,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/tokens.css" />
+  <link rel="stylesheet" href="/assets/styles/motion.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -38,7 +40,7 @@
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
     nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
+    .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
     .logo span { color: var(--amber); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-link { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
@@ -51,9 +53,9 @@
     .container { max-width: 1060px; margin: 0 auto; }
     .container-narrow { max-width: 680px; margin: 0 auto; }
     .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
-    h1 { font-family: 'Lora', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 20px; }
+    h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 20px; }
     h1 em { font-style: italic; color: var(--green); }
-    h2 { font-family: 'Lora', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.5px; color: var(--text); margin-bottom: 14px; }
+    h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.5px; color: var(--text); margin-bottom: 14px; }
     h2 em { font-style: italic; color: var(--green); }
     .lead { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
 
@@ -72,7 +74,7 @@
     .tl-green .tl-dot { background: #4A8B5E; }
     .tl-amber .tl-dot { background: #C4853A; }
     .tl-red   .tl-dot { background: #B85C3A; }
-    .tl-label { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: var(--text); }
+    .tl-label { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
     .tl-list { list-style: none; padding: 0; margin: 0; }
     .tl-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 9px 0; border-bottom: 1px solid var(--border); }
     .tl-list li:last-child { border-bottom: none; padding-bottom: 0; }
@@ -86,8 +88,8 @@
     .acro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .acro-card { display: flex; gap: 20px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 24px; transition: transform 0.2s, box-shadow 0.2s; }
     .acro-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
-    .acro-letter { font-family: 'Lora', serif; font-size: 34px; font-weight: 600; line-height: 1; color: var(--white); background: var(--green); width: 60px; height: 60px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .acro-term { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: var(--green); margin-bottom: 3px; }
+    .acro-letter { font-family: var(--font-display); font-size: 34px; font-weight: 600; line-height: 1; color: var(--white); background: var(--green); width: 60px; height: 60px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .acro-term { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--green); margin-bottom: 3px; }
     .acro-card p { font-size: 14.5px; color: var(--text); line-height: 1.55; }
 
     /* ── SECTION 2: DATING FLAGS ── */
@@ -101,14 +103,14 @@
     .flag-yellow { background: #FAEEDA; border-top-color: #BA7517; }
     .flag-red    { background: #FCEBEB; border-top-color: #A32D2D; }
     .flag-emoji { font-size: 26px; line-height: 1; margin-bottom: 12px; }
-    .flag-title { font-family: 'Lora', serif; font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .flag-title { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
     .flag-sub { font-size: 14px; font-style: italic; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
     .flag-list { list-style: none; padding: 0; margin: 0; }
     .flag-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 10px 0; border-bottom: 1px solid rgba(26,26,24,0.1); }
     .flag-list li:last-child { border-bottom: none; padding-bottom: 0; }
 
     footer { background: var(--text); padding: 44px 2rem; text-align: center; }
-    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
+    .flogo { font-family: var(--font-display); font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
     .flogo span { color: var(--amber); }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
     footer a:hover { color: rgba(255,255,255,0.75); }
@@ -128,21 +130,14 @@
 </head>
 <body>
 
-  <nav>
-    <a class="logo" href="/">biomy<span>.</span>health</a>
-    <div class="nav-links">
-      <a href="/about/" class="nav-link">About</a>
-      <a href="/recipes/" class="nav-link">Recipes</a>
-      <a href="/privacy/" class="nav-link">Privacy</a>
-      <a class="nav-cta" href="/#waitlist">Join waitlist</a>
-    </div>
-  </nav>
+  <div id="site-header"></div>
 
   <div class="fodmap-hero">
     <div class="container-narrow">
       <p class="eyebrow fade-up">The food guide</p>
       <h1 class="fade-up">What can I <em>actually</em> eat?</h1>
       <p class="lead fade-up">FODMAP, in plain language. No science degree required. Here's a simple traffic-light guide to what's usually fine, what depends, and what tends to cause trouble.</p>
+      <p class="lead fade-up" style="margin-top:18px;">FODMAP is a framework developed by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;font-weight:500;">Monash University</a> that identifies the short-chain carbohydrates most likely to trigger gut symptoms.</p>
     </div>
   </div>
 
@@ -246,30 +241,8 @@
     </div>
   </section>
 
-<footer>
-  <a class="flogo" href="/">biomy<span>.</span>health</a>
-  <div class="flinks">
-    <a href="mailto:hello@biomy.health">hello@biomy.health</a>
-    &nbsp;&middot;&nbsp;
-    <a href="/about/">About</a>
-    &nbsp;&middot;&nbsp;
-    <a href="/recipes/">Recipes</a>
-    &nbsp;&middot;&nbsp;
-    <a href="/privacy/">Privacy</a>
-    &nbsp;&middot;&nbsp;
-    <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
-    &nbsp;&middot;&nbsp;
-    <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
-  </div>
-  <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
-  <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
-</footer>
-
-  <script>
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-  </script>
+<div id="site-footer"></div>
+  <script src="/assets/layout.js" defer></script>
+  <script src="/assets/motion.js" defer></script>
 </body>
 </html>

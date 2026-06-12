@@ -26,369 +26,322 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/tokens.css" />
+  <link rel="stylesheet" href="/assets/styles/motion.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --cream: #F7F4EE; --cream-dark: #EDE8DF;
-      --green: #2D5A3D; --green-mid: #4A7B5E;
-      --green-light: #D4E8DA; --green-pale: #EBF3EE;
-      --amber: #C4853A; --text: #1A1A18;
-      --text-muted: #5C5C52; --border: #D8D3C8;
-      --white: #FFFFFF; --r: 12px; --r-sm: 8px;
-    }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-    /* ── MASTHEAD ── */
-    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px, 5vw, 56px); border-bottom: 1px solid var(--border); }
-    .brand { font-family: 'Lora', serif; font-weight: 600; font-size: 18px; color: var(--green); text-decoration: none; letter-spacing: -0.2px; }
-    .brand b { color: var(--amber); font-weight: 600; }
-    .nav-links { display: flex; gap: 28px; font-size: 13.5px; }
-    .nav-links a { color: var(--text-muted); text-decoration: none; transition: color 0.15s ease; }
-    .nav-links a:hover { color: var(--green); }
-
-    /* ── BUTTONS ── */
-    .btn-primary { background: var(--green); color: var(--white); font-size: 16px; font-weight: 500; border: none; border-radius: 100px; padding: 16px 36px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
-    .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
-    .btn-primary.compact { font-size: 13px; padding: 10px 22px; }
-    .btn-secondary { background: transparent; color: var(--green); border: 1.5px solid var(--green); border-radius: 100px; padding: 16px 30px; font-size: 16px; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, color 0.2s, transform 0.15s; display: inline-block; }
-    .btn-secondary:hover { background: var(--green); color: white; transform: translateY(-2px); }
-    .btn-ghost { background: transparent; color: var(--text); font-size: 15px; font-weight: 500; padding: 16px 0; border: none; border-bottom: 1px solid var(--text); border-radius: 0; text-decoration: none; display: inline-block; cursor: pointer; transition: color 0.15s ease, border-color 0.15s ease; }
-    .btn-ghost:hover { color: var(--green); border-color: var(--green); }
-
-    /* ── HERO ── */
-    .hero { background: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
-    .hero-content { flex: 1; padding: clamp(56px, 8vw, 104px) clamp(20px, 5vw, 104px) 56px; }
-    .hero-eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.6px; color: var(--green-mid); margin-bottom: clamp(28px, 4vw, 44px); }
-    .hero-title { font-family: 'Lora', serif; font-weight: 600; font-size: clamp(48px, 8vw, 108px); line-height: 1.0; letter-spacing: -0.025em; color: var(--text); margin: 0; text-wrap: balance; }
-    .hero-title em { font-style: italic; color: var(--green); font-weight: 600; }
-    .hero-sub { font-size: clamp(15.5px, 1.3vw, 18.5px); line-height: 1.6; color: var(--text-muted); max-width: 600px; margin: clamp(28px, 3.5vw, 44px) 0 clamp(28px, 3vw, 40px); text-wrap: pretty; }
-    .hero-ctas { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
-
-    /* ── HERO TRUST STRIP ── */
-    .hero-trust { margin: 0 clamp(20px, 5vw, 104px); padding: 22px 0 44px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
-    .trust-left { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
-    .trust-left em { font-family: 'Lora', serif; font-style: italic; color: var(--text); font-weight: 600; }
-    .trust-meta { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.6px; color: var(--text-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-
-    /* ── SHARED SECTION STYLES ── */
-    .section { padding: 80px 2rem; }
-    .container { max-width: 1060px; margin: 0 auto; }
-    .container-narrow { max-width: 640px; margin: 0 auto; }
-    .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
-    h2 { font-family: 'Lora', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; line-height: 1.2; letter-spacing: -0.4px; margin-bottom: 8px; }
-    .sec-sub { font-size: 16px; color: var(--text-muted); line-height: 1.65; margin-bottom: 40px; }
-
-    /* ── RECIPE PREVIEW ── */
-    .recipe-preview { background: var(--white); }
-    .recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
-    .recipe-card { background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; color: inherit; }
-    .recipe-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
-    .recipe-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
-    .recipe-card-body { padding: 18px; }
-    .recipe-tag { display: inline-block; font-size: 11px; font-weight: 500; background: var(--green-pale); color: var(--green); border-radius: 100px; padding: 4px 10px; margin-bottom: 10px; }
-    .recipe-title { font-family: 'Lora', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-    .recipe-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-    .recipe-link-row { margin-top: 28px; text-align: center; }
-    .text-link { color: var(--green); font-weight: 500; text-decoration: none; }
-    .text-link:hover { text-decoration: underline; }
-    .recipe-img-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: white; }
-
-    /* ── FLORA ── */
-    .flora-section { background: var(--green); }
-    .flora-section .eyebrow { color: #9FE1CB; }
-    .flora-section h2 { color: white; }
-    .flora-section .sec-sub { color: rgba(255,255,255,0.65); }
-    .flora-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .chat { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--r); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
-    .bubble { border-radius: 16px; padding: 12px 16px; font-size: 14px; line-height: 1.55; max-width: 86%; }
-    .bubble-user { background: rgba(255,255,255,0.13); color: rgba(255,255,255,0.9); align-self: flex-end; border-bottom-right-radius: 3px; }
-    .bubble-flora { background: white; color: var(--text); align-self: flex-start; border-bottom-left-radius: 3px; }
-    .flora-name { font-size: 10px; font-weight: 500; color: var(--green); margin-bottom: 3px; }
-    .flora-disclaimer { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 20px; line-height: 1.6; }
-
-    /* ── FODMAP SUSPECTS ── */
-    .suspects { background: var(--white); }
-    .suspects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .scard { background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 18px; transition: transform 0.2s; }
-    .scard:hover { transform: translateY(-2px); }
-    .scard.star { background: var(--text); border-color: var(--text); }
-    .emoji-circle { width: 48px; height: 48px; border-radius: 50%; background: var(--cream-dark); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 12px; }
-    .scard:nth-child(1) .emoji-circle { transform: rotate(-6deg); }
-    .scard:nth-child(2) .emoji-circle { transform: rotate(5deg); }
-    .scard:nth-child(3) .emoji-circle { transform: rotate(-4deg); }
-    .scard:nth-child(4) .emoji-circle { transform: rotate(8deg); }
-    .scard:nth-child(5) .emoji-circle { transform: rotate(-5deg); }
-    .scard.star .emoji-circle { background: var(--green); transform: rotate(4deg); }
-    .snum { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); margin-bottom: 4px; }
-    .scard.star .snum { color: rgba(255,255,255,0.4); }
-    .sname { font-family: 'Lora', serif; font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .scard.star .sname { color: white; }
-    .stag { display: inline-block; font-size: 10px; font-weight: 500; background: var(--green-pale); color: var(--green); border-radius: 100px; padding: 2px 10px; margin-bottom: 8px; }
-    .scard.star .stag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); }
-    .sdesc { font-size: 12px; color: var(--text-muted); line-height: 1.55; }
-    .scard.star .sdesc { color: rgba(255,255,255,0.6); }
-    .monash-note { font-size: 13px; color: var(--text-muted); margin-top: 24px; line-height: 1.6; }
-    .monash-note a { color: var(--green); text-decoration: none; }
-    .monash-note a:hover { text-decoration: underline; }
-    .fodmap-teaser { text-align: center; margin: 40px auto 0; padding: 36px 28px; background: var(--green-pale); border: 1px solid var(--green-light); border-radius: var(--r); max-width: 720px; }
-    .ft-heading { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 10px; line-height: 1.3; }
-    .ft-body { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin: 0 auto 22px; max-width: 540px; }
-
-    /* ── FODMAP TRAFFIC LIGHTS (kept for /fodmap/ page) ── */
-    .fodmap { background: var(--white); }
-    .tl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
-    .tl-card { background: var(--cream); border: 1px solid var(--border); border-top: 4px solid var(--border); border-radius: var(--r); padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
-    .tl-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
-    .tl-green { border-top-color: #4A8B5E; }
-    .tl-amber { border-top-color: #C4853A; }
-    .tl-red   { border-top-color: #B85C3A; }
-    .tl-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .tl-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-    .tl-green .tl-dot { background: #4A8B5E; }
-    .tl-amber .tl-dot { background: #C4853A; }
-    .tl-red   .tl-dot { background: #B85C3A; }
-    .tl-label { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: var(--text); }
-    .tl-list { list-style: none; padding: 0; margin: 0; }
-    .tl-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 9px 0; border-bottom: 1px solid var(--border); }
-    .tl-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .tl-note { font-size: 13px; color: var(--text-muted); margin-top: 28px; line-height: 1.65; max-width: 760px; }
-    .tl-note a { color: var(--green); text-decoration: none; font-weight: 500; }
-    .tl-note a:hover { text-decoration: underline; }
-    .tl-tease { font-size: 15px; color: var(--text); line-height: 1.65; margin-top: 28px; padding: 20px 24px; background: var(--green-pale); border-left: 3px solid var(--green); border-radius: var(--r-sm); max-width: 760px; }
-    .tl-tease em { color: var(--green); font-weight: 500; font-style: normal; }
-
-    /* ── WHAT YOU GET ── */
-    .wyg { background: var(--cream); }
-    .feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 32px; }
-    .fcard { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; transition: transform 0.2s, box-shadow 0.2s; }
-    .fcard:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(45,90,61,0.08); }
-    .fnum { font-size: 11px; font-weight: 500; color: var(--green-mid); margin-bottom: 10px; }
-    .ftitle { font-family: 'Lora', serif; font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
-    .fdesc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
-
-    /* ── LAUNCH LINE ── */
-    .launch-line { background: var(--cream-dark); }
-    .launch-text { font-size: 17px; color: var(--text); text-align: center; }
-
-    /* ── WAITLIST ── */
-    .waitlist { background: var(--white); }
-    .form-box { background: var(--green-pale); border: 1px solid var(--green-light); border-radius: 20px; padding: 44px; max-width: 600px; margin: 32px auto 0; }
-    .form-box h3 { font-family: 'Lora', serif; font-size: 26px; font-weight: 600; margin-bottom: 6px; }
-    .form-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
-    .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); border-radius: 100px; padding: 14px 32px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; text-decoration: none; transition: background 0.2s, color 0.2s; display: inline-block; }
-    .btn-outline:hover { background: var(--green); color: white; }
-
-    /* ── FOOTER ── */
-    footer { background: var(--text); padding: 44px 2rem; text-align: center; }
-    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; }
-    .flogo span { color: var(--amber); }
-    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
-    footer a:hover { color: rgba(255,255,255,0.75); }
-    .flinks { margin-bottom: 16px; }
-    .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
-
-    /* ── ANIMATIONS ── */
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    /* Safety net: if JS fails for any reason, show content after 1.5s instead of leaving it invisible */
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up { opacity: 1; transform: none; transition: none; }
+    body {
+      font-family: var(--font-body);
+      background: var(--forest);
+      color: var(--cloud);
+      font-size: var(--text-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    :where(a, button):focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 4px; }
 
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hero-content { padding-top: 48px; padding-bottom: 40px; }
-      .hero-trust { flex-direction: column; align-items: flex-start; gap: 10px; padding-bottom: 32px; }
-      .btn-primary { padding: 14px 26px; font-size: 14.5px; }
-      .btn-ghost { padding: 14px 0; font-size: 14.5px; }
-      .flora-inner { grid-template-columns: 1fr; gap: 32px; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding-inline: var(--space-gutter); }
+    .eyebrow { font-family: var(--font-body); font-size: var(--text-small); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); }
+    h2 { font-family: var(--font-display); font-weight: 700; font-size: var(--text-h2); line-height: 1.08; letter-spacing: -0.02em; }
+
+    /* ── Buttons: exactly one CTA style (mint pill) + one ghost ── */
+    .btn-mint { display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--forest-deep); background: var(--mint); border: 2px solid var(--mint); border-radius: var(--radius-pill); padding: 14px 30px; text-decoration: none; transition: transform .15s ease, filter .15s ease; }
+    .btn-mint:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .btn-ghost { display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--mint); background: transparent; border: 2px solid rgba(176,240,216,0.5); border-radius: var(--radius-pill); padding: 14px 30px; text-decoration: none; transition: border-color .15s ease, transform .15s ease; }
+    .btn-ghost:hover { border-color: var(--mint); transform: translateY(-2px); }
+
+    /* ════════ HERO ════════ */
+    .hero { position: relative; overflow: hidden; padding: clamp(3rem, 7vw, 6rem) 0 clamp(3.5rem, 7vw, 6.5rem); }
+    .hero-leaf { position: absolute; top: -6%; right: -4%; width: clamp(320px, 42vw, 620px); opacity: 0.36; z-index: 0; pointer-events: none; will-change: transform; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+
+    .cond-pill { display: inline-flex; align-items: baseline; gap: 6px; background: var(--forest-deep); border: 1px solid rgba(176,240,216,0.18); border-radius: var(--radius-pill); padding: 8px 16px; font-size: var(--text-small); color: var(--cloud-soft); margin-bottom: 24px; }
+    .cond-cycle { position: relative; display: inline-block; min-width: 9.5em; height: 1.3em; }
+    .cond { position: absolute; left: 0; top: 0; white-space: nowrap; color: var(--mint); font-weight: 500; opacity: 0; transition: opacity .6s ease; }
+    .cond:first-child { opacity: 1; }
+
+    .hero-title { font-family: var(--font-display); font-weight: 700; font-size: var(--text-hero); line-height: 1.02; letter-spacing: -0.03em; color: var(--cloud); text-wrap: balance; }
+    .hl-accent { color: var(--mint); text-decoration: underline; text-decoration-color: var(--teal); text-decoration-thickness: 4px; text-underline-offset: 6px; }
+    .hero-sub { font-size: 1.125rem; line-height: 1.6; color: var(--cloud-soft); max-width: 34em; margin: 26px 0 32px; text-wrap: pretty; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .hero-founder { margin-top: 30px; font-size: var(--text-small); color: rgba(242,247,243,0.55); line-height: 1.6; max-width: 30em; }
+    .hero-founder strong { color: var(--cloud-soft); font-weight: 500; }
+
+    /* ── Flora chat card (reusable component; reused on /flora/) ── */
+    .flora-chat { background: var(--forest-deep); border: 1px solid rgba(176,240,216,0.12); border-radius: var(--radius-card); padding: 22px; }
+    .flora-head { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(176,240,216,0.1); }
+    .flora-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--sky); color: var(--sky-ink); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; flex: none; }
+    .flora-id { font-family: var(--font-display); font-weight: 500; font-size: 1rem; color: var(--cloud); }
+    .flora-id span { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.78rem; color: var(--cloud-soft); }
+    .chat-stream { display: flex; flex-direction: column; gap: 12px; }
+    .msg { max-width: 86%; padding: 11px 15px; font-size: 0.92rem; line-height: 1.5; border-radius: 16px; }
+    .msg-user { align-self: flex-end; background: rgba(242,247,243,0.1); color: var(--cloud); border-bottom-right-radius: 4px; }
+    .msg-flora { align-self: flex-start; background: var(--sky); color: var(--sky-ink); border-bottom-left-radius: 4px; }
+    .typing { align-self: flex-start; display: inline-flex; gap: 4px; padding: 13px 15px; background: var(--sky); border-radius: 16px; border-bottom-left-radius: 4px; }
+    .typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--sky-ink); opacity: 0.5; }
+    .flora-note { margin-top: 16px; font-size: 0.76rem; line-height: 1.6; color: rgba(242,247,243,0.4); }
+
+    /* ════════ THE USUAL SUSPECTS ════════ */
+    .suspects { background: var(--cloud); color: var(--ink); padding: var(--space-section) 0; }
+    .suspects .eyebrow { color: var(--teal); }
+    .suspects h2 { color: var(--ink); }
+    .suspects-intro { font-size: 1.05rem; color: var(--ink-soft); margin-top: 12px; }
+    .suspects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .suspect { background: #fff; border: 1px solid rgba(20,43,33,0.1); border-radius: var(--radius-card); padding: 24px; transition: transform .15s ease, box-shadow .15s ease; }
+    .suspect:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(20,43,33,0.08); }
+    .suspect-emoji { width: 46px; height: 46px; border-radius: 50%; background: var(--cloud); display: grid; place-items: center; font-size: 22px; margin-bottom: 14px; }
+    .suspect-num { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+    .suspect-name { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); margin: 4px 0 8px; }
+    .suspect-tag { display: inline-block; font-size: 0.7rem; font-weight: 500; background: rgba(99,178,175,0.16); color: #2c6360; border-radius: var(--radius-pill); padding: 3px 10px; margin-bottom: 10px; }
+    .suspect-desc { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; }
+    .suspect.invert { background: var(--forest); border-color: var(--forest); }
+    .suspect.invert .suspect-emoji { background: var(--teal); }
+    .suspect.invert .suspect-num { color: rgba(242,247,243,0.5); }
+    .suspect.invert .suspect-name { color: var(--cloud); }
+    .suspect.invert .suspect-tag { background: rgba(176,240,216,0.16); color: var(--mint); }
+    .suspect.invert .suspect-desc { color: var(--cloud-soft); }
+    .monash-note { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6; margin-top: 28px; }
+    .monash-note a { color: #2c6360; font-weight: 500; }
+    .guide-link-row { margin-top: 18px; }
+    .guide-link { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: #2c6360; text-decoration: none; border-bottom: 2px solid rgba(99,178,175,0.4); padding-bottom: 2px; }
+    .guide-link:hover { border-color: var(--teal); }
+
+    /* ════════ PHOTO BAND ════════ */
+    .photo-band { position: relative; background: var(--forest-deep); min-height: clamp(320px, 42vw, 460px); display: grid; overflow: hidden; }
+    .photo-band > .photo-wrap { position: absolute; inset: 0; z-index: 0; }
+    .photo-band img { width: 100%; height: 100%; object-fit: cover; }
+    /* Readability scrim: darken the image (heaviest at the bottom, where the quote sits) so white text stays legible. */
+    .photo-band::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(16,36,28,0.82) 0%, rgba(16,36,28,0.5) 45%, rgba(16,36,28,0.22) 100%); }
+    .photo-band-inner { position: relative; z-index: 2; align-self: end; padding: clamp(2.5rem, 6vw, 5rem) 0; }
+    .photo-band-quote { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.25; color: var(--cloud); max-width: 18em; text-wrap: balance; text-shadow: 0 1px 14px rgba(0,0,0,0.45); }
+
+    /* ════════ RECIPES ════════ */
+    .recipes { background: var(--forest-deep); padding: var(--space-section) 0; border-top: 1px solid rgba(176,240,216,0.1); }
+    .recipes h2 { color: var(--cloud); }
+    .recipes .eyebrow { color: var(--mint); }
+    .recipes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+    .rcard { background: var(--forest); border: 1px solid rgba(176,240,216,0.12); border-radius: var(--radius-card); overflow: hidden; text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
+    .rcard:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,0.3); }
+    .rcard .photo-wrap { aspect-ratio: 4 / 3; }
+    .rcard img { width: 100%; height: 100%; object-fit: cover; }
+    .rcard-body { padding: 18px 20px 22px; }
+    .rtag { display: inline-block; font-size: 0.7rem; font-weight: 500; color: var(--forest-deep); background: var(--mint); border-radius: var(--radius-pill); padding: 4px 11px; margin-bottom: 10px; }
+    .rtitle { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--cloud); margin-bottom: 8px; }
+    .rdesc { font-size: 0.9rem; color: var(--cloud-soft); line-height: 1.55; }
+    .browse-link-row { margin-top: 32px; }
+    .browse-link { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--mint); text-decoration: none; border-bottom: 2px solid rgba(176,240,216,0.4); padding-bottom: 2px; }
+    .browse-link:hover { border-color: var(--mint); }
+
+    /* ════════ WAITLIST ════════ */
+    .waitlist { background: var(--teal); color: var(--forest-deep); padding: var(--space-section) 0; }
+    .waitlist .eyebrow { color: var(--forest-deep); opacity: 0.7; }
+    .waitlist h2 { color: var(--forest-deep); }
+    .waitlist-sub { font-size: 1.1rem; color: var(--sky-ink); margin-top: 12px; max-width: 32em; }
+    .waitlist-card { background: var(--cloud); border-radius: var(--radius-card); padding: clamp(1.5rem, 4vw, 2.5rem); margin-top: 32px; max-width: 620px; }
+
+    /* ════════ RESPONSIVE ════════ */
+    @media (max-width: 880px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-right { order: 2; }
+      .hero-leaf { width: 360px; opacity: 0.28; top: -2%; right: -12%; }
       .suspects-grid { grid-template-columns: repeat(2, 1fr); }
-      .tl-grid { grid-template-columns: 1fr; }
-      .feat-grid { grid-template-columns: 1fr; }
-      .form-box { padding: 28px 20px; }
-      .recipe-grid { grid-template-columns: 1fr; }
+      .recipes-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 480px) {
+    @media (max-width: 540px) {
       .suspects-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn-mint, .hero-ctas .btn-ghost { text-align: center; }
     }
   </style>
 </head>
 <body>
 
+  <div id="site-header"></div>
+
   <!-- ════════ HERO ════════ -->
   <section class="hero">
+    <svg class="hero-leaf" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="leafgrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#DFA486" />
+          <stop offset="0.4" stop-color="#B1879B" />
+          <stop offset="0.72" stop-color="#71A8C6" />
+          <stop offset="1" stop-color="#63B2AF" />
+        </linearGradient>
+        <filter id="leafblur" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="13" />
+        </filter>
+      </defs>
+      <path d="M205 44 C312 70 360 156 344 262 C250 256 116 252 58 168 C108 86 152 58 205 44 Z" fill="url(#leafgrad)" filter="url(#leafblur)" />
+    </svg>
 
-    <header class="masthead">
-      <a class="brand" href="/">biomy<b>.</b>health</a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="/about/">About</a>
-        <a href="/recipes/">Recipes</a>
-        <a href="/fodmap/">FODMAP</a>
-        <a href="/flora/">Flora</a>
-        <a href="/privacy/">Privacy</a>
-      </nav>
-      <a class="btn-primary compact" href="#waitlist">Join the waitlist</a>
-    </header>
-
-    <div class="hero-content">
-      <p class="hero-eyebrow">For people living with ulcerative colitis</p>
-      <h1 class="hero-title">
-        Understand it.<br />
-        Manage it.<br />
-        On <em>your own terms.</em>
-      </h1>
-      <p class="hero-sub">
-        Gut-health advice is gatekept behind science nobody can read, and built for a patient who isn't you. Biomy makes it make sense, then gives you the guidance and tools to manage it your way.
-      </p>
-      <div class="hero-ctas">
-        <a class="btn-primary" href="/flora/">Meet Flora</a>
-        <a class="btn-ghost" href="#waitlist">Join the waitlist &rarr;</a>
-      </div>
-    </div>
-
-    <div class="hero-trust">
-      <p class="trust-left">
-        Built by someone living with UC since 2008. Not a doctor. <em>A product person.</em>
-      </p>
-      <p class="trust-meta">A wellness platform &middot; Not medical advice</p>
-    </div>
-
-  </section>
-
-  <!-- ════════ RECIPE PREVIEW ════════ -->
-  <section class="section recipe-preview">
-    <div class="container">
-      <div class="container-narrow fade-up">
-        <p class="eyebrow">Taste the difference</p>
-        <h2>Real food. Real flavour. Gut-friendly.</h2>
-        <p class="sec-sub">Every recipe is low-FODMAP, culturally authentic, and actually something you'd want to eat.</p>
-      </div>
-      <div class="recipe-grid fade-up">
-        <a class="recipe-card" href="/recipes/">
-          <img src="/Images/Recipes/chicken-tikka-masala.png" alt="Chicken Tikka Masala" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="recipe-img-placeholder" style="display:none;background:linear-gradient(135deg,#e8c07a,#d4853a);">Chicken Tikka Masala</div>
-          <div class="recipe-card-body">
-            <span class="recipe-tag">Indian</span>
-            <div class="recipe-title">Chicken Tikka Masala</div>
-            <div class="recipe-desc">Rich, creamy, totally gut-friendly. No onion, no garlic, all flavour.</div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-left reveal">
+          <p class="cond-pill">For people living with
+            <span class="cond-cycle" aria-label="ulcerative colitis, Crohn's, and IBS">
+              <span class="cond">ulcerative colitis</span>
+              <span class="cond">Crohn's</span>
+              <span class="cond">IBS</span>
+            </span>
+          </p>
+          <h1 class="hero-title">Your gut, finally explained <span class="hl-accent">your way</span>.</h1>
+          <p class="hero-sub">Gut-health advice is gatekept behind science nobody can read, and built for a patient who isn't you. Biomy makes it make sense, then gives you the guidance and tools to manage it your way.</p>
+          <div class="hero-ctas">
+            <a class="btn-mint" href="/#waitlist">Join the waitlist</a>
+            <a class="btn-ghost" href="/flora/">Meet Flora</a>
           </div>
-        </a>
-        <a class="recipe-card" href="/recipes/">
-          <img src="/Images/Recipes/jollof-style-rice.png" alt="Jollof-Style Rice" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="recipe-img-placeholder" style="display:none;background:linear-gradient(135deg,#c94b2a,#e87840);">Jollof-Style Rice</div>
-          <div class="recipe-card-body">
-            <span class="recipe-tag">West African</span>
-            <div class="recipe-title">Jollof-Style Rice</div>
-            <div class="recipe-desc">Smoky tomato rice without the usual FODMAP triggers.</div>
-          </div>
-        </a>
-        <a class="recipe-card" href="/recipes/">
-          <img src="/Images/Recipes/ginger-scallion-chicken-stir-fry.png" alt="Ginger Scallion Chicken Stir-Fry" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="recipe-img-placeholder" style="display:none;background:linear-gradient(135deg,#7ab55e,#4a8b3e);">Ginger Scallion Stir-Fry</div>
-          <div class="recipe-card-body">
-            <span class="recipe-tag">Asian</span>
-            <div class="recipe-title">Ginger Scallion Chicken Stir-Fry</div>
-            <div class="recipe-desc">Quick weeknight dinner. Bright, punchy, and safe.</div>
-          </div>
-        </a>
-      </div>
-      <div class="recipe-link-row fade-up">
-        <a class="text-link" href="/recipes/">Browse all recipes →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════ FLORA ════════ -->
-  <section class="section flora-section">
-    <div class="container">
-      <div class="flora-inner">
-        <div class="fade-up">
-          <p class="eyebrow">Meet Flora</p>
-          <h2>Your wellness companion, whenever you need one.</h2>
-          <p class="sec-sub">The questions you'd normally wait 6 weeks to ask. Flora's got you — day or night.</p>
-          <p class="flora-disclaimer">Flora is a wellness guide, not a medical professional. Always consult your doctor for medical decisions.</p>
+          <p class="hero-founder">Built by someone living with UC since 2008. Not a doctor. <strong>A product person.</strong></p>
         </div>
-        <div class="chat fade-up">
-          <div class="bubble bubble-user">Is it normal to feel this exhausted during a flare?</div>
-          <div class="bubble bubble-flora"><div class="flora-name">Flora</div>Yes - fatigue is one of the most common and underappreciated parts of a flare. Your body is working hard. Want some tips for managing energy on difficult days?</div>
-          <div class="bubble bubble-user">Yes please</div>
-          <div class="bubble bubble-flora"><div class="flora-name">Flora</div>Here are a few things that can help on low-energy days...</div>
+
+        <div class="hero-right reveal">
+          <!-- Flora chat card — reusable component (also used on /flora/) -->
+          <div class="flora-chat" data-flora-chat>
+            <div class="flora-head">
+              <div class="flora-avatar" aria-hidden="true">F</div>
+              <div class="flora-id">Flora<span>Wellness companion</span></div>
+            </div>
+            <div class="chat-stream">
+              <div class="msg msg-user">Is it normal to feel this exhausted during a flare?</div>
+              <div class="msg msg-flora">Yes — fatigue is one of the most common and underappreciated parts of a flare. Your body is working hard. Want some tips for managing energy on difficult days?</div>
+              <div class="msg msg-user">Yes please</div>
+              <div class="msg msg-flora">Here are a few things that can help on low-energy days...</div>
+            </div>
+            <p class="flora-note">Flora is a wellness guide, not a medical professional. Always consult your doctor for medical decisions.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════ FODMAP EXPLAINER ════════ -->
-  <section class="section suspects">
-    <div class="container">
-      <div class="container-narrow fade-up">
+  <!-- ════════ THE USUAL SUSPECTS ════════ -->
+  <section class="suspects">
+    <div class="wrap">
+      <div class="reveal">
         <p class="eyebrow">Demystifying the jargon</p>
         <h2>FODMAP sounds complicated. It isn't.</h2>
-        <p class="sec-sub">FODMAP is a framework developed by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;font-weight:500;">Monash University</a> that identifies the short-chain carbohydrates most likely to trigger gut symptoms. Here's the lineup.</p>
+        <p class="suspects-intro">Here's the lineup.</p>
       </div>
-      <div class="suspects-grid fade-up">
-        <div class="scard"><div class="emoji-circle">🧅</div><div class="snum">Suspect 1</div><div class="sname">The Allium</div><div class="stag">Oligosaccharides</div><div class="sdesc">Garlic, onion, wheat, legumes. The ones that will ruin your day.</div></div>
-        <div class="scard"><div class="emoji-circle">🥛</div><div class="snum">Suspect 2</div><div class="sname">The Dairy</div><div class="stag">Disaccharides</div><div class="sdesc">Lactose. Milk, soft cheese, yoghurt.</div></div>
-        <div class="scard"><div class="emoji-circle">🍎</div><div class="snum">Suspect 3</div><div class="sname">The Fructose</div><div class="stag">Monosaccharides</div><div class="sdesc">Honey, mango, apple, pear. Too much fructose overwhelms your gut.</div></div>
-        <div class="scard"><div class="emoji-circle">➕</div><div class="snum">Suspect 4</div><div class="sname">The "And"</div><div class="stag">And</div><div class="sdesc">Yes. The A literally just stands for "and." We didn't name it.</div></div>
-        <div class="scard"><div class="emoji-circle">🍄</div><div class="snum">Suspect 5</div><div class="sname">The Sneaky One</div><div class="stag">Polyols</div><div class="sdesc">Mushrooms, cauliflower, stone fruits, sugar-free gum.</div></div>
-        <div class="scard star"><div class="emoji-circle">🌍</div><div class="snum">Suspect 6</div><div class="sname">The Cultural Gap</div><div class="stag">Biomy's speciality</div><div class="sdesc">Nobody told you how to cook Indian, Mexican, or West African food without garlic and onion. Biomy does.</div></div>
+      <div class="suspects-grid">
+        <div class="suspect reveal">
+          <div class="suspect-emoji">🧅</div>
+          <div class="suspect-num">Suspect 01</div>
+          <div class="suspect-name">The Allium</div>
+          <span class="suspect-tag">Oligosaccharides</span>
+          <p class="suspect-desc">Garlic, onion, wheat, legumes. The ones that will ruin your day.</p>
+        </div>
+        <div class="suspect reveal">
+          <div class="suspect-emoji">🥛</div>
+          <div class="suspect-num">Suspect 02</div>
+          <div class="suspect-name">The Dairy</div>
+          <span class="suspect-tag">Disaccharides</span>
+          <p class="suspect-desc">Lactose. Milk, soft cheese, yoghurt.</p>
+        </div>
+        <div class="suspect reveal">
+          <div class="suspect-emoji">🍎</div>
+          <div class="suspect-num">Suspect 03</div>
+          <div class="suspect-name">The Fructose</div>
+          <span class="suspect-tag">Monosaccharides</span>
+          <p class="suspect-desc">Honey, mango, apple, pear. Too much fructose overwhelms your gut.</p>
+        </div>
+        <div class="suspect reveal">
+          <div class="suspect-emoji">➕</div>
+          <div class="suspect-num">Suspect 04</div>
+          <div class="suspect-name">The "And"</div>
+          <span class="suspect-tag">And</span>
+          <p class="suspect-desc">Yes. The A literally just stands for "and." We didn't name it.</p>
+        </div>
+        <div class="suspect reveal">
+          <div class="suspect-emoji">🍄</div>
+          <div class="suspect-num">Suspect 05</div>
+          <div class="suspect-name">The Sneaky One</div>
+          <span class="suspect-tag">Polyols</span>
+          <p class="suspect-desc">Mushrooms, cauliflower, stone fruits, sugar-free gum.</p>
+        </div>
+        <div class="suspect invert reveal">
+          <div class="suspect-emoji">🌍</div>
+          <div class="suspect-num">Suspect 06</div>
+          <div class="suspect-name">The Cultural Gap</div>
+          <span class="suspect-tag">Biomy's speciality</span>
+          <p class="suspect-desc">Nobody told you how to cook Indian, Mexican, or West African food without garlic and onion. Biomy does.</p>
+        </div>
       </div>
-
-      <div class="fodmap-teaser fade-up">
-        <h3 class="ft-heading">Want to know what you can actually eat?</h3>
-        <p class="ft-body">We've broken it down into a simple traffic-light guide — green for usually fine, amber for it-depends, red for the usual suspects. Plain language, no science degree required.</p>
-        <a class="btn-secondary" href="/fodmap/">See the full food guide</a>
+      <p class="monash-note reveal">FODMAP research is led by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener">Monash University</a>. Biomy's recipes are guided by the Monash low-FODMAP framework.</p>
+      <div class="guide-link-row reveal">
+        <a class="guide-link" href="/fodmap/">See the full food guide →</a>
       </div>
-
-      <p class="monash-note fade-up">FODMAP research is led by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener">Monash University</a>. Biomy's recipes are guided by the Monash low-FODMAP framework.</p>
     </div>
   </section>
 
-  <!-- ════════ WHAT YOU GET ════════ -->
-  <section class="section wyg">
-    <div class="container">
-      <div class="container-narrow fade-up">
-        <p class="eyebrow">What you get</p>
-        <h2>Two things, done properly.</h2>
-        <p class="sec-sub">No feature bloat. Just the two things that actually help right now.</p>
-      </div>
-      <div class="feat-grid fade-up">
-        <div class="fcard">
-          <div class="fnum">01</div>
-          <div class="ftitle">Culturally diverse recipes</div>
-          <div class="fdesc">Indian, Mexican, West African and more. Low-FODMAP, full flavour. Every recipe explains why the swaps work so you learn as you cook.</div>
-        </div>
-        <div class="fcard">
-          <div class="fnum">02</div>
-          <div class="ftitle">Flora — your wellness companion</div>
-          <div class="fdesc">"Is this normal?" "Can I eat this?" Flora is there at 11pm when your next appointment is 6 weeks away. A wellness guide, not a doctor — but always a steady voice.</div>
-        </div>
-      </div>
+  <!-- ════════ REAL-LIFE PHOTO BAND ════════ -->
+  <section class="photo-band">
+    <div class="photo-wrap">
+      <img class="photo" src="/assets/img/cooking-band.jpg" alt="Person cooking a fresh meal in a home kitchen" loading="lazy"
+           onerror="this.closest('.photo-wrap').style.display='none';" />
+    </div>
+    <div class="wrap photo-band-inner">
+      <p class="photo-band-quote reveal">Built by someone living with UC since 2008. Not a doctor. A product person.</p>
     </div>
   </section>
 
-  <!-- ════════ LAUNCH LINE ════════ -->
-  <section class="section launch-line" style="padding:48px 2rem;">
-    <div class="container">
-      <p class="launch-text fade-up">
-        <strong>Launching with Ulcerative Colitis, Crohn's, and IBS.</strong> More conditions coming soon.
-      </p>
+  <!-- ════════ RECIPES ════════ -->
+  <section class="recipes">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Taste the difference</p>
+        <h2>Your food culture, gut-friendly.</h2>
+      </div>
+      <div class="recipes-grid">
+        <a class="rcard reveal" href="/recipes/">
+          <div class="photo-wrap">
+            <img class="photo" src="/Images/Recipes/chicken-tikka-masala.png" alt="Chicken Tikka Masala" loading="lazy" />
+          </div>
+          <div class="rcard-body">
+            <span class="rtag">Indian</span>
+            <div class="rtitle">Chicken Tikka Masala</div>
+            <p class="rdesc">Rich, creamy, totally gut-friendly. No onion, no garlic, all flavour.</p>
+          </div>
+        </a>
+        <a class="rcard reveal" href="/recipes/">
+          <div class="photo-wrap">
+            <img class="photo" src="/Images/Recipes/jollof-style-rice.png" alt="Jollof-Style Rice" loading="lazy" />
+          </div>
+          <div class="rcard-body">
+            <span class="rtag">West African</span>
+            <div class="rtitle">Jollof-Style Rice</div>
+            <p class="rdesc">Smoky tomato rice without the usual FODMAP triggers.</p>
+          </div>
+        </a>
+        <a class="rcard reveal" href="/recipes/">
+          <div class="photo-wrap">
+            <img class="photo" src="/Images/Recipes/ginger-scallion-chicken-stir-fry.png" alt="Ginger Scallion Chicken Stir-Fry" loading="lazy" />
+          </div>
+          <div class="rcard-body">
+            <span class="rtag">Asian</span>
+            <div class="rtitle">Ginger Scallion Stir-Fry</div>
+            <p class="rdesc">Quick weeknight dinner. Bright, punchy, and safe.</p>
+          </div>
+        </a>
+      </div>
+      <div class="browse-link-row reveal">
+        <a class="browse-link" href="/recipes/">Browse all recipes →</a>
+      </div>
     </div>
   </section>
 
   <!-- ════════ WAITLIST ════════ -->
-  <section class="section waitlist" id="waitlist">
-    <div class="container">
-      <div class="fade-up" style="text-align:center;">
+  <section class="waitlist" id="waitlist">
+    <div class="wrap">
+      <div class="reveal">
         <p class="eyebrow">Join the waitlist</p>
         <h2>Be the first to know.</h2>
-        <p class="sec-sub" style="max-width:480px;margin:8px auto 0;">Tell us about yourself and we'll make sure Biomy is ready for you when we launch.</p>
+        <p class="waitlist-sub">Launching with Ulcerative Colitis, Crohn's, and IBS.</p>
       </div>
-      <div class="form-box fade-up">
+      <div class="waitlist-card reveal">
         <iframe data-tally-src="https://tally.so/embed/xXyy45?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
           loading="lazy"
           width="100%"
@@ -401,54 +354,13 @@
     </div>
   </section>
 
-  <!-- ════════ FOOTER ════════ -->
-  <footer>
-    <span class="flogo">biomy<span>.</span>health</span>
-    <div class="flinks">
-      <a href="/cdn-cgi/l/email-protection#caa2afa6a6a58aa8a3a5a7b3e4a2afaba6bea2"><span class="__cf_email__" data-cfemail="046c6168686b44666d6b697d2a6c616568706c">[email&#160;protected]</span></a>
-      &nbsp;&middot;&nbsp;
-      <a href="/about/">About</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/recipes/">Recipes</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/privacy/">Privacy</a>
-      &nbsp;&middot;&nbsp;
-      <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
-      &nbsp;&middot;&nbsp;
-      <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
-    </div>
-    <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
-    <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
-  </footer>
+  <div id="site-footer"></div>
 
-  <!-- ════════ TALLY EMBED ════════ -->
+  <!-- Tally embed -->
   <script async src="https://tally.so/widgets/embed.js"></script>
-
-  <!-- ════════ SCRIPTS ════════ -->
-  <script>
-    // Scroll reveal — adds .visible to .fade-up elements when they enter the viewport
-    (function() {
-      const fadeEls = document.querySelectorAll('.fade-up');
-      if (!fadeEls.length) return;
-
-      // Fallback for old browsers without IntersectionObserver — just show everything
-      if (!('IntersectionObserver' in window)) {
-        fadeEls.forEach(el => el.classList.add('visible'));
-        return;
-      }
-
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-      fadeEls.forEach(el => obs.observe(el));
-    })();
-  </script>
+  <!-- Shared chrome + motion -->
+  <script src="/assets/layout.js" defer></script>
+  <script src="/assets/motion.js" defer></script>
 
 </body>
 </html>

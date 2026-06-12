@@ -1,0 +1,37 @@
+/* ============================================================
+   Biomy motion — all animation lives here + assets/motion.js.
+   Everything is gated behind html.motion-ready (added by motion.js)
+   so the site is fully visible if JS never runs, and everything
+   collapses to static under prefers-reduced-motion.
+   ============================================================ */
+
+/* ── Scroll reveals: homepage uses .reveal, content pages use .fade-up ── */
+html.motion-ready .reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+html.motion-ready .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ── Hero gradient leaf: 12s breathing / drift loop ── */
+@keyframes bm-breathe {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-14px, 12px) scale(1.06); }
+}
+.hero-leaf { animation: bm-breathe 12s ease-in-out infinite; }
+
+/* ── Flora chat: messages appear in sequence, typing dots before each ── */
+html.motion-ready [data-flora-chat] .chat-stream > .msg { display: none; }
+html.motion-ready [data-flora-chat] .chat-stream > .msg.is-shown { display: block; animation: bm-msgin .32s ease both; }
+@keyframes bm-msgin { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes bm-blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: .9; } }
+[data-flora-chat] .typing span { animation: bm-blink 1.2s infinite; }
+[data-flora-chat] .typing span:nth-child(2) { animation-delay: .2s; }
+[data-flora-chat] .typing span:nth-child(3) { animation-delay: .4s; }
+
+/* ── Reduced motion: non-negotiable static fallback ── */
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready .reveal,
+  html.motion-ready [data-flora-chat] .chat-stream > .msg { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
+  html.motion-ready [data-flora-chat] .chat-stream > .msg { display: block !important; }
+  .fade-up { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero-leaf { animation: none !important; }
+  .cond { transition: none !important; }
+  [data-flora-chat] .typing span { animation: none !important; }
+}

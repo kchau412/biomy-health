@@ -17,7 +17,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/tokens.css" />
 
   <script type="application/ld+json">
   {
@@ -48,7 +49,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
     nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; } .logo span { color: var(--amber); }
+    .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; } .logo span { color: var(--amber); }
     .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; text-decoration: none; }
     .recipe-hero { max-width: 900px; margin: 0 auto; padding: 48px 2rem 0; }
     .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; } .breadcrumb a { color: var(--green); text-decoration: none; }
@@ -57,15 +58,15 @@
     .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
     .tag { display: inline-block; font-size: 11px; font-weight: 500; background: var(--green-pale); color: var(--green); border: 1px solid var(--green-light); border-radius: 100px; padding: 4px 12px; }
     .tag.alt { background: var(--cream); color: var(--text-muted); border-color: var(--border); }
-    h1 { font-family: 'Lora', serif; font-size: 34px; font-weight: 600; line-height: 1.15; margin-bottom: 14px; }
+    h1 { font-family: var(--font-display); font-size: 34px; font-weight: 600; line-height: 1.15; margin-bottom: 14px; }
     .recipe-intro { font-size: 17px; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; }
     .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
     .meta-box { background: var(--white); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 12px; text-align: center; }
     .meta-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
-    .meta-value { font-family: 'Lora', serif; font-size: 16px; font-weight: 600; color: var(--green); }
+    .meta-value { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--green); }
     .content-area { max-width: 900px; margin: 0 auto; padding: 48px 2rem 80px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    h2 { font-family: 'Lora', serif; font-size: 24px; font-weight: 600; margin-bottom: 18px; }
+    h2 { font-family: var(--font-display); font-size: 24px; font-weight: 600; margin-bottom: 18px; }
     .ingredients-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; }
     .ingredients-card ul { list-style: none; } .ingredients-card li { padding: 8px 0; border-bottom: 1px solid var(--cream-dark); font-size: 15px; } .ingredients-card li:last-child { border-bottom: none; }
     .method-steps { counter-reset: step; }
@@ -81,19 +82,19 @@
     .flora-btn { background: white; color: var(--green); border: none; border-radius: 100px; padding: 12px 28px; font-size: 14px; font-weight: 500; text-decoration: none; display: inline-block; }
     .back-link { display: inline-block; margin-top: 40px; font-size: 15px; color: var(--green); text-decoration: none; font-weight: 500; } .back-link:hover { text-decoration: underline; }
     footer { background: var(--text); padding: 44px 2rem; text-align: center; }
-    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; } .flogo span { color: var(--amber); }
+    .flogo { font-family: var(--font-display); font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; } .flogo span { color: var(--amber); }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; } .flinks { margin-bottom: 16px; }
     .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
     @media (max-width: 768px) { .recipe-hero-grid { grid-template-columns: 1fr; } .two-col { grid-template-columns: 1fr; } .meta-grid { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
   </style>
 </head>
 <body>
-  <nav><a class="logo" href="/">biomy<span>.</span>health</a><div style="display:flex;align-items:center;gap:28px;"><a href="/about/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;">About</a><a href="/recipes/" style="font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none;">Recipes</a><a class="nav-cta" href="/#waitlist">Join waitlist</a></div></nav>
+  <div id="site-header"></div>
 
   <div class="recipe-hero">
     <div class="breadcrumb"><a href="/">Home</a> / <a href="/recipes/">Recipes</a> / Lemon Herb Roast Chicken</div>
     <div class="recipe-hero-grid">
-      <div class="recipe-hero-img"><img src="/Images/Recipes/roast-chicken-potatoes-herbs.png" alt="Lemon Herb Roast Chicken with Potatoes" /></div>
+      <div class="recipe-hero-img photo-wrap"><img class="photo" src="/Images/Recipes/roast-chicken-potatoes-herbs.png" alt="Lemon Herb Roast Chicken with Potatoes" /></div>
       <div>
         <div class="tag-row"><span class="tag">European</span><span class="tag alt">Everyday</span><span class="tag alt">Low FODMAP</span></div>
         <h1>Lemon Herb Roast Chicken with Potatoes</h1>
@@ -173,6 +174,7 @@
     <a class="back-link" href="/recipes/">← Back to all recipes</a>
   </div>
 
-  <footer><span class="flogo">biomy<span>.</span>health</span><div class="flinks"><a href="mailto:hello@biomy.health">hello@biomy.health</a> &middot; <a href="/about/">About</a> &middot; <a href="/recipes/">Recipes</a> &middot; <a href="/privacy/">Privacy</a> &middot; <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a> &middot; <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a></div><p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional.</p><p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">© 2026 Biomy.</p></footer>
+  <div id="site-footer"></div>
+  <script src="/assets/layout.js" defer></script>
 </body>
 </html>
