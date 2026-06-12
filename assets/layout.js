@@ -22,12 +22,23 @@
     { href: "/privacy/", label: "Privacy", match: "/privacy" }
   ];
 
-  /* Inline logo: forest-deep disc + mint leaf. No external asset. */
-  var LOGO_SVG =
-    '<svg class="bm-logo-mark" width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false">' +
-      '<circle cx="15" cy="15" r="15" fill="var(--forest-deep)"/>' +
-      '<path d="M15.5 6.5c-4.6 1-7.8 4.6-7.8 9 0 1.6.5 3.1 1.3 4.3 1-4.9 4.3-8 8.6-9.2-3.3 2-5.5 5-6.4 9.2 1 .6 2.2.9 3.4.9 4.8 0 8-3.9 8-9.3 0-2.2-.5-4.2-1.3-5.9-1.8.4-3.7.6-5.5.7z" fill="var(--mint)"/>' +
+  /* Inline logo: the real Biomy gradient leaf (assets/img/biomy-leaf.svg),
+     inlined so there's no extra network request. A unique gradient id per
+     instance (sfx) keeps the header and footer copies valid. Sized ~30px
+     tall to match the previous header mark. */
+  function logoSvg(sfx) {
+    return '<svg class="bm-logo-mark" width="25" height="30" viewBox="0 0 264 316" aria-hidden="true" focusable="false">' +
+      '<defs><linearGradient id="bmLeaf' + sfx + '" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0.02" stop-color="#E8B07F"/><stop offset="0.28" stop-color="#D9998F"/>' +
+        '<stop offset="0.50" stop-color="#90A7C6"/><stop offset="0.72" stop-color="#6EAAC2"/>' +
+        '<stop offset="0.98" stop-color="#61B4AC"/></linearGradient></defs>' +
+      '<path d="M132 6 C 244 88, 248 212, 132 310 C 16 212, 20 88, 132 6 Z" fill="url(#bmLeaf' + sfx + ')"/>' +
+      '<line x1="132" y1="10" x2="132" y2="306" stroke="#173630" stroke-width="8" stroke-linecap="round"/>' +
+      '<path d="M62 138 L132 94 L202 138" fill="none" stroke="#173630" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M64 196 Q132 162 200 196" fill="none" stroke="#173630" stroke-width="8" stroke-linecap="round"/>' +
+      '<path d="M88 254 Q132 230 176 254" fill="none" stroke="#173630" stroke-width="8" stroke-linecap="round"/>' +
     '</svg>';
+  }
 
   function isCurrent(match) {
     var path = window.location.pathname;
@@ -45,7 +56,7 @@
   var HEADER_HTML =
     '<header class="bm-header">' +
       '<div class="bm-header-inner">' +
-        '<a class="bm-brand" href="/" aria-label="Biomy home">' + LOGO_SVG +
+        '<a class="bm-brand" href="/" aria-label="Biomy home">' + logoSvg('h') +
           '<span class="bm-wordmark">biomy</span>' +
         '</a>' +
         '<nav class="bm-nav" aria-label="Primary">' + navLinks("bm-nav-link") + '</nav>' +
@@ -62,7 +73,7 @@
 
   var FOOTER_HTML =
     '<footer class="bm-footer">' +
-      '<a class="bm-foot-brand" href="/" aria-label="Biomy home">' + LOGO_SVG +
+      '<a class="bm-foot-brand" href="/" aria-label="Biomy home">' + logoSvg('f') +
         '<span class="bm-wordmark">biomy</span>' +
       '</a>' +
       '<nav class="bm-foot-links" aria-label="Footer">' +
