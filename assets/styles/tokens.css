@@ -29,3 +29,18 @@
   --space-section: clamp(4rem, 10vw, 7.5rem);
   --space-gutter: clamp(1.25rem, 5vw, 4rem);
 }
+
+/* ============================================================
+   Photo treatment — applied to every photograph site-wide so a
+   mixed set of images reads as one art-directed collection.
+   ============================================================ */
+.photo { filter: saturate(0.85) contrast(1.05); }
+.photo-wrap { position: relative; }
+.photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1A3A2D;
+  opacity: 0.12;
+  pointer-events: none;
+}
