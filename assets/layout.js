@@ -129,8 +129,24 @@
     document.head.appendChild(s);
   }
 
+  /* Favicons — centralised here so every page stays consistent. */
+  function injectFavicons() {
+    if (document.querySelector('link[rel="icon"]')) return;
+    var links = [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", sizes: "any", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }
+    ];
+    links.forEach(function (attrs) {
+      var l = document.createElement("link");
+      Object.keys(attrs).forEach(function (k) { l.setAttribute(k, attrs[k]); });
+      document.head.appendChild(l);
+    });
+  }
+
   function mount() {
     injectStyles();
+    injectFavicons();
 
     var headerSlot = document.getElementById("site-header");
     if (headerSlot) headerSlot.outerHTML = HEADER_HTML;
