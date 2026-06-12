@@ -22,7 +22,8 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/tokens.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -37,7 +38,7 @@
     body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
     nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Lora', serif; font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
+    .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
     .logo span { color: var(--amber); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-link { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
@@ -49,7 +50,7 @@
     .privacy-hero { background: var(--cream); padding: 72px 2rem 56px; }
     .privacy-hero .container-narrow { max-width: 680px; margin: 0 auto; }
     .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
-    h1 { font-family: 'Lora', serif; font-size: clamp(32px, 4.5vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.6px; color: var(--text); margin-bottom: 16px; }
+    h1 { font-family: var(--font-display); font-size: clamp(32px, 4.5vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.6px; color: var(--text); margin-bottom: 16px; }
     .date-line { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
     .lead { font-size: 17px; color: var(--text-muted); line-height: 1.75; }
 
@@ -57,7 +58,7 @@
     .prose { max-width: 680px; margin: 0 auto; }
     .prose-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
     .prose-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .prose h2 { font-family: 'Lora', serif; font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 14px; letter-spacing: -0.2px; }
+    .prose h2 { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text); margin-bottom: 14px; letter-spacing: -0.2px; }
     .prose p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 14px; }
     .prose p:last-child { margin-bottom: 0; }
     .prose ul { list-style: none; margin: 10px 0 14px; display: flex; flex-direction: column; gap: 8px; }
@@ -69,7 +70,7 @@
     .highlight-box strong { color: var(--green); font-weight: 500; }
 
     footer { background: var(--text); padding: 44px 2rem; text-align: center; }
-    .flogo { font-family: 'Lora', serif; font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
+    .flogo { font-family: var(--font-display); font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
     .flogo span { color: var(--amber); }
     footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
     footer a:hover { color: rgba(255,255,255,0.75); }
@@ -87,15 +88,7 @@
 </head>
 <body>
 
-<nav>
-  <a class="logo" href="/">biomy<span>.</span>health</a>
-  <div class="nav-links">
-    <a href="/about/" class="nav-link">About</a>
-    <a href="/recipes/" class="nav-link">Recipes</a>
-    <a href="/privacy/" class="nav-link current">Privacy</a>
-    <a class="nav-cta" href="/#waitlist">Join waitlist</a>
-  </div>
-</nav>
+<div id="site-header"></div>
 
   <div class="privacy-hero">
     <div class="container-narrow">
@@ -168,24 +161,7 @@
     </div>
   </div>
 
-  <footer>
-    <a class="flogo" href="/">biomy<span>.</span>health</a>
-    <div class="flinks">
-  <a href="mailto:hello@biomy.health">hello@biomy.health</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/about/">About</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/recipes/">Recipes</a>
-  &nbsp;&middot;&nbsp;
-  <a href="/privacy/">Privacy</a>
-  &nbsp;&middot;&nbsp;
-  <a href="https://instagram.com/biomy.health" target="_blank">Instagram</a>
-  &nbsp;&middot;&nbsp;
-  <a href="https://tiktok.com/@biomy.health" target="_blank">TikTok</a>
-</div>
-    <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
-    <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Currently in stealth.</p>
-  </footer>
+  <div id="site-footer"></div>
 
   <script>
     const obs = new IntersectionObserver(entries => {
@@ -193,5 +169,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
   </script>
+  <script src="/assets/layout.js" defer></script>
 </body>
 </html>

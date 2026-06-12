@@ -25,7 +25,8 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/tokens.css" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -72,7 +73,7 @@
     }
 
     .logo {
-      font-family: 'Lora', serif;
+      font-family: var(--font-display);
       font-size: 22px;
       font-weight: 600;
       color: var(--green);
@@ -133,7 +134,7 @@
     }
 
     h1, h2, h3 {
-      font-family: 'Lora', serif;
+      font-family: var(--font-display);
       font-weight: 600;
       color: var(--text);
       letter-spacing: -0.4px;
@@ -248,7 +249,7 @@
     }
 
     .stat-num {
-      font-family: 'Lora', serif;
+      font-family: var(--font-display);
       font-size: 22px;
       color: var(--green);
       margin-bottom: 4px;
@@ -339,7 +340,7 @@
     }
 
     .featured-title, .recipe-title {
-      font-family: 'Lora', serif;
+      font-family: var(--font-display);
       font-size: 22px;
       line-height: 1.2;
       margin-top: 14px;
@@ -521,7 +522,7 @@
     }
 
     .flogo {
-      font-family: 'Lora', serif;
+      font-family: var(--font-display);
       font-size: 20px;
       color: white;
       font-weight: 600;
@@ -592,15 +593,7 @@
 </head>
 <body>
 
-  <nav>
-    <a class="logo" href="/">biomy<span>.</span>health</a>
-    <div class="nav-links">
-      <a class="nav-link" href="/about">About</a>
-      <a class="nav-link active" href="/recipes">Recipes</a>
-      <a class="nav-link" href="/privacy">Privacy</a>
-      <a class="nav-cta" href="/#waitlist">Join waitlist</a>
-    </div>
-  </nav>
+  <div id="site-header"></div>
 
   <section class="hero">
     <div class="hero-inner">
@@ -885,25 +878,7 @@
     </div>
   </section>
 
-  <footer>
-    <span class="flogo">biomy<span>.</span>health</span>
-    <div class="flinks">
-      <a href="mailto:hello@biomy.health">hello@biomy.health</a>
-      &nbsp;&middot;&nbsp;
-      <a href="https://instagram.com/biomy.health" target="_blank" rel="noopener">Instagram</a>
-      &nbsp;&middot;&nbsp;
-      <a href="https://tiktok.com/@biomy.health" target="_blank" rel="noopener">TikTok</a>
-    </div>
-    <div class="flinks flinks-secondary">
-      <a href="/about">About</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/recipes">Recipes</a>
-      &nbsp;&middot;&nbsp;
-      <a href="/privacy">Privacy</a>
-    </div>
-    <p class="fdisclaimer">Biomy is a wellness platform. It does not provide medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional regarding any medical condition.</p>
-    <p style="font-size:12px;color:rgba(255,255,255,0.2);margin-top:16px;">&copy; 2026 Biomy. Launching 2026.</p>
-  </footer>
+  <div id="site-footer"></div>
 
   <script>
     const recipes = [
@@ -1039,5 +1014,6 @@
 
     renderRecipes(recipes);
   </script>
+  <script src="/assets/layout.js" defer></script>
 </body>
 </html>
