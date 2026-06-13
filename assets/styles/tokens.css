@@ -28,6 +28,11 @@
   --radius-pill: 999px;
   --space-section: clamp(4rem, 10vw, 7.5rem);
   --space-gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* food-semantic only, used only on /fodmap/, never as brand or UI colour */
+  --flag-green: #4C8B5C;
+  --flag-amber: #B98A3A;
+  --flag-red:   #B05A4E;
 }
 
 /* ============================================================
