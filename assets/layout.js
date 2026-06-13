@@ -18,8 +18,7 @@
     { href: "/about/",   label: "About",   match: "/about" },
     { href: "/recipes/", label: "Recipes", match: "/recipes" },
     { href: "/fodmap/",  label: "FODMAP",  match: "/fodmap" },
-    { href: "/flora/",   label: "Flora",   match: "/flora" },
-    { href: "/privacy/", label: "Privacy", match: "/privacy" }
+    { href: "/flora/",   label: "Flora",   match: "/flora" }
   ];
 
   /* Inline logo: the real Biomy gradient leaf (assets/img/biomy-leaf.svg),
@@ -81,6 +80,7 @@
         '<a href="/about/">About</a>' +
         '<a href="/recipes/">Recipes</a>' +
         '<a href="/fodmap/">FODMAP</a>' +
+        '<a href="/flora/">Flora</a>' +
         '<a href="/privacy/">Privacy</a>' +
         '<a href="https://instagram.com/biomy.health" target="_blank" rel="noopener">Instagram</a>' +
         '<a href="https://tiktok.com/@biomy.health" target="_blank" rel="noopener">TikTok</a>' +
@@ -90,7 +90,7 @@
     '</footer>';
 
   var STYLES =
-    ".bm-header{position:sticky;top:0;z-index:200;background:var(--forest);border-bottom:1px solid rgba(176,240,216,0.14)}" +
+    ".bm-header{position:sticky;top:0;z-index:200;background:var(--forest-deep);border-bottom:1px solid rgba(176,240,216,0.14)}" +
     ".bm-header-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:24px;padding:0 var(--space-gutter);height:66px}" +
     ".bm-brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}" +
     ".bm-wordmark{font-family:var(--font-display);font-weight:700;font-size:1.3rem;letter-spacing:-0.02em;color:var(--mint)}" +
@@ -106,7 +106,7 @@
     ".bm-burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}" +
     ".bm-burger[aria-expanded=true] span:nth-child(2){opacity:0}" +
     ".bm-burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}" +
-    ".bm-mobile-nav{display:none;flex-direction:column;gap:4px;padding:8px var(--space-gutter) 20px;background:var(--forest);border-bottom:1px solid rgba(176,240,216,0.14)}" +
+    ".bm-mobile-nav{display:none;flex-direction:column;gap:4px;padding:8px var(--space-gutter) 20px;background:var(--forest-deep);border-bottom:1px solid rgba(176,240,216,0.14)}" +
     ".bm-mobile-nav:not([hidden]){display:flex}" +
     ".bm-mobile-link{font-family:var(--font-body);font-size:1.05rem;color:var(--cloud-soft);text-decoration:none;padding:12px 4px;border-bottom:1px solid rgba(176,240,216,0.08)}" +
     ".bm-mobile-link[aria-current=page]{color:var(--mint)}" +
@@ -119,7 +119,7 @@
     ".bm-foot-disclaimer{font-family:var(--font-body);font-size:0.8rem;color:rgba(242,247,243,0.4);max-width:540px;margin:0 auto 14px;line-height:1.7}" +
     ".bm-foot-copy{font-family:var(--font-body);font-size:0.8rem;color:rgba(242,247,243,0.3)}" +
     ".bm-header a:focus-visible,.bm-footer a:focus-visible,.bm-burger:focus-visible{outline:2px solid var(--mint);outline-offset:3px;border-radius:4px}" +
-    "@media(max-width:820px){.bm-nav,.bm-header .bm-cta{display:none}.bm-burger{display:flex}}";
+    "@media(max-width:767px){.bm-nav,.bm-header .bm-cta{display:none}.bm-burger{display:flex}}";
 
   function injectStyles() {
     if (document.getElementById("bm-layout-styles")) return;
