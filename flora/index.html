@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flora | Biomy</title>
+  <meta name="description" content="Meet Flora, Biomy's wellness companion. Coming soon: plain-language guidance for living with a gut condition. A wellness guide, not a doctor." />
+  <link rel="canonical" href="https://biomy.health/flora/" />
+  <meta property="og:title" content="Meet Flora | Biomy" />
+  <meta property="og:description" content="Coming soon. Flora is a wellness guide for living with a gut condition, not a doctor." />
+  <meta property="og:url" content="https://biomy.health/flora/" />
+  <meta property="og:type" content="website" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-25DX3B1E4C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-25DX3B1E4C');
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles/tokens.css" />
+  <link rel="stylesheet" href="/assets/styles/pages.css" />
+  <style>
+    /* --sky is Flora's colour and leads this page only. */
+    .accent-sky-i { color: var(--sky); font-style: italic; }
+    .flora-hero { position: relative; overflow: hidden; }
+    .sky-orb { position: absolute; top: -30%; right: -15%; width: 60vw; max-width: 680px; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(113,168,198,0.55), rgba(113,168,198,0) 65%); z-index: 0; pointer-events: none; }
+    .flora-hero .wrap { position: relative; z-index: 1; }
+    .coming-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(113,168,198,0.14); border: 1px solid rgba(113,168,198,0.5); border-radius: var(--radius-pill); padding: 8px 16px; font-size: var(--text-small); letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); margin-bottom: 22px; }
+    .coming-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); }
+
+    /* Reused Flora chat card component (matches the homepage) */
+    .chat-wrap { max-width: 520px; margin-top: 22px; }
+    .flora-chat { position: relative; background: var(--forest-deep); border: 1px solid rgba(176,240,216,0.12); border-radius: var(--radius-card); padding: 22px; }
+    .preview-tag { position: absolute; top: 16px; right: 16px; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); background: rgba(113,168,198,0.14); border: 1px solid rgba(113,168,198,0.4); border-radius: var(--radius-pill); padding: 4px 10px; }
+    .flora-head { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(176,240,216,0.1); }
+    .flora-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--sky); color: var(--sky-ink); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; flex: none; }
+    .flora-id { font-family: var(--font-display); font-weight: 500; font-size: 1rem; color: var(--cloud); }
+    .flora-id span { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.78rem; color: var(--cloud-soft); }
+    .chat-stream { display: flex; flex-direction: column; gap: 12px; }
+    .msg { max-width: 86%; padding: 11px 15px; font-size: 0.92rem; line-height: 1.5; border-radius: 16px; }
+    .msg-user { align-self: flex-end; background: rgba(242,247,243,0.1); color: var(--cloud); border-bottom-right-radius: 4px; }
+    .msg-flora { align-self: flex-start; background: var(--sky); color: var(--sky-ink); border-bottom-left-radius: 4px; }
+    .chat-input { margin-top: 16px; width: 100%; background: rgba(242,247,243,0.06); border: 1px solid rgba(242,247,243,0.12); border-radius: var(--radius-pill); padding: 13px 18px; font-family: var(--font-body); font-size: 0.9rem; color: var(--cloud-soft); opacity: 0.5; cursor: not-allowed; }
+
+    /* Sky spine */
+    .spine.sky::before { background: var(--sky); opacity: 0.5; }
+    .spine.sky .spine-disc { background: rgba(113,168,198,0.12); border: 2px solid var(--sky); color: var(--sky); }
+    .spine.sky .spine-disc .ic { width: 28px; height: 28px; }
+
+    /* Founder note */
+    .founder-quote { font-size: 1.15rem; line-height: 1.6; color: var(--cloud); max-width: 36em; }
+    .founder-sign { color: var(--mint); font-weight: 500; margin-top: 14px; }
+
+    /* Safety */
+    .safety-card { background: #fff; border: 1px solid var(--sky); border-radius: var(--radius-card); padding: 28px; margin-top: 8px; }
+    .num-chips { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .num-chip { background: var(--forest-deep); color: var(--mint); border-radius: var(--radius-pill); padding: 10px 18px; font-size: 0.9rem; font-weight: 500; }
+
+    /* Sky waitlist CTA */
+    .flora-cta { background: var(--sky); color: var(--sky-ink); }
+    .flora-cta .h2 { color: var(--sky-ink); }
+    .flora-cta p { color: var(--sky-ink); opacity: 0.85; }
+    .btn-forest { display: inline-block; font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--mint); background: var(--forest-deep); border-radius: var(--radius-pill); padding: 14px 30px; text-decoration: none; transition: transform .15s ease, filter .15s ease; }
+    .btn-forest:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  </style>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="sec bg-forest flora-hero">
+    <span class="sky-orb" aria-hidden="true"></span>
+    <div class="wrap">
+      <p class="coming-pill"><span class="dot"></span> Coming soon</p>
+      <h1 class="h1">Meet <span class="accent-sky-i">Flora.</span></h1>
+      <p class="lead" style="margin-top:22px;">The questions you'd normally wait six weeks to ask. Flora's there to help you navigate, find information, and feel a little less alone at 11pm.</p>
+      <p class="small-line">A wellness guide, not a doctor. Always consult a clinician for medical decisions.</p>
+    </div>
+  </section>
+
+  <!-- CHAT PREVIEW -->
+  <section class="sec bg-cloud">
+    <div class="wrap">
+      <p class="overline">A preview of what's coming</p>
+      <div class="chat-wrap">
+        <div class="flora-chat">
+          <span class="preview-tag">Preview</span>
+          <div class="flora-head">
+            <div class="flora-avatar" aria-hidden="true">F</div>
+            <div class="flora-id">Flora<span>Wellness companion</span></div>
+          </div>
+          <div class="chat-stream">
+            <div class="msg msg-user">Is it normal to feel this exhausted during a flare?</div>
+            <div class="msg msg-flora">Yes, fatigue is one of the most common and underappreciated parts of a flare. Your body is working hard. Want some tips for managing energy on difficult days?</div>
+            <div class="msg msg-user">Yes please</div>
+          </div>
+          <input class="chat-input" type="text" placeholder="Flora's not live yet, join the waitlist" disabled tabindex="-1" aria-disabled="true" aria-label="Chat input, disabled until Flora launches" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT FLORA CAN HELP WITH -->
+  <section class="sec bg-cloud" style="padding-top:0;">
+    <div class="wrap-narrow">
+      <h2 class="h2">Three things, <span class="accent-sky-i">whenever you need them.</span></h2>
+      <div class="spine sky">
+        <div class="spine-row">
+          <div class="spine-disc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5a7.5 7 0 0 1 15 0 7.5 7 0 0 1-10.5 6.4L4 19l1-3.4A7 7 0 0 1 4 11.5z"/></svg></div>
+          <div class="spine-body">
+            <div class="spine-name">Understanding your condition</div>
+            <div class="spine-desc">In plain language, not clinical jargon. Ask what a term means or why something happens.</div>
+          </div>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v7M5 3v4a2 2 0 0 0 4 0V3M7 10v11"/><path d="M16 3c-1.6 1.5-1.6 6 0 7h1V3z"/><path d="M16.5 10v11"/></svg></div>
+          <div class="spine-body">
+            <div class="spine-name">Thinking through food</div>
+            <div class="spine-desc">Can I eat this? What can I swap? Flora helps you reason it out, your cuisine included.</div>
+          </div>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 10h6M9 14h4"/></svg></div>
+          <div class="spine-body">
+            <div class="spine-name">Preparing for appointments</div>
+            <div class="spine-desc">Sort what you want to ask before you're sat in front of the doctor with six minutes on the clock.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER NOTE -->
+  <section class="sec bg-forest">
+    <div class="wrap-narrow">
+      <div style="display:flex;gap:18px;align-items:flex-start;">
+        <span class="avatar-disc" aria-hidden="true">K</span>
+        <div>
+          <p class="founder-quote">I've lived with UC since 2008. I built Flora to be the steady voice I wished I'd had at 11pm, when the worry is loud and the next appointment is weeks away. Flora won't diagnose you or replace your doctor. That was never the point.</p>
+          <p class="founder-sign">Karan, founder, Biomy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="sec bg-cloud">
+    <div class="wrap-narrow">
+      <div class="safety-card">
+        <h2 class="h2" style="font-size:1.6rem;">Flora is not a doctor.</h2>
+        <p style="margin-top:14px;">Flora won't diagnose, prescribe, or give medical advice. For anything urgent, please contact a real clinician, and if it's an emergency, don't wait for Flora.</p>
+        <div class="num-chips">
+          <span class="num-chip">UK, non-emergency: 111 NHS</span>
+          <span class="num-chip">Emergency: 999 / 911</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONEST PRIVACY NOTE -->
+  <section class="sec bg-cloud" style="padding-top:0;">
+    <div class="wrap-narrow">
+      <div class="callout"><strong>An honest note on privacy.</strong> Flora's backend doesn't exist yet, we're building it. When Flora is live, conversations won't be stored beyond your session. We'll update our <a href="/privacy/">privacy policy</a> before anything goes live, and we'll tell you when we do.</div>
+    </div>
+  </section>
+
+  <!-- WAITLIST CTA -->
+  <section class="sec flora-cta center">
+    <div class="wrap-narrow">
+      <h2 class="h2">Be there when Flora arrives.</h2>
+      <p class="lead" style="margin-top:14px;">Join the waitlist for early access to Flora and everything else Biomy is building.</p>
+      <div class="btn-row"><a class="btn-forest" href="/#waitlist">Join the waitlist</a></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="/assets/layout.js" defer></script>
+</body>
+</html>
