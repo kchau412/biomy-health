@@ -17,7 +17,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-25DX3B1E4C');
 </script>
 
@@ -25,224 +24,147 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles/tokens.css" />
-  <link rel="stylesheet" href="/assets/styles/motion.css" />
+  <link rel="stylesheet" href="/assets/styles/pages.css" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --cream: #F7F4EE; --cream-dark: #EDE8DF;
-      --green: #2D5A3D; --green-mid: #4A7B5E;
-      --green-light: #D4E8DA; --green-pale: #EBF3EE;
-      --amber: #C4853A; --text: #1A1A18;
-      --text-muted: #5C5C52; --border: #D8D3C8;
-      --white: #FFFFFF; --r: 12px; --r-sm: 8px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(247,244,238,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: var(--green); text-decoration: none; }
-    .logo span { color: var(--amber); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-link { font-size: 14px; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-link:hover { color: var(--green); }
-    .nav-link.current { color: var(--green); }
-    .nav-cta { background: var(--green); color: var(--white); font-size: 14px; font-weight: 500; border: none; border-radius: 100px; padding: 10px 22px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
-
-    .section { padding: 80px 2rem; }
-    .container { max-width: 1060px; margin: 0 auto; }
-    .container-narrow { max-width: 680px; margin: 0 auto; }
-    .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 1.4px; color: var(--green-mid); margin-bottom: 12px; }
-    h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1.1; letter-spacing: -0.8px; color: var(--text); margin-bottom: 20px; }
-    h1 em { font-style: italic; color: var(--green); }
-    h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.5px; color: var(--text); margin-bottom: 14px; }
-    h2 em { font-style: italic; color: var(--green); }
-    .lead { font-size: 18px; color: var(--text-muted); line-height: 1.7; }
-
-    .fodmap-hero { background: var(--cream); padding: 72px 2rem 56px; }
-
-    /* ── FODMAP TRAFFIC LIGHTS (lifted from index.html) ── */
-    .fodmap { background: var(--white); }
-    .tl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
-    .tl-card { background: var(--cream); border: 1px solid var(--border); border-top: 4px solid var(--border); border-radius: var(--r); padding: 24px; transition: transform 0.2s, box-shadow 0.2s; }
-    .tl-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
-    .tl-green { border-top-color: #4A8B5E; }
-    .tl-amber { border-top-color: #C4853A; }
-    .tl-red   { border-top-color: #B85C3A; }
-    .tl-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .tl-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-    .tl-green .tl-dot { background: #4A8B5E; }
-    .tl-amber .tl-dot { background: #C4853A; }
-    .tl-red   .tl-dot { background: #B85C3A; }
-    .tl-label { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--text); }
-    .tl-list { list-style: none; padding: 0; margin: 0; }
-    .tl-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 9px 0; border-bottom: 1px solid var(--border); }
-    .tl-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .tl-note { font-size: 13px; color: var(--text-muted); margin-top: 28px; line-height: 1.65; max-width: 760px; }
-    .tl-note a { color: var(--green); text-decoration: none; font-weight: 500; }
-    .tl-note a:hover { text-decoration: underline; }
-
-    /* ── SECTION 1: WHAT EVEN IS A FODMAP ── */
-    .acronym { background: var(--cream); }
-    .acro-intro { font-size: 18px; color: var(--text-muted); line-height: 1.7; max-width: 620px; margin-bottom: 36px; }
-    .acro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .acro-card { display: flex; gap: 20px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 24px; transition: transform 0.2s, box-shadow 0.2s; }
-    .acro-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
-    .acro-letter { font-family: var(--font-display); font-size: 34px; font-weight: 600; line-height: 1; color: var(--white); background: var(--green); width: 60px; height: 60px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .acro-term { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--green); margin-bottom: 3px; }
-    .acro-card p { font-size: 14.5px; color: var(--text); line-height: 1.55; }
-
-    /* ── SECTION 2: DATING FLAGS ── */
-    .flags { background: var(--cream-dark); }
-    .flags h2 { margin-bottom: 10px; }
-    .flags .lead { max-width: 640px; margin-bottom: 36px; }
-    .flag-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .flag-card { border-radius: var(--r); padding: 24px; border-top: 3px solid; transition: transform 0.2s, box-shadow 0.2s; }
-    .flag-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,90,61,0.08); }
-    .flag-green  { background: #EAF3DE; border-top-color: #3B6D11; }
-    .flag-yellow { background: #FAEEDA; border-top-color: #BA7517; }
-    .flag-red    { background: #FCEBEB; border-top-color: #A32D2D; }
-    .flag-emoji { font-size: 26px; line-height: 1; margin-bottom: 12px; }
-    .flag-title { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-    .flag-sub { font-size: 14px; font-style: italic; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
-    .flag-list { list-style: none; padding: 0; margin: 0; }
-    .flag-list li { font-size: 14px; color: var(--text); line-height: 1.55; padding: 10px 0; border-bottom: 1px solid rgba(26,26,24,0.1); }
-    .flag-list li:last-child { border-bottom: none; padding-bottom: 0; }
-
-    footer { background: var(--text); padding: 44px 2rem; text-align: center; }
-    .flogo { font-family: var(--font-display); font-size: 20px; color: white; font-weight: 600; display: block; margin-bottom: 12px; text-decoration: none; }
-    .flogo span { color: var(--amber); }
-    footer a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 13px; }
-    footer a:hover { color: rgba(255,255,255,0.75); }
-    .flinks { margin-bottom: 16px; }
-    .fdisclaimer { font-size: 12px; color: rgba(255,255,255,0.22); max-width: 520px; margin: 0 auto; line-height: 1.7; }
-
-    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 768px) {
-      .fodmap-hero { padding: 48px 1.5rem 36px; }
-      .tl-grid { grid-template-columns: 1fr; }
-      .acro-grid { grid-template-columns: 1fr; }
-      .flag-grid { grid-template-columns: 1fr; }
-    }
+    .fodmap-hero { position: relative; overflow: hidden; }
+    .big-f { position: absolute; top: -0.34em; right: -0.04em; font-family: var(--font-display); font-weight: 700; font-size: min(46vw, 560px); line-height: 0.8; color: var(--mint); opacity: 0.06; z-index: 0; pointer-events: none; user-select: none; }
+    .fodmap-hero .wrap { position: relative; z-index: 1; }
+    .monash-link { color: var(--mint); text-decoration: underline; text-underline-offset: 3px; }
+    .bg-cloud .monash-link, .callout .monash-link { color: #2c6360; }
   </style>
 </head>
 <body>
 
   <div id="site-header"></div>
 
-  <div class="fodmap-hero">
-    <div class="container-narrow">
-      <p class="eyebrow fade-up">The food guide</p>
-      <h1 class="fade-up">What can I <em>actually</em> eat?</h1>
-      <p class="lead fade-up">FODMAP, in plain language. No science degree required. Here's a simple traffic-light guide to what's usually fine, what depends, and what tends to cause trouble.</p>
-      <p class="lead fade-up" style="margin-top:18px;">FODMAP is a framework developed by <a href="https://www.monashfodmap.com/" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;font-weight:500;">Monash University</a> that identifies the short-chain carbohydrates most likely to trigger gut symptoms.</p>
+  <!-- HERO -->
+  <section class="sec bg-forest fodmap-hero">
+    <span class="big-f" aria-hidden="true">F</span>
+    <div class="wrap">
+      <p class="eyebrow-pill">The food guide</p>
+      <h1 class="h1">What can I <span class="accent-mint-i">actually</span> eat?</h1>
+      <p class="lead" style="margin-top:22px;">FODMAP, in plain language. No science degree required. A simple flag guide to what's usually fine, what depends, and what tends to cause trouble.</p>
+      <p class="small-line">FODMAP is a framework developed by <a class="monash-link" href="https://www.monashfodmap.com/" target="_blank" rel="noopener">Monash University</a> that identifies the short-chain carbohydrates most likely to trigger gut symptoms.</p>
     </div>
-  </div>
+  </section>
 
-  <section class="section acronym">
-    <div class="container">
-      <h2 class="fade-up">What even is a <em>FODMAP</em>?</h2>
-      <p class="acro-intro fade-up">You got told to try low-FODMAP and immediately googled "what is a saccharide." Same. Here's the thing — FODMAP is just an acronym. Six letters, each one a type of carb that can stir up trouble in a sensitive gut. Let's break it down.</p>
+  <!-- THE ACRONYM, VERTICAL SPINE -->
+  <section class="sec bg-cloud">
+    <div class="wrap-narrow">
+      <h2 class="h2">What even is a <span class="accent-teal-i">FODMAP</span>?</h2>
+      <p class="lead" style="margin-top:16px;">You got told to try low-FODMAP and immediately googled "what is a saccharide." Same. It's just an acronym, six letters, each a type of carb that can stir up trouble.</p>
 
-      <div class="acro-grid fade-up">
-        <div class="acro-card">
-          <div class="acro-letter">F</div>
+      <div class="spine">
+        <div class="spine-row">
+          <div class="spine-disc">F</div>
+          <div class="spine-body">
+            <div class="spine-name">Fermentable</div>
+            <div class="spine-desc">Stuff that ferments in your gut like a tiny brewery you didn't ask for.</div>
+          </div>
+          <span class="spine-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14" r="3"/><circle cx="16" cy="9" r="2.2"/><circle cx="15" cy="16" r="1.4"/></svg></span>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc">O</div>
+          <div class="spine-body">
+            <div class="spine-name">Oligosaccharides</div>
+            <div class="spine-desc">Garlic, onion, wheat. The social butterflies that cause chaos.</div>
+          </div>
+          <span class="spine-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-9"/><path d="M12 11c0-3 2.5-5.5 6-5.5C18 9 15.5 11 12 11z"/><path d="M12 13c0-2.5-2.2-4.5-5.5-4.5C6.5 11.5 8.7 13 12 13z"/></svg></span>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc">D</div>
+          <div class="spine-body">
+            <div class="spine-name">Disaccharides</div>
+            <div class="spine-desc">Lactose. Milk's personality.</div>
+          </div>
+          <span class="spine-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M9.5 3l-.5 3.5L8 9v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V9l-1-2.5L14.5 3"/><path d="M8.4 11h7.2"/></svg></span>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc">M</div>
+          <div class="spine-body">
+            <div class="spine-name">Monosaccharides</div>
+            <div class="spine-desc">Fructose, honey, mango, apple, pear. Too much overwhelms your gut.</div>
+          </div>
+          <span class="spine-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8c-3-2.5-7-.5-7 4.5 0 4 3 7.5 5 7.5 1 0 1.2-.8 2-.8s1 .8 2 .8c2 0 5-3.5 5-7.5 0-5-4-7-7-4.5z"/><path d="M12 8c0-2 1-3.5 3-3.5"/></svg></span>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc invert">A</div>
+          <div class="spine-body">
+            <div class="spine-name">And</div>
+            <div class="spine-desc">Yes, literally just "and." They named a diet after the word "and."</div>
+          </div>
+          <span class="spine-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+        </div>
+        <div class="spine-row">
+          <div class="spine-disc">P</div>
+          <div class="spine-body">
+            <div class="spine-name">Polyols</div>
+            <div class="spine-desc">Stone fruits, cauliflower, mushrooms, sugar-free gum.</div>
+          </div>
+          <span class="spine-icon"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 11a7.5 6 0 0 1 15 0z"/><path d="M10 11v6a2 2 0 0 0 4 0v-6"/></svg></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FLAG SYSTEM -->
+  <section class="sec bg-forest">
+    <div class="wrap-narrow">
+      <h2 class="h2">Like dating flags, <span class="accent-mint-i">but for your gut.</span></h2>
+      <p class="lead" style="margin-top:16px;">What's usually fine, what needs a second thought, and what your gut is already writing a strongly-worded letter about.</p>
+
+      <div class="flags">
+        <div class="flag flag-green">
+          <span class="flag-disc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h11l-2.5 4L17 12H6"/></svg></span>
           <div>
-            <p class="acro-term">Fermentable</p>
-            <p>Stuff that ferments in your gut like a tiny brewery you didn't ask for.</p>
+            <div class="flag-title">Green flag</div>
+            <div class="flag-sub">Go off, your gut is fine</div>
+            <div class="flag-chips">
+              <span class="chip">plain meat and fish</span><span class="chip">eggs</span><span class="chip">rice, oats, quinoa</span><span class="chip">carrots, potatoes, spinach</span><span class="chip">firm banana</span><span class="chip">lactose-free milk</span><span class="chip">hard cheese</span>
+            </div>
           </div>
         </div>
-        <div class="acro-card">
-          <div class="acro-letter">O</div>
+        <div class="flag flag-amber">
+          <span class="flag-disc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h11l-2.5 4L17 12H6"/></svg></span>
           <div>
-            <p class="acro-term">Oligosaccharides</p>
-            <p>Garlic, onion, wheat — the social butterflies that cause chaos. Think of them like a Russian oligarch of your gut: powerful, disruptive, impossible to ignore.</p>
+            <div class="flag-title">Amber flag</div>
+            <div class="flag-sub">Portion size is everything here</div>
+            <div class="flag-chips">
+              <span class="chip">sourdough (small slice)</span><span class="chip">oats in bigger portions</span><span class="chip">brie and camembert</span><span class="chip">rinsed tinned chickpeas</span><span class="chip">avocado (eighth fine, half not)</span>
+            </div>
           </div>
         </div>
-        <div class="acro-card">
-          <div class="acro-letter">D</div>
+        <div class="flag flag-red">
+          <span class="flag-disc"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h11l-2.5 4L17 12H6"/></svg></span>
           <div>
-            <p class="acro-term">Disaccharides</p>
-            <p>Lactose. Milk's personality.</p>
-          </div>
-        </div>
-        <div class="acro-card">
-          <div class="acro-letter">M</div>
-          <div>
-            <p class="acro-term">Monosaccharides</p>
-            <p>Fructose — honey, mango, apple, pear. Too much of it overwhelms your gut.</p>
-          </div>
-        </div>
-        <div class="acro-card">
-          <div class="acro-letter">A</div>
-          <div>
-            <p class="acro-term">And</p>
-            <p>Yes, literally just "and." They named a diet after the word "and."</p>
-          </div>
-        </div>
-        <div class="acro-card">
-          <div class="acro-letter">P</div>
-          <div>
-            <p class="acro-term">Polyols</p>
-            <p>Stone fruits, cauliflower, mushrooms, sugar-free gum.</p>
+            <div class="flag-title">Red flag</div>
+            <div class="flag-sub">Your gut has filed a restraining order</div>
+            <div class="flag-chips">
+              <span class="chip">garlic, onion, leek</span><span class="chip">wheat, rye, regular pasta</span><span class="chip">milk, soft cheese, yoghurt</span><span class="chip">apple, pear, mango</span><span class="chip">honey, beans, most lentils</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section flags">
-    <div class="container">
-      <h2 class="fade-up">Think of it like dating flags — but for your gut.</h2>
-      <p class="lead fade-up">Here's what's usually fine, what needs a second thought, and what your gut is already writing a strongly-worded letter about.</p>
-
-      <div class="flag-grid fade-up">
-        <div class="flag-card flag-green">
-          <div class="flag-emoji">🟢</div>
-          <p class="flag-title">Green flag</p>
-          <p class="flag-sub">Go off, your gut is fine</p>
-          <ul class="flag-list">
-            <li>plain meat, chicken, fish, eggs</li>
-            <li>rice, oats, quinoa</li>
-            <li>carrots, potatoes, spinach, courgette</li>
-            <li>blueberries, strawberries, firm banana</li>
-            <li>lactose-free milk, almond milk, hard cheese</li>
-          </ul>
-        </div>
-        <div class="flag-card flag-yellow">
-          <div class="flag-emoji">🟡</div>
-          <p class="flag-title">Yellow flag</p>
-          <p class="flag-sub">Portion size is everything here</p>
-          <ul class="flag-list">
-            <li>sourdough bread (small slice)</li>
-            <li>oats in bigger portions</li>
-            <li>some cheeses like brie or camembert</li>
-            <li>well-rinsed tinned chickpeas, small amounts</li>
-            <li>avocado (⅛ is fine, half is not)</li>
-          </ul>
-        </div>
-        <div class="flag-card flag-red">
-          <div class="flag-emoji">🔴</div>
-          <p class="flag-title">Red flag</p>
-          <p class="flag-sub">Your gut has filed a restraining order</p>
-          <ul class="flag-list">
-            <li>garlic, onion, leek, spring onion</li>
-            <li>wheat, rye, regular pasta</li>
-            <li>milk, soft cheese, yoghurt</li>
-            <li>apple, pear, mango, watermelon, dried fruit</li>
-            <li>honey, beans, most lentils</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="tl-note fade-up">Portion size changes everything — even a "safe" food can tip over if you eat a lot. This is a plain-language starting point, not a clinical chart. For exact amounts, the <a href="https://www.monashfodmap.com" target="_blank" rel="noopener">Monash FODMAP app</a> is the gold standard, and always check with your doctor or dietitian.</p>
+  <!-- PORTION NOTE -->
+  <section class="sec bg-cloud">
+    <div class="wrap-narrow">
+      <div class="callout">Portion size changes everything, even a "safe" food can tip over if you eat a lot. This is a plain-language starting point, not a clinical chart. For exact amounts, the <a class="monash-link" href="https://www.monashfodmap.com" target="_blank" rel="noopener">Monash FODMAP app</a> is the gold standard, and always check with your doctor or dietitian.</div>
     </div>
   </section>
 
-<div id="site-footer"></div>
+  <!-- CLOSING CTA -->
+  <section class="sec bg-forest-deep center">
+    <div class="wrap-narrow">
+      <h2 class="h2">Want recipes that dodge the red flags?</h2>
+      <div class="btn-row"><a class="btn-mint" href="/recipes/">See the sample recipes</a></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
   <script src="/assets/layout.js" defer></script>
-  <script src="/assets/motion.js" defer></script>
 </body>
 </html>
