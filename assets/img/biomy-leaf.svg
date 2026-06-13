@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 316" role="img" aria-label="Biomy leaf mark">
+  <defs>
+    <linearGradient id="biomyLeaf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.02" stop-color="#E8B07F"/>
+      <stop offset="0.28" stop-color="#D9998F"/>
+      <stop offset="0.50" stop-color="#90A7C6"/>
+      <stop offset="0.72" stop-color="#6EAAC2"/>
+      <stop offset="0.98" stop-color="#61B4AC"/>
+    </linearGradient>
+  </defs>
+    <path d="M132 6 C 244 88, 248 212, 132 310 C 16 212, 20 88, 132 6 Z" fill="url(#biomyLeaf)"/>
+    <line x1="132" y1="10" x2="132" y2="306" stroke="#173630" stroke-width="8" stroke-linecap="round"/>
+    <path d="M62 138 L132 94 L202 138" fill="none" stroke="#173630" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M64 196 Q132 162 200 196" fill="none" stroke="#173630" stroke-width="8" stroke-linecap="round"/>
+    <path d="M88 254 Q132 230 176 254" fill="none" stroke="#173630" stroke-width="8" stroke-linecap="round"/>
+</svg>
