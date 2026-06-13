@@ -60,8 +60,8 @@
     .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 
     .cond-pill { display: inline-flex; align-items: baseline; gap: 6px; background: var(--forest-deep); border: 1px solid rgba(176,240,216,0.18); border-radius: var(--radius-pill); padding: 8px 16px; font-size: var(--text-small); color: var(--cloud-soft); margin-bottom: 24px; }
-    .cond-cycle { position: relative; display: inline-block; min-width: 9.5em; height: 1.3em; }
-    .cond { position: absolute; left: 0; top: 0; white-space: nowrap; color: var(--mint); font-weight: 500; opacity: 0; transition: opacity .6s ease; }
+    .cond-cycle { display: inline-grid; vertical-align: baseline; }
+    .cond { grid-area: 1 / 1; white-space: nowrap; color: var(--mint); font-weight: 500; opacity: 0; transition: opacity .6s ease; }
     .cond:first-child { opacity: 1; }
 
     .hero-title { font-family: var(--font-display); font-weight: 700; font-size: var(--text-hero); line-height: 1.02; letter-spacing: -0.03em; color: var(--cloud); text-wrap: balance; }
