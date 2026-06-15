@@ -110,15 +110,6 @@
     .guide-link { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: #2c6360; text-decoration: none; border-bottom: 2px solid rgba(99,178,175,0.4); padding-bottom: 2px; }
     .guide-link:hover { border-color: var(--teal); }
 
-    /* ════════ PHOTO BAND ════════ */
-    .photo-band { position: relative; background: var(--forest-deep); min-height: clamp(320px, 42vw, 460px); display: grid; overflow: hidden; }
-    .photo-band > .photo-wrap { position: absolute; inset: 0; z-index: 0; }
-    .photo-band img { width: 100%; height: 100%; object-fit: cover; }
-    /* Readability scrim: darken the image (heaviest at the bottom, where the quote sits) so white text stays legible. */
-    .photo-band::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(to top, rgba(16,36,28,0.82) 0%, rgba(16,36,28,0.5) 45%, rgba(16,36,28,0.22) 100%); }
-    .photo-band-inner { position: relative; z-index: 2; align-self: end; padding: clamp(2.5rem, 6vw, 5rem) 0; }
-    .photo-band-quote { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem, 2.6vw, 2rem); line-height: 1.25; color: var(--cloud); max-width: 18em; text-wrap: balance; text-shadow: 0 1px 14px rgba(0,0,0,0.45); }
-
     /* ════════ RECIPES ════════ */
     .recipes { background: var(--forest-deep); padding: var(--space-section) 0; border-top: 1px solid rgba(176,240,216,0.1); }
     .recipes h2 { color: var(--cloud); }
@@ -139,6 +130,33 @@
     .browse-link { font-family: var(--font-body); font-weight: 500; font-size: 1rem; color: var(--mint); text-decoration: none; border-bottom: 2px solid rgba(176,240,216,0.4); padding-bottom: 2px; }
     .browse-link:hover { border-color: var(--mint); }
 
+    /* ════════ SYMPTOM TRACKING ════════ */
+    .tracking { background: var(--cloud); color: var(--ink); padding: var(--space-section) 0; }
+    .tracking .eyebrow { color: var(--teal); }
+    .tracking h2 { color: var(--ink); }
+    .tracking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+    .tracking-sub { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.6; margin-top: 12px; max-width: 38em; }
+    .track-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+    .track-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 1rem; color: var(--ink); line-height: 1.5; }
+    .track-list svg { width: 20px; height: 20px; color: var(--teal); flex: none; margin-top: 1px; }
+    .track-card { background: #fff; border: 1px solid rgba(20,43,33,0.12); border-radius: var(--radius-card); padding: 22px; box-shadow: 0 12px 30px rgba(20,43,33,0.06); }
+    .track-head { display: flex; align-items: baseline; justify-content: space-between; }
+    .track-head .tw { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); }
+    .track-head .tr { font-size: 0.8rem; color: var(--ink-soft); }
+    .track-chart { display: flex; align-items: flex-end; gap: 8px; height: 120px; margin-top: 18px; }
+    .track-chart .bar { flex: 1; background: var(--flag-green); border-radius: 6px 6px 0 0; }
+    .track-chart .bar.flare { background: var(--flag-amber); }
+    .track-days { display: flex; gap: 8px; margin-top: 8px; }
+    .track-days span { flex: 1; text-align: center; font-size: 0.72rem; color: var(--ink-soft); }
+    .track-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .track-pill { font-size: 0.75rem; padding: 5px 12px; border-radius: var(--radius-pill); background: rgba(20,43,33,0.06); color: var(--ink-soft); }
+    .track-summary { display: flex; gap: 12px; align-items: flex-start; background: rgba(176,240,216,0.3); border-radius: 12px; padding: 14px 16px; margin-top: 18px; }
+    .track-favatar { width: 32px; height: 32px; border-radius: 50%; background: var(--sky); color: var(--sky-ink); display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; flex: none; }
+    .track-summary p { font-size: 0.85rem; color: var(--ink); line-height: 1.5; }
+    .track-export { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 18px; background: var(--forest-deep); color: var(--mint); border: none; border-radius: var(--radius-pill); padding: 14px; font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: filter .15s ease, transform .15s ease; }
+    .track-export:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    .track-export svg { width: 18px; height: 18px; }
+
     /* ════════ WAITLIST ════════ */
     .waitlist { background: var(--teal); color: var(--forest-deep); padding: var(--space-section) 0; }
     .waitlist .eyebrow { color: var(--forest-deep); opacity: 0.7; }
@@ -152,6 +170,7 @@
       .hero-right { order: 2; }
       .hero-leaf { width: 360px; opacity: 0.28; top: -2%; right: -12%; }
       .recipes-grid { grid-template-columns: 1fr; }
+      .tracking-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 767px) {
       .suspects-grid { grid-template-columns: 1fr; }
@@ -281,17 +300,6 @@
     </div>
   </section>
 
-  <!-- ════════ REAL-LIFE PHOTO BAND ════════ -->
-  <section class="photo-band">
-    <div class="photo-wrap">
-      <img class="photo" src="/assets/img/cooking-band.jpg" alt="Person cooking a fresh meal in a home kitchen" loading="lazy"
-           onerror="this.closest('.photo-wrap').style.display='none';" />
-    </div>
-    <div class="wrap photo-band-inner">
-      <p class="photo-band-quote reveal">Built by someone living with UC since 2008. Not a doctor. A product person.</p>
-    </div>
-  </section>
-
   <!-- ════════ RECIPES ════════ -->
   <section class="recipes">
     <div class="wrap">
@@ -334,6 +342,52 @@
       </div>
       <div class="browse-link-row reveal">
         <a class="browse-link" href="/recipes/">See the cooking guide →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ SYMPTOM TRACKING ════════ -->
+  <section class="tracking">
+    <div class="wrap">
+      <div class="tracking-grid">
+        <div class="reveal">
+          <p class="eyebrow">Daily tracking</p>
+          <h2>See the pattern, not just the bad day.</h2>
+          <p class="tracking-sub">Log how your gut feels in seconds. Watch the trends build. Hand your doctor something they can actually use.</p>
+          <ul class="track-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 6"/></svg><span>Track bowel frequency, urgency, mood, and food.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 6"/></svg><span>See your trends over weeks, not just today.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 6"/></svg><span>Flora turns it into a clear summary, ready for your appointment.</span></li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="track-card">
+            <div class="track-head"><span class="tw">Your week</span><span class="tr">Mon to Sun</span></div>
+            <div class="track-chart">
+              <div class="bar" style="height:45%"></div>
+              <div class="bar" style="height:62%"></div>
+              <div class="bar" style="height:38%"></div>
+              <div class="bar" style="height:72%"></div>
+              <div class="bar" style="height:52%"></div>
+              <div class="bar flare" style="height:90%"></div>
+              <div class="bar" style="height:44%"></div>
+            </div>
+            <div class="track-days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+            <div class="track-pills">
+              <span class="track-pill">Urgency low</span>
+              <span class="track-pill">Mood improving</span>
+              <span class="track-pill">1 flare day</span>
+            </div>
+            <div class="track-summary">
+              <span class="track-favatar" aria-hidden="true">F</span>
+              <p>Symptoms eased after you cut onion this week. Worth raising at your next appointment.</p>
+            </div>
+            <button class="track-export" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M8 11l4 4 4-4M5 20h14"/></svg>
+              Export for your doctor
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
