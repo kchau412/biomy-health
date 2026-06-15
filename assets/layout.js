@@ -16,7 +16,7 @@
      current page via aria-current. */
   var NAV = [
     { href: "/about/",   label: "About",   match: "/about" },
-    { href: "/recipes/", label: "Recipes", match: "/recipes" },
+    { href: "/recipes/", label: "Cooking", match: "/recipes" },
     { href: "/fodmap/",  label: "FODMAP",  match: "/fodmap" },
     { href: "/flora/",   label: "Flora",   match: "/flora" }
   ];
@@ -78,7 +78,7 @@
       '<nav class="bm-foot-links" aria-label="Footer">' +
         '<a href="mailto:hello@biomy.health">hello@biomy.health</a>' +
         '<a href="/about/">About</a>' +
-        '<a href="/recipes/">Recipes</a>' +
+        '<a href="/recipes/">Cooking</a>' +
         '<a href="/fodmap/">FODMAP</a>' +
         '<a href="/flora/">Flora</a>' +
         '<a href="/privacy/">Privacy</a>' +
