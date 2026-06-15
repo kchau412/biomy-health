@@ -28,6 +28,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/styles/tokens.css" />
   <link rel="stylesheet" href="/assets/styles/pages.css" />
+  <style>
+    .swaps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+    .swap-card { background: #fff; border: 1px solid rgba(20,43,33,0.1); border-radius: var(--radius-card); padding: 24px; }
+    .swap-card.locked { background: transparent; border: 1px dashed rgba(20,43,33,0.28); }
+    .swap-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; padding: 4px 10px; border-radius: var(--radius-pill); margin-bottom: 12px; }
+    .swap-pill .ic { width: 13px; height: 13px; }
+    .swap-pill.free { background: rgba(76,139,92,0.15); color: var(--flag-green); }
+    .swap-pill.app { background: rgba(185,138,58,0.16); color: var(--flag-amber); }
+    .swap-title { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); margin-bottom: 6px; }
+    .swap-card.locked .swap-title { color: var(--ink-soft); }
+    .swap-desc { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.5; }
+    .swap-card.locked .swap-desc { color: var(--ink-soft); opacity: 0.85; }
+    .swaps-note { font-style: italic; font-size: 0.88rem; color: var(--ink-soft); margin-top: 22px; }
+    @media (max-width: 900px) { .swaps-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px) { .swaps-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 
@@ -41,7 +57,7 @@
       <p class="lead" style="margin-top:22px;">A preview of where Biomy's recipes are heading: low FODMAP food across Indian, West African, Chinese, Mexican, and European cuisines, built for people who want flavour and food that still feels like them.</p>
       <div class="btn-row">
         <a class="btn-mint" href="/#waitlist">Join the waitlist</a>
-        <a class="btn-ghost" href="#samples">Browse samples</a>
+        <a class="btn-ghost" href="#swaps">See the swaps</a>
       </div>
     </div>
   </section>
@@ -50,7 +66,44 @@
   <section class="sec bg-cloud">
     <div class="wrap-narrow">
       <h2 class="h2">Low FODMAP food should still taste like real food.</h2>
-      <p class="lead" style="margin-top:18px;">Most low FODMAP recipe pages flatten food into beige mush. These samples respect the spices, techniques, and flavours that make food feel like home.</p>
+      <p class="lead" style="margin-top:18px;">Most low FODMAP recipe pages flatten food into beige mush. These samples respect the spices, techniques, and flavours that make food feel like home. The science is solid, the recipes around it just were not built for your kitchen.</p>
+    </div>
+  </section>
+
+  <!-- THE CORNERSTONE: SWAPS -->
+  <section class="sec bg-cloud" id="swaps" style="padding-top:0;">
+    <div class="wrap">
+      <p class="overline">The cornerstone</p>
+      <h2 class="h2">Keep the flavour, lose the trigger.</h2>
+      <p class="lead" style="margin-top:12px;">The swaps that keep your food tasting like itself.</p>
+      <div class="swaps-grid">
+        <div class="swap-card">
+          <span class="swap-pill free"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h11l-2.5 4L17 12H6"/></svg>Free</span>
+          <div class="swap-title">Onion and garlic</div>
+          <p class="swap-desc">Hing, garlic-infused oil, spring onion greens. FODMAPs don't dissolve in oil, so the flavour carries, not the trigger.</p>
+        </div>
+        <div class="swap-card">
+          <span class="swap-pill free"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h11l-2.5 4L17 12H6"/></svg>Free</span>
+          <div class="swap-title">The onion curry base</div>
+          <p class="swap-desc">Grated carrot and a pinch of hing builds the same sweet depth your masala needs.</p>
+        </div>
+        <div class="swap-card">
+          <span class="swap-pill free"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4h11l-2.5 4L17 12H6"/></svg>Free</span>
+          <div class="swap-title">Wheat noodles and roti</div>
+          <p class="swap-desc">Rice, rice noodles, vermicelli. Naturally gentle, already at home in your kitchen.</p>
+        </div>
+        <div class="swap-card locked">
+          <span class="swap-pill app"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>In the app</span>
+          <div class="swap-title">Sweetcorn flavour in soups</div>
+          <p class="swap-desc">The swap that keeps the body and the sweetness.</p>
+        </div>
+        <div class="swap-card locked">
+          <span class="swap-pill app"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>In the app</span>
+          <div class="swap-title">Heavy coconut base</div>
+          <p class="swap-desc">Keep the richness inside your limit.</p>
+        </div>
+      </div>
+      <p class="swaps-note">Everyone's triggers are different. These are a starting point, not medical advice.</p>
     </div>
   </section>
 
@@ -128,13 +181,6 @@
         </a>
 
       </div>
-    </div>
-  </section>
-
-  <!-- CALLOUT -->
-  <section class="sec bg-cloud" style="padding-top:0;">
-    <div class="wrap-narrow">
-      <div class="callout">Smarter swaps, not less flavour. Garlic-infused oil instead of cloves, green tops of spring onions, lactose-free dairy where needed. Everyone's triggers are different, these are a starting point, not medical advice.</div>
     </div>
   </section>
 
