@@ -123,7 +123,10 @@
     .recipes { background: var(--forest-deep); padding: var(--space-section) 0; border-top: 1px solid rgba(176,240,216,0.1); }
     .recipes h2 { color: var(--cloud); }
     .recipes .eyebrow { color: var(--mint); }
+    .recipes-sub { font-size: 1.05rem; color: var(--cloud-soft); line-height: 1.6; margin-top: 12px; max-width: 42em; }
     .recipes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+    .swap-panel { aspect-ratio: 4 / 3; background: var(--mint); display: grid; place-items: center; }
+    .swap-panel svg { width: 64px; height: 64px; color: var(--forest-deep); }
     .rcard { background: var(--forest); border: 1px solid rgba(176,240,216,0.12); border-radius: var(--radius-card); overflow: hidden; text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
     .rcard:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,0.3); }
     .rcard .photo-wrap { aspect-ratio: 4 / 3; }
@@ -295,8 +298,19 @@
       <div class="reveal">
         <p class="eyebrow">Taste the difference</p>
         <h2>Your food culture, gut-friendly.</h2>
+        <p class="recipes-sub">Swaps, technique, and recipes that keep your food tasting like yours.</p>
       </div>
       <div class="recipes-grid">
+        <a class="rcard reveal" href="/recipes/">
+          <div class="swap-panel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h14M18 9l-4-4M18 9l-4 4M20 15H6M6 15l4-4M6 15l4 4"/></svg>
+          </div>
+          <div class="rcard-body">
+            <span class="rtag">Swap</span>
+            <div class="rtitle">Onion and garlic</div>
+            <p class="rdesc">Swap for hing, garlic-infused oil, and spring onion greens. Same depth, no trigger.</p>
+          </div>
+        </a>
         <a class="rcard reveal" href="/recipes/">
           <div class="photo-wrap">
             <img class="photo" src="/Images/Recipes/chicken-tikka-masala.png" alt="Chicken Tikka Masala" loading="lazy" />
@@ -317,19 +331,9 @@
             <p class="rdesc">Smoky tomato rice without the usual FODMAP triggers.</p>
           </div>
         </a>
-        <a class="rcard reveal" href="/recipes/">
-          <div class="photo-wrap">
-            <img class="photo" src="/Images/Recipes/ginger-scallion-chicken-stir-fry.png" alt="Ginger Scallion Chicken Stir-Fry" loading="lazy" />
-          </div>
-          <div class="rcard-body">
-            <span class="rtag">Asian</span>
-            <div class="rtitle">Ginger Scallion Stir-Fry</div>
-            <p class="rdesc">Quick weeknight dinner. Bright, punchy, and safe.</p>
-          </div>
-        </a>
       </div>
       <div class="browse-link-row reveal">
-        <a class="browse-link" href="/recipes/">See the sample recipes →</a>
+        <a class="browse-link" href="/recipes/">See the cooking guide →</a>
       </div>
     </div>
   </section>
