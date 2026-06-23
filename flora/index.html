@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flora | Biomy</title>
-  <meta name="description" content="Meet Flora, Biomy's wellness companion. Coming soon: plain-language guidance for living with a gut condition. A wellness guide, not a doctor." />
+  <meta name="description" content="Meet Flora, Biomy's wellness companion. Early preview: plain-language guidance for living with a gut condition. A wellness guide, not a doctor." />
   <link rel="canonical" href="https://biomy.health/flora/" />
   <meta property="og:title" content="Meet Flora | Biomy" />
-  <meta property="og:description" content="Coming soon. Flora is a wellness guide for living with a gut condition, not a doctor." />
+  <meta property="og:description" content="Early preview. Flora is a wellness guide for living with a gut condition, not a doctor." />
   <meta property="og:url" content="https://biomy.health/flora/" />
   <meta property="og:type" content="website" />
 
@@ -47,6 +47,13 @@
     .msg-user { align-self: flex-end; background: rgba(242,247,243,0.1); color: var(--cloud); border-bottom-right-radius: 4px; }
     .msg-flora { align-self: flex-start; background: var(--sky); color: var(--sky-ink); border-bottom-left-radius: 4px; }
     .chat-input { margin-top: 16px; width: 100%; background: rgba(242,247,243,0.06); border: 1px solid rgba(242,247,243,0.12); border-radius: var(--radius-pill); padding: 13px 18px; font-family: var(--font-body); font-size: 0.9rem; color: var(--cloud-soft); opacity: 0.5; cursor: not-allowed; }
+    .chat-form { display: flex; gap: 8px; margin-top: 16px; }
+    .chat-input-live { flex: 1; background: rgba(242,247,243,0.06); border: 1px solid rgba(242,247,243,0.12); border-radius: var(--radius-pill); padding: 13px 18px; font-family: var(--font-body); font-size: 0.9rem; color: var(--cloud); }
+    .chat-input-live::placeholder { color: var(--cloud-soft); }
+    .chat-input-live:focus { outline: none; border-color: var(--sky); }
+    .chat-send { flex: none; border: none; background: var(--mint); color: var(--forest-deep); font-family: var(--font-body); font-weight: 500; font-size: 0.9rem; padding: 0 20px; border-radius: var(--radius-pill); cursor: pointer; }
+    .chat-send:disabled { opacity: 0.5; cursor: default; }
+    .msg-flora.typing { opacity: 0.6; }
 
     /* Sky spine */
     .spine.sky::before { background: var(--sky); opacity: 0.5; }
@@ -78,7 +85,7 @@
   <section class="sec bg-forest flora-hero">
     <span class="sky-orb" aria-hidden="true"></span>
     <div class="wrap">
-      <p class="coming-pill"><span class="dot"></span> Coming soon</p>
+      <p class="coming-pill"><span class="dot"></span> Early preview</p>
       <h1 class="h1">Meet <span class="accent-sky-i">Flora.</span></h1>
       <p class="lead" style="margin-top:22px;">The questions you'd normally wait six weeks to ask. Flora's there to help you navigate, find information, and feel a little less alone at 11pm.</p>
       <p class="small-line">A wellness guide, not a doctor. Always consult a clinician for medical decisions.</p>
@@ -91,17 +98,18 @@
       <p class="overline">A preview of what's coming</p>
       <div class="chat-wrap">
         <div class="flora-chat">
-          <span class="preview-tag">Preview</span>
+          <span class="preview-tag">Early preview</span>
           <div class="flora-head">
             <div class="flora-avatar" aria-hidden="true">F</div>
             <div class="flora-id">Flora<span>Wellness companion</span></div>
           </div>
-          <div class="chat-stream">
-            <div class="msg msg-user">Is it normal to feel this exhausted during a flare?</div>
-            <div class="msg msg-flora">Yes, fatigue is one of the most common and underappreciated parts of a flare. Your body is working hard. Want some tips for managing energy on difficult days?</div>
-            <div class="msg msg-user">Yes please</div>
+          <div class="chat-stream" id="floraStream">
+            <div class="msg msg-flora">Hi, I'm Flora. Ask me about living with a gut condition, food and swaps for your cuisine, or what to raise at your next appointment.</div>
           </div>
-          <input class="chat-input" type="text" placeholder="Flora's not live yet, join the waitlist" disabled tabindex="-1" aria-disabled="true" aria-label="Chat input, disabled until Flora launches" />
+          <div class="chat-form">
+            <input class="chat-input-live" id="floraInput" type="text" placeholder="Ask Flora something" aria-label="Message Flora" autocomplete="off" />
+            <button class="chat-send" id="floraSend" type="button">Send</button>
+          </div>
         </div>
       </div>
     </div>
@@ -167,7 +175,7 @@
   <!-- HONEST PRIVACY NOTE -->
   <section class="sec bg-cloud" style="padding-top:0;">
     <div class="wrap-narrow">
-      <div class="callout"><strong>An honest note on privacy.</strong> Flora's backend doesn't exist yet, we're building it. When Flora is live, conversations won't be stored beyond your session. We'll update our <a href="/privacy/">privacy policy</a> before anything goes live, and we'll tell you when we do.</div>
+      <div class="callout"><strong>An honest note on privacy.</strong> Flora is an early preview. When you send a message, your text is sent to our server and on to Anthropic, the AI provider that powers Flora's replies. Biomy does not store your conversations. Flora has no access to your medical records and only knows what you type in this chat. Please avoid sharing anything you would not want processed by an AI service, and know that Flora is not a substitute for advice from a doctor or dietitian. For the full picture, see our <a href="/privacy/">privacy policy</a>.</div>
     </div>
   </section>
 
@@ -183,5 +191,6 @@
   <div id="site-footer"></div>
 
   <script src="/assets/layout.js" defer></script>
+  <script src="/assets/flora.js" defer></script>
 </body>
 </html>

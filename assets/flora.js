@@ -1,64 +1,73 @@
-// Flora live chat. Wires the existing .flora-chat card to the Cloudflare Worker.
-// Set this to your deployed Worker URL before this will work.
+// Flora live chat, early preview. Wires the chat card to the Cloudflare Worker.
 const FLORA_WORKER_URL = "https://flora-api.karanchaudhri.workers.dev";
 
 (function () {
   const stream = document.getElementById("floraStream");
   const input = document.getElementById("floraInput");
-  const send = document.getElementById("floraSend");
-  if (!stream || !input || !send) return;
+  const sendBtn = document.getElementById("floraSend");
+  if (!stream || !input || !sendBtn) return;
 
-  const history = []; // { role, content }
+  // Conversation turns sent to the worker on each request.
+  const messages = [];
 
-  function addMsg(role, text, extra) {
+  function addMessage(role, text) {
     const el = document.createElement("div");
-    el.className = "msg " + (role === "user" ? "msg-user" : "msg-flora") + (extra ? " " + extra : "");
+    el.className = "msg " + (role === "user" ? "msg-user" : "msg-flora");
     el.textContent = text;
     stream.appendChild(el);
-    el.scrollIntoView({ block: "nearest" });
+    stream.scrollTop = stream.scrollHeight;
     return el;
   }
 
-  async function sendMessage() {
+  function setBusy(busy) {
+    input.disabled = busy;
+    sendBtn.disabled = busy;
+  }
+
+  async function send() {
     const text = input.value.trim();
     if (!text) return;
 
+    addMessage("user", text);
+    messages.push({ role: "user", content: text });
     input.value = "";
-    send.disabled = true;
-    addMsg("user", text);
-    history.push({ role: "user", content: text });
+    setBusy(true);
 
-    const typing = addMsg("flora", "Flora is thinking", "typing");
+    const typing = addMessage("flora", "Flora is thinking");
+    typing.classList.add("typing");
 
     try {
       const res = await fetch(FLORA_WORKER_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
+        body: JSON.stringify({ messages: messages })
       });
-      const data = await res.json();
+      const data = await res.json().catch(function () { return {}; });
       typing.remove();
 
-      if (data.reply) {
-        addMsg("flora", data.reply);
-        history.push({ role: "assistant", content: data.reply });
+      if (data && data.reply) {
+        addMessage("flora", data.reply);
+        messages.push({ role: "assistant", content: data.reply });
+      } else if (data && data.error) {
+        // Show the worker's own message, for example the rate limit note.
+        addMessage("flora", data.error);
       } else {
-        addMsg("flora", data.error || "Flora is having a quiet moment. Please try again.");
+        addMessage("flora", "Something went wrong reaching Flora. Please try again in a moment.");
       }
-    } catch (e) {
+    } catch (err) {
       typing.remove();
-      addMsg("flora", "Flora could not connect just now. Please try again.");
+      addMessage("flora", "Flora could not be reached just now. Please check your connection and try again.");
     } finally {
-      send.disabled = false;
+      setBusy(false);
       input.focus();
     }
   }
 
-  send.addEventListener("click", sendMessage);
+  sendBtn.addEventListener("click", send);
   input.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       e.preventDefault();
-      sendMessage();
+      send();
     }
   });
 })();
